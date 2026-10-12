@@ -1,0 +1,60 @@
+{
+  "config": {
+    "pair": "USDJPY",
+    "timeframe": "5m",
+    "isAutoTrading": true,
+    "spreadPips": 0,
+    "defaultLots": 1,
+    "takeProfitPips": 6,
+    "stopLossPips": 4.5,
+    "useTrailingStop": true,
+    "trailingStopPips": 2.5,
+    "trailingActivationPips": 2,
+    "maxOpenTrades": 2,
+    "minAiConfidence": 75,
+    "timeExpiryCandles": 12,
+    "selectedStrategy": "ALL"
+  },
+  "account": {
+    "initialBalance": 1000000,
+    "balance": 1000000,
+    "equity": 1000000,
+    "freeMargin": 1000000,
+    "marginLevel": 9999,
+    "currency": "JPY",
+    "spreadPips": 0,
+    "slippagePips": 0
+  },
+  "openPositions": [],
+  "tradeLogs": [],
+  "metrics": {
+    "totalTrades": 0,
+    "wins": 0,
+    "losses": 0,
+    "winRate": 0,
+    "profitFactor": 0,
+    "totalPipsWon": 0,
+    "totalPipsLost": 0,
+    "netPips": 0,
+    "netProfit": 0,
+    "maxDrawdown": 0,
+    "maxDrawdownPercent": 0,
+    "averageWinPips": 0,
+    "averageLossPips": 0,
+    "riskRewardRatio": 0,
+    "expectancyPips": 0,
+    "consecutiveWins": 0,
+    "consecutiveLosses": 0,
+    "maxConsecutiveWins": 0,
+    "maxConsecutiveLosses": 0
+  },
+  "equityHistory": [
+    {
+      "timestamp": 1791769904156,
+      "equity": 1000000,
+      "balance": 1000000
+    }
+  ],
+  "lastUpdated": 1791769904156,
+  "startedAt": 1791769904156
+}
