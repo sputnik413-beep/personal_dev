@@ -1,0 +1,6 @@
+{
+  "name": "さくらクラウド調査・学習サポートエージェント",
+  "description": "さくらクラウドの公式ドキュメントに基づく調査レポート作成、AWSとの詳細比較・アーキテクチャ相互補完、図解付きの学習問題作成・解説エージェント",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
