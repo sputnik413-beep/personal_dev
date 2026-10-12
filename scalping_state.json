@@ -25,7 +25,24 @@
     "spreadPips": 0,
     "slippagePips": 0
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "id": "pos_1791790067111_c9l",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 1,
+      "entryPrice": 158.414,
+      "entryTime": 1791790067111,
+      "currentPrice": 158.414,
+      "stopLoss": 158.459,
+      "takeProfit": 158.354,
+      "pipsPnL": 0,
+      "unrealizedPnL": 0,
+      "signalReason": "BB Squeeze Breakout (スクイーズ下方ブレイク) (信頼度: 82%)",
+      "highestPriceSinceEntry": 158.414,
+      "lowestPriceSinceEntry": 158.414
+    }
+  ],
   "tradeLogs": [],
   "metrics": {
     "totalTrades": 0,
@@ -55,6 +72,6 @@
       "balance": 1000000
     }
   ],
-  "lastUpdated": 1791769904156,
+  "lastUpdated": 1791790067111,
   "startedAt": 1791769904156
 }
