@@ -33,7 +33,7 @@ const __dirname = path.dirname(__filename);
 const STATE_FILE = path.resolve(__dirname, '../scalping_state.json');
 
 // Command line arguments
-const isSinglePass = process.argv.includes('--single-pass');
+const isSinglePass = process.argv.includes('--single-pass') || process.argv.includes('--once');
 const intervalSeconds = 15;
 
 function loadState(): ForwardTestState {
