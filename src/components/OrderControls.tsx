@@ -52,17 +52,17 @@ export const OrderControls: React.FC<OrderControlsProps> = ({
         {/* Strategy Selector */}
         <div>
           <label className="text-[11px] text-slate-400 font-semibold mb-1 block">
-            採用ロジック
+            採用ロジック（トレンドフォロー厳格）
           </label>
           <select
             value={config.selectedStrategy}
             onChange={(e) => onUpdateConfig({ selectedStrategy: e.target.value as any })}
-            className="w-full bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500"
+            className="w-full bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500 font-medium"
           >
-            <option value="ALL">全自動ハイブリッド (推奨)</option>
-            <option value="BOB_VOLMAN_PULLBACK">Bob Volman 21EMAロールリバーサル</option>
-            <option value="BB_BREAKOUT">BBスクイーズ・エクスパンション</option>
-            <option value="RSI_MOMENTUM">RSI極限域ダイナミック反発</option>
+            <option value="ALL">全自動 (プルバック & ブロック突破)</option>
+            <option value="BOB_VOLMAN_PULLBACK">20EMAプルバック反発ブレイク</option>
+            <option value="VOLMAN_BLOCK_BREAK">保ち合いブロック突破 (ビルドアップ)</option>
+            <option value="BB_BREAKOUT">BBトレンド同調ブレイク</option>
           </select>
         </div>
 
@@ -103,10 +103,10 @@ export const OrderControls: React.FC<OrderControlsProps> = ({
               <input
                 type="number"
                 step="0.5"
-                min="2"
-                max="20"
+                min="5"
+                max="35"
                 value={config.takeProfitPips}
-                onChange={(e) => onUpdateConfig({ takeProfitPips: parseFloat(e.target.value) || 6 })}
+                onChange={(e) => onUpdateConfig({ takeProfitPips: parseFloat(e.target.value) || 18 })}
                 className="w-full bg-transparent text-xs font-mono text-emerald-400 focus:outline-none"
               />
               <span className="text-[10px] text-slate-500">p</span>
@@ -116,10 +116,10 @@ export const OrderControls: React.FC<OrderControlsProps> = ({
               <input
                 type="number"
                 step="0.5"
-                min="2"
-                max="15"
+                min="5"
+                max="25"
                 value={config.stopLossPips}
-                onChange={(e) => onUpdateConfig({ stopLossPips: parseFloat(e.target.value) || 4 })}
+                onChange={(e) => onUpdateConfig({ stopLossPips: parseFloat(e.target.value) || 10 })}
                 className="w-full bg-transparent text-xs font-mono text-rose-400 focus:outline-none"
               />
               <span className="text-[10px] text-slate-500">p</span>

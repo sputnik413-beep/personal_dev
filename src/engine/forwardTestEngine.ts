@@ -17,15 +17,16 @@ export const DEFAULT_CONFIG: ScalperConfig = {
   isAutoTrading: true,
   spreadPips: 0.0, // User requirement: zero-spread account assumption
   defaultLots: 1.0, // 1.0 lot = 100,000 units (1 pip = 1,000 JPY on USDJPY)
-  takeProfitPips: 6.0, // 6.0 pips scalping target
-  stopLossPips: 4.5, // 4.5 pips tight stop
+  takeProfitPips: 18.0, // Bob Volman 5-minute scalping standard target (~18-20 pips)
+  stopLossPips: 10.0, // Bob Volman standard stop-loss (10.0 pips to avoid noise whipsaws)
   useTrailingStop: true,
-  trailingStopPips: 2.5,
-  trailingActivationPips: 2.0,
+  trailingStopPips: 5.0,
+  trailingActivationPips: 8.0,
   maxOpenTrades: 2,
   minAiConfidence: 75,
-  timeExpiryCandles: 12,
+  timeExpiryCandles: 18,
   selectedStrategy: 'ALL',
+  trendSlopeFilter: true,
 };
 
 export const INITIAL_ACCOUNT: AccountState = {

@@ -168,16 +168,16 @@ jobs:
                 <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
                   <h4 className="font-bold text-white text-sm mb-2 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    解決策A: GitHub Actions 自動Cron実行 (費用: 0円)
+                    解決策A: GitHub Actions 24時間数珠つなぎループ (稼働中・完全無料)
                   </h4>
                   <p className="text-slate-400 mb-2">
-                    既に連携いただいたリポジトリ <code>sputnik413-beep/personal_dev</code> を使用し、
-                    GitHubの無料クラウドサーバーで平日5分おきに自動起動してフォワードテストを回します。
+                    リポジトリ <code>sputnik413-beep/personal_dev</code> を<b>Publicに設定いただいたため、GitHub Actionsの実行時間制限は完全に撤廃（無制限・無料）</b>されました。
+                    12分間の常駐セッション完了時に次のワークフローを自動キックする「数珠つなぎリレー方式」で、Cronの遅延を回避し24時間稼働します。
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-slate-300">
-                    <li>PCを完全にシャットダウンしていても2週間稼働継続</li>
-                    <li>トレード結果を自動でGitHubリポジトリにコミット保存</li>
-                    <li>完全無料（GitHub Actions無料枠 月2,000分以内）</li>
+                    <li>PCをシャットダウンしていても24時間365日フォワードテスト継続</li>
+                    <li>ボブ・ボルマン流（10pip損切 / 18〜20pip利確 / 20EMAトレンドフォロー）で稼働</li>
+                    <li>約定結果・AI自己診断結果は <code>scalping_state.json</code> に自動コミット保存</li>
                   </ul>
                 </div>
 

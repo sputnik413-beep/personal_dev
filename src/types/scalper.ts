@@ -123,6 +123,28 @@ export interface PerformanceMetrics {
   maxConsecutiveLosses: number;
 }
 
+export interface StrategyDiagnosis {
+  id: string;
+  timestamp: number;
+  totalAnalyzedTrades: number;
+  winRate: number;
+  profitFactor: number;
+  netPips: number;
+  trendDisciplineScore: number; // 0 - 100
+  executiveSummary: string;
+  lossPatternForensics: string[];
+  strengthsIdentified: string[];
+  suggestedParameterAdjustments: {
+    stopLossPips?: number;
+    takeProfitPips?: number;
+    minAiConfidence?: number;
+    trailingActivationPips?: number;
+    trailingStopPips?: number;
+    reason: string;
+  };
+  applied: boolean;
+}
+
 export interface ScalperConfig {
   pair: CurrencyPair;
   timeframe: Timeframe;
@@ -137,8 +159,9 @@ export interface ScalperConfig {
   maxOpenTrades: number;
   minAiConfidence: number;
   timeExpiryCandles: number;
-  selectedStrategy: 'ALL' | 'BOB_VOLMAN_PULLBACK' | 'BB_BREAKOUT' | 'RSI_MOMENTUM';
+  selectedStrategy: 'ALL' | 'BOB_VOLMAN_PULLBACK' | 'BB_BREAKOUT' | 'VOLMAN_BLOCK_BREAK';
   simulationSpeedMultiplier?: number;
+  trendSlopeFilter?: boolean;
 }
 
 export interface EquityPoint {
@@ -155,6 +178,7 @@ export interface ForwardTestState {
   tradeLogs: TradeLog[];
   metrics: PerformanceMetrics;
   equityHistory: EquityPoint[];
+  aiDiagnosisHistory?: StrategyDiagnosis[];
   lastUpdated: number;
   startedAt: number;
 }

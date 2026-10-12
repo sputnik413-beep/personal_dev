@@ -22,6 +22,7 @@ import {
 } from './src/engine/forwardTestEngine';
 import { evaluateScalperStrategy } from './src/engine/scalperStrategy';
 import { generateRealisticCandles, isFxMarketOpen } from './src/engine/marketDataService';
+import { performStrategySelfReflection } from './src/engine/strategySelfReflection';
 
 const execAsync = promisify(exec);
 dotenv.config();
@@ -368,7 +369,7 @@ app.post('/api/scalper/ai-analyze', async (req: Request, res: Response) => {
 }`;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.8-flash',
       contents: prompt,
       config: {
         systemInstruction,
@@ -384,10 +385,99 @@ app.post('/api/scalper/ai-analyze', async (req: Request, res: Response) => {
       success: true,
       score: 75,
       action: 'HOLD',
-      oneLineVerdict: '短期レンジ形成中、ブレイクアウト待ち',
-      scalpAdvice: '21EMAでの押し目反発を確認できるまで静観を推奨します。',
-      keyFactors: ['21EMA近傍', 'RSI50近傍中立', 'ブレイク待ち'],
+      oneLineVerdict: '20EMA沿いでのビルドアップ形成待ち',
+      scalpAdvice: '20EMAでの押し目・戻り目ブレイクアウトを確認できるまで静観を推奨します。',
+      keyFactors: ['20EMA近傍', 'トレンド方向ブレイク待ち', 'ノイズ回避中'],
     });
+  }
+});
+
+// -------------------------------------------------------------
+// Strategy Self-Reflection & Adaptive PDCA Cycle Endpoint
+// -------------------------------------------------------------
+app.post('/api/scalper/self-reflection', async (req: Request, res: Response) => {
+  try {
+    const diagnosis = await performStrategySelfReflection(currentState);
+    if (!currentState.aiDiagnosisHistory) {
+      currentState.aiDiagnosisHistory = [];
+    }
+    currentState.aiDiagnosisHistory.unshift(diagnosis);
+    if (currentState.aiDiagnosisHistory.length > 10) {
+      currentState.aiDiagnosisHistory = currentState.aiDiagnosisHistory.slice(0, 10);
+    }
+    saveStateToFile(currentState);
+    res.json({ success: true, diagnosis, state: currentState });
+  } catch (e: any) {
+    console.error('Self-reflection error:', e);
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
+// -------------------------------------------------------------
+// Apply Recommended Strategy Parameter Adjustments
+// -------------------------------------------------------------
+app.post('/api/scalper/apply-tuning', (req: Request, res: Response) => {
+  try {
+    const { adjustments } = req.body;
+    if (adjustments) {
+      if (adjustments.stopLossPips != null) currentState.config.stopLossPips = Number(adjustments.stopLossPips);
+      if (adjustments.takeProfitPips != null) currentState.config.takeProfitPips = Number(adjustments.takeProfitPips);
+      if (adjustments.minAiConfidence != null) currentState.config.minAiConfidence = Number(adjustments.minAiConfidence);
+      if (adjustments.trailingActivationPips != null) currentState.config.trailingActivationPips = Number(adjustments.trailingActivationPips);
+      if (adjustments.trailingStopPips != null) currentState.config.trailingStopPips = Number(adjustments.trailingStopPips);
+      currentState.config.trendSlopeFilter = true;
+    }
+    if (currentState.aiDiagnosisHistory && currentState.aiDiagnosisHistory.length > 0) {
+      currentState.aiDiagnosisHistory[0].applied = true;
+    }
+    saveStateToFile(currentState);
+    res.json({ success: true, config: currentState.config, state: currentState });
+  } catch (e: any) {
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
+// -------------------------------------------------------------
+// GitHub Actions Workflow Dispatch (Continuous Relay Trigger)
+// -------------------------------------------------------------
+app.post('/api/github/dispatch-workflow', async (req: Request, res: Response) => {
+  try {
+    const pat = process.env.GITHUB_PAT || '';
+    if (!pat) {
+      return res.status(400).json({
+        success: false,
+        message: 'GITHUB_PAT環境変数が未設定です。.envに設定してください。',
+      });
+    }
+    const repo = 'sputnik413-beep/personal_dev';
+    const ghRes = await fetch(
+      `https://api.github.com/repos/${repo}/actions/workflows/scalping_forward_test.yml/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/vnd.github.v3+json',
+          Authorization: `token ${pat}`,
+          'User-Agent': 'FX-Scalper-Agent',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      }
+    );
+
+    if (ghRes.ok || ghRes.status === 204) {
+      res.json({
+        success: true,
+        message: '24時間数珠つなぎループのワークフロー起動リクエストが受理されました！',
+      });
+    } else {
+      const errText = await ghRes.text();
+      res.status(ghRes.status).json({
+        success: false,
+        message: 'GitHub Actionsの起動に失敗しました',
+        detail: errText,
+      });
+    }
+  } catch (e: any) {
+    res.status(500).json({ success: false, error: e.message });
   }
 });
 

@@ -7,6 +7,7 @@ import { OrderControls } from './components/OrderControls';
 import { OpenPositionsCard } from './components/OpenPositionsCard';
 import { TradeHistoryTable } from './components/TradeHistoryTable';
 import { EquityCurveChart } from './components/EquityCurveChart';
+import { StrategyPdcaPanel } from './components/StrategyPdcaPanel';
 import { Setup24x7Modal } from './components/Setup24x7Modal';
 import {
   CurrencyPair,
@@ -65,6 +66,9 @@ export function App() {
 
   const [is24x7ModalOpen, setIs24x7ModalOpen] = useState<boolean>(false);
   const [isSyncingGithub, setIsSyncingGithub] = useState<boolean>(false);
+  const [isDiagnosisLoading, setIsDiagnosisLoading] = useState<boolean>(false);
+  const [isApplyingTuning, setIsApplyingTuning] = useState<boolean>(false);
+  const [isTriggeringRelay, setIsTriggeringRelay] = useState<boolean>(false);
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'info' | 'warn' } | null>(null);
 
   const currentPriceRef = useRef<number>(pair === 'USDJPY' ? 152.45 : 1.0875);
@@ -271,6 +275,69 @@ export function App() {
     }
   };
 
+  // Run AI Strategy Self-Reflection (Gemini 3.8 Flash)
+  const handleRefreshDiagnosis = async () => {
+    setIsDiagnosisLoading(true);
+    try {
+      const res = await fetch('/api/scalper/self-reflection', { method: 'POST' });
+      const data = await res.json();
+      if (data.success && data.state) {
+        setState(data.state);
+        showToast('AI自己分析・PDCA診断レポートを更新しました！', 'success');
+      } else {
+        showToast('AI自己分析の実行に失敗しました', 'warn');
+      }
+    } catch (e) {
+      console.error('Self-reflection error:', e);
+      showToast('AI自己診断通信エラー', 'warn');
+    } finally {
+      setIsDiagnosisLoading(false);
+    }
+  };
+
+  // Apply suggested parameter adjustments
+  const handleApplyTuning = async (adjustments: any) => {
+    setIsApplyingTuning(true);
+    try {
+      const res = await fetch('/api/scalper/apply-tuning', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ adjustments }),
+      });
+      const data = await res.json();
+      if (data.success && data.state) {
+        setState(data.state);
+        showToast('ボブ・ボルマン推奨パラメータ（10p損切 / 18p利確）を反映しました！', 'success');
+      } else {
+        showToast('パラメータ更新に失敗しました', 'warn');
+      }
+    } catch (e) {
+      console.error('Apply tuning error:', e);
+      showToast('パラメータ更新通信エラー', 'warn');
+    } finally {
+      setIsApplyingTuning(false);
+    }
+  };
+
+  // Trigger continuous 24/7 GitHub Actions relay runner
+  const handleTriggerRelayWorkflow = async () => {
+    setIsTriggeringRelay(true);
+    try {
+      const res = await fetch('/api/github/dispatch-workflow', { method: 'POST' });
+      const data = await res.json();
+      if (data.success) {
+        showToast('GitHub Actionsの24時間連続ループを起動しました！', 'success');
+      } else {
+        showToast(data.message || 'ワークフロー起動エラー', 'warn');
+      }
+    } catch (e) {
+      console.error('Trigger workflow error:', e);
+      showToast('ワークフロー起動通信エラー', 'warn');
+    } finally {
+      setIsTriggeringRelay(false);
+    }
+  };
+
   // Real-time Tick Loop (every 3 seconds)
   useEffect(() => {
     const timer = setInterval(async () => {
@@ -389,6 +456,17 @@ export function App() {
           onTriggerAiDiagnosis={handleTriggerAiDiagnosis}
           aiAnalysis={aiAnalysis}
           isAiAnalyzing={isAiAnalyzing}
+        />
+
+        {/* Strategy Self-Reflection & Adaptive PDCA Cycle Panel */}
+        <StrategyPdcaPanel
+          state={state}
+          onRefreshDiagnosis={handleRefreshDiagnosis}
+          onApplyTuning={handleApplyTuning}
+          onTriggerRelayWorkflow={handleTriggerRelayWorkflow}
+          isAnalyzing={isDiagnosisLoading}
+          isApplying={isApplyingTuning}
+          isTriggeringRelay={isTriggeringRelay}
         />
 
         {/* Order Controls & Manual One-Click Scalping */}

@@ -34,13 +34,31 @@ const STATE_FILE = path.resolve(__dirname, '../scalping_state.json');
 
 // Command line arguments
 const isSinglePass = process.argv.includes('--single-pass') || process.argv.includes('--once');
+const durationMinutesArg = process.argv.find((arg) => arg.startsWith('--duration-minutes='));
+const durationMinutesPos = process.argv.indexOf('--duration-minutes');
+const durationMinutes = durationMinutesArg
+  ? parseInt(durationMinutesArg.split('=')[1], 10)
+  : durationMinutesPos !== -1 && process.argv[durationMinutesPos + 1]
+  ? parseInt(process.argv[durationMinutesPos + 1], 10)
+  : null;
+
 const intervalSeconds = 15;
 
 function loadState(): ForwardTestState {
   if (fs.existsSync(STATE_FILE)) {
     try {
       const raw = fs.readFileSync(STATE_FILE, 'utf-8');
-      return JSON.parse(raw);
+      const loaded = JSON.parse(raw);
+      // Upgrade legacy tight stops to Bob Volman defaults if older than 10 pips
+      if (loaded.config && (loaded.config.stopLossPips < 8 || loaded.config.takeProfitPips < 12)) {
+        console.log('Upgrading legacy tight stop-loss (4.5 pips) to Bob Volman 10.0 pip standard...');
+        loaded.config.stopLossPips = 10.0;
+        loaded.config.takeProfitPips = 18.0;
+        loaded.config.trailingActivationPips = 8.0;
+        loaded.config.trailingStopPips = 5.0;
+        loaded.config.trendSlopeFilter = true;
+      }
+      return loaded;
     } catch (e) {
       console.warn('Could not parse scalping_state.json, creating initial state.');
     }
@@ -151,9 +169,32 @@ async function main() {
   let state = loadState();
 
   if (isSinglePass) {
-    console.log('Running in single-pass mode (GitHub Actions scheduled cron)...');
+    console.log('Running in single-pass mode...');
     await stepBot(state);
     console.log('Single pass completed successfully.');
+    process.exit(0);
+  }
+
+  if (durationMinutes && durationMinutes > 0) {
+    console.log(`Running timed relay session: ${durationMinutes} minutes (interval: ${intervalSeconds}s)...`);
+    const endTime = Date.now() + durationMinutes * 60 * 1000;
+    let iteration = 0;
+
+    while (Date.now() < endTime) {
+      iteration++;
+      try {
+        state = await stepBot(state);
+      } catch (err) {
+        console.error(`[Iteration ${iteration}] Error in daemon step:`, err);
+      }
+      const remainingMs = endTime - Date.now();
+      if (remainingMs <= intervalSeconds * 1000) {
+        break;
+      }
+      await new Promise((resolve) => setTimeout(resolve, intervalSeconds * 1000));
+    }
+
+    console.log(`Timed relay session completed (${iteration} ticks executed). Exiting cleanly to pass baton to next relay runner.`);
     process.exit(0);
   }
 
