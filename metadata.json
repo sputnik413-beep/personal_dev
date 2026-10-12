@@ -1,0 +1,6 @@
+{
+  "name": "Private Mahjong Analytics & Simulation Platform",
+  "description": "プライベート4人麻雀オンライン対戦・戦績牌譜分析・ペルソナBot生成プラットフォーム。オープン立直・真似満・三連刻・四連刻のローカル役、向聴数・放銃ケアレベル(Lv1-4)・無謀押しスコア、半荘セット分析、対戦相性マトリクス、状態巻き戻しUndo、ペルソナAIを完全実装。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

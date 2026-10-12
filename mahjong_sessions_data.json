@@ -1,0 +1,639 @@
+[
+  {
+    "id": "session_league_set_1",
+    "name": "第14期 週末定期対局セット (6半荘)",
+    "status": "COMPLETED",
+    "targetGamesCount": 6,
+    "completedGamesCount": 6,
+    "createdAt": 1791387892348,
+    "updatedAt": 1791474292348,
+    "players": [
+      {
+        "id": "player_you",
+        "name": "あなた (Player 1)",
+        "isBot": false
+      },
+      {
+        "id": "player_sato",
+        "name": "佐藤 健一 (Sato)",
+        "isBot": true,
+        "personaId": "persona_sato"
+      },
+      {
+        "id": "player_tanaka",
+        "name": "田中 亮 (Tanaka)",
+        "isBot": true,
+        "personaId": "persona_tanaka"
+      },
+      {
+        "id": "player_suzuki",
+        "name": "鈴木 雅之 (Suzuki)",
+        "isBot": true,
+        "personaId": "persona_suzuki"
+      }
+    ],
+    "gameRecords": [
+      {
+        "id": "rec_game_1",
+        "sessionId": "session_league_set_1",
+        "gameIndexInSet": 1,
+        "startedAt": 1791387892348,
+        "finishedAt": 1791391492348,
+        "isRecorded": true,
+        "rules": {
+          "startingScore": 25000,
+          "returnScore": 30000,
+          "uma": [
+            20,
+            10,
+            -10,
+            -20
+          ],
+          "tenpaiRenchan": true,
+          "honbaValue": 300,
+          "ryanhanShibariHonba": 5,
+          "kyushukyuhai": true,
+          "sufonRenda": true,
+          "nagashiMangan": true,
+          "tripleRonDraw": true,
+          "sanrenko": true,
+          "suurenko": true,
+          "openRiichi": true,
+          "maneMangan": true,
+          "doubleYakuman": true,
+          "allowRedDora": true,
+          "turnTimerSeconds": 10
+        },
+        "players": [
+          {
+            "id": "player_you",
+            "name": "あなた (Player 1)",
+            "finalScore": 38200,
+            "rank": 1,
+            "umaDiff": 48.2,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_sato",
+            "name": "佐藤 健一 (Sato)",
+            "finalScore": 29400,
+            "rank": 2,
+            "umaDiff": 9.4,
+            "totalDealIns": 2,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 1,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_suzuki",
+            "name": "鈴木 雅之 (Suzuki)",
+            "finalScore": 21100,
+            "rank": 3,
+            "umaDiff": -18.9,
+            "totalDealIns": 3,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 1,
+              "4": 1
+            }
+          },
+          {
+            "id": "player_tanaka",
+            "name": "田中 亮 (Tanaka)",
+            "finalScore": 11300,
+            "rank": 4,
+            "umaDiff": -38.7,
+            "totalDealIns": 4,
+            "unreasonablePushes": 2,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 1,
+              "4": 3
+            }
+          }
+        ],
+        "telemetryActions": [
+          {
+            "id": "t_act_1",
+            "roundNumber": 1,
+            "turnIndex": 6,
+            "playerIndex": 2,
+            "actionType": "RON",
+            "tile": {
+              "id": "3m_1",
+              "suit": "m",
+              "value": 3
+            },
+            "shanten": -1,
+            "isRiichiActive": true,
+            "isOpenRiichiActive": false,
+            "anyOpponentInRiichi": true,
+            "maneManganStreak": 0,
+            "dealInAnalysis": {
+              "careLevel": 4,
+              "careDetails": "無筋危険牌の押し込み放銃",
+              "unreasonablePush": true,
+              "dealInShanten": 2,
+              "targetWaitShape": "RYANMEN",
+              "winningHandHan": 3,
+              "winningHandFu": 40,
+              "pointsLost": 5200,
+              "isAgainstOpenRiichi": false,
+              "isOpenRiichiYakumanPenalty": false
+            },
+            "timestamp": 1791388012348
+          }
+        ]
+      },
+      {
+        "id": "rec_game_2",
+        "sessionId": "session_league_set_1",
+        "gameIndexInSet": 2,
+        "startedAt": 1791391892348,
+        "finishedAt": 1791395092348,
+        "isRecorded": true,
+        "rules": {
+          "startingScore": 25000,
+          "returnScore": 30000,
+          "uma": [
+            20,
+            10,
+            -10,
+            -20
+          ],
+          "tenpaiRenchan": true,
+          "honbaValue": 300,
+          "ryanhanShibariHonba": 5,
+          "kyushukyuhai": true,
+          "sufonRenda": true,
+          "nagashiMangan": true,
+          "tripleRonDraw": true,
+          "sanrenko": true,
+          "suurenko": true,
+          "openRiichi": true,
+          "maneMangan": true,
+          "doubleYakuman": true,
+          "allowRedDora": true,
+          "turnTimerSeconds": 10
+        },
+        "players": [
+          {
+            "id": "player_sato",
+            "name": "佐藤 健一 (Sato)",
+            "finalScore": 41500,
+            "rank": 1,
+            "umaDiff": 51.5,
+            "totalDealIns": 0,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_you",
+            "name": "あなた (Player 1)",
+            "finalScore": 26800,
+            "rank": 2,
+            "umaDiff": 6.8,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 1,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_tanaka",
+            "name": "田中 亮 (Tanaka)",
+            "finalScore": 21900,
+            "rank": 3,
+            "umaDiff": -18.1,
+            "totalDealIns": 3,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 1,
+              "4": 1
+            }
+          },
+          {
+            "id": "player_suzuki",
+            "name": "鈴木 雅之 (Suzuki)",
+            "finalScore": 9800,
+            "rank": 4,
+            "umaDiff": -40.2,
+            "totalDealIns": 3,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 2
+            }
+          }
+        ],
+        "telemetryActions": []
+      },
+      {
+        "id": "rec_game_3",
+        "sessionId": "session_league_set_1",
+        "gameIndexInSet": 3,
+        "startedAt": 1791395392348,
+        "finishedAt": 1791398392348,
+        "isRecorded": true,
+        "rules": {
+          "startingScore": 25000,
+          "returnScore": 30000,
+          "uma": [
+            20,
+            10,
+            -10,
+            -20
+          ],
+          "tenpaiRenchan": true,
+          "honbaValue": 300,
+          "ryanhanShibariHonba": 5,
+          "kyushukyuhai": true,
+          "sufonRenda": true,
+          "nagashiMangan": true,
+          "tripleRonDraw": true,
+          "sanrenko": true,
+          "suurenko": true,
+          "openRiichi": true,
+          "maneMangan": true,
+          "doubleYakuman": true,
+          "allowRedDora": true,
+          "turnTimerSeconds": 10
+        },
+        "players": [
+          {
+            "id": "player_you",
+            "name": "あなた (Player 1)",
+            "finalScore": 35000,
+            "rank": 1,
+            "umaDiff": 45,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_suzuki",
+            "name": "鈴木 雅之 (Suzuki)",
+            "finalScore": 27500,
+            "rank": 2,
+            "umaDiff": 7.5,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 1,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_sato",
+            "name": "佐藤 健一 (Sato)",
+            "finalScore": 24200,
+            "rank": 3,
+            "umaDiff": -15.8,
+            "totalDealIns": 2,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 1,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_tanaka",
+            "name": "田中 亮 (Tanaka)",
+            "finalScore": 13300,
+            "rank": 4,
+            "umaDiff": -36.7,
+            "totalDealIns": 3,
+            "unreasonablePushes": 2,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 2
+            }
+          }
+        ],
+        "telemetryActions": []
+      },
+      {
+        "id": "rec_game_4",
+        "sessionId": "session_league_set_1",
+        "gameIndexInSet": 4,
+        "startedAt": 1791474292348,
+        "finishedAt": 1791477792348,
+        "isRecorded": true,
+        "rules": {
+          "startingScore": 25000,
+          "returnScore": 30000,
+          "uma": [
+            20,
+            10,
+            -10,
+            -20
+          ],
+          "tenpaiRenchan": true,
+          "honbaValue": 300,
+          "ryanhanShibariHonba": 5,
+          "kyushukyuhai": true,
+          "sufonRenda": true,
+          "nagashiMangan": true,
+          "tripleRonDraw": true,
+          "sanrenko": true,
+          "suurenko": true,
+          "openRiichi": true,
+          "maneMangan": true,
+          "doubleYakuman": true,
+          "allowRedDora": true,
+          "turnTimerSeconds": 10
+        },
+        "players": [
+          {
+            "id": "player_tanaka",
+            "name": "田中 亮 (Tanaka)",
+            "finalScore": 48900,
+            "rank": 1,
+            "umaDiff": 58.9,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_you",
+            "name": "あなた (Player 1)",
+            "finalScore": 25400,
+            "rank": 2,
+            "umaDiff": 5.4,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 1,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_sato",
+            "name": "佐藤 健一 (Sato)",
+            "finalScore": 18200,
+            "rank": 3,
+            "umaDiff": -21.8,
+            "totalDealIns": 2,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 1,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_suzuki",
+            "name": "鈴木 雅之 (Suzuki)",
+            "finalScore": 7500,
+            "rank": 4,
+            "umaDiff": -42.5,
+            "totalDealIns": 4,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 1,
+              "4": 2
+            }
+          }
+        ],
+        "telemetryActions": []
+      },
+      {
+        "id": "rec_game_5",
+        "sessionId": "session_league_set_1",
+        "gameIndexInSet": 5,
+        "startedAt": 1791478292348,
+        "finishedAt": 1791481292348,
+        "isRecorded": true,
+        "rules": {
+          "startingScore": 25000,
+          "returnScore": 30000,
+          "uma": [
+            20,
+            10,
+            -10,
+            -20
+          ],
+          "tenpaiRenchan": true,
+          "honbaValue": 300,
+          "ryanhanShibariHonba": 5,
+          "kyushukyuhai": true,
+          "sufonRenda": true,
+          "nagashiMangan": true,
+          "tripleRonDraw": true,
+          "sanrenko": true,
+          "suurenko": true,
+          "openRiichi": true,
+          "maneMangan": true,
+          "doubleYakuman": true,
+          "allowRedDora": true,
+          "turnTimerSeconds": 10
+        },
+        "players": [
+          {
+            "id": "player_you",
+            "name": "あなた (Player 1)",
+            "finalScore": 36800,
+            "rank": 1,
+            "umaDiff": 46.8,
+            "totalDealIns": 0,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_sato",
+            "name": "佐藤 健一 (Sato)",
+            "finalScore": 28100,
+            "rank": 2,
+            "umaDiff": 8.1,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_tanaka",
+            "name": "田中 亮 (Tanaka)",
+            "finalScore": 22600,
+            "rank": 3,
+            "umaDiff": -17.4,
+            "totalDealIns": 2,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 1,
+              "4": 1
+            }
+          },
+          {
+            "id": "player_suzuki",
+            "name": "鈴木 雅之 (Suzuki)",
+            "finalScore": 12500,
+            "rank": 4,
+            "umaDiff": -37.5,
+            "totalDealIns": 3,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "4": 2
+            }
+          }
+        ],
+        "telemetryActions": []
+      },
+      {
+        "id": "rec_game_6",
+        "sessionId": "session_league_set_1",
+        "gameIndexInSet": 6,
+        "startedAt": 1791481792348,
+        "finishedAt": 1791485092348,
+        "isRecorded": true,
+        "rules": {
+          "startingScore": 25000,
+          "returnScore": 30000,
+          "uma": [
+            20,
+            10,
+            -10,
+            -20
+          ],
+          "tenpaiRenchan": true,
+          "honbaValue": 300,
+          "ryanhanShibariHonba": 5,
+          "kyushukyuhai": true,
+          "sufonRenda": true,
+          "nagashiMangan": true,
+          "tripleRonDraw": true,
+          "sanrenko": true,
+          "suurenko": true,
+          "openRiichi": true,
+          "maneMangan": true,
+          "doubleYakuman": true,
+          "allowRedDora": true,
+          "turnTimerSeconds": 10
+        },
+        "players": [
+          {
+            "id": "player_you",
+            "name": "あなた (Player 1)",
+            "finalScore": 39100,
+            "rank": 1,
+            "umaDiff": 49.1,
+            "totalDealIns": 0,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_tanaka",
+            "name": "田中 亮 (Tanaka)",
+            "finalScore": 27900,
+            "rank": 2,
+            "umaDiff": 7.9,
+            "totalDealIns": 2,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 1,
+              "3": 1,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_sato",
+            "name": "佐藤 健一 (Sato)",
+            "finalScore": 21400,
+            "rank": 3,
+            "umaDiff": -18.6,
+            "totalDealIns": 1,
+            "unreasonablePushes": 0,
+            "careLevelCounts": {
+              "1": 1,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "id": "player_suzuki",
+            "name": "鈴木 雅之 (Suzuki)",
+            "finalScore": 11600,
+            "rank": 4,
+            "umaDiff": -38.4,
+            "totalDealIns": 3,
+            "unreasonablePushes": 1,
+            "careLevelCounts": {
+              "1": 0,
+              "2": 0,
+              "3": 1,
+              "4": 2
+            }
+          }
+        ],
+        "telemetryActions": []
+      }
+    ]
+  }
+]
