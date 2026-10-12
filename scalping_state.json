@@ -18,9 +18,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 951700,
-    "equity": 945200,
-    "freeMargin": 865200,
+    "balance": 941700,
+    "equity": 933100,
+    "freeMargin": 893100,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -28,39 +28,38 @@
   },
   "openPositions": [
     {
-      "id": "pos_1791821442899_k2c",
-      "pair": "USDJPY",
-      "direction": "BUY",
-      "lots": 1,
-      "entryPrice": 158.695,
-      "entryTime": 1791821442899,
-      "currentPrice": 158.638,
-      "stopLoss": 158.595,
-      "takeProfit": 158.875,
-      "pipsPnL": -5.7,
-      "unrealizedPnL": -5700,
-      "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.714,
-      "lowestPriceSinceEntry": 158.622
-    },
-    {
       "id": "pos_1791824690330_kis",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 1,
       "entryPrice": 158.646,
       "entryTime": 1791824690330,
-      "currentPrice": 158.638,
+      "currentPrice": 158.56,
       "stopLoss": 158.546,
       "takeProfit": 158.826,
-      "pipsPnL": -0.8,
-      "unrealizedPnL": -800,
+      "pipsPnL": -8.6,
+      "unrealizedPnL": -8600,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 158.693,
-      "lowestPriceSinceEntry": 158.622
+      "lowestPriceSinceEntry": 158.56
     }
   ],
   "tradeLogs": [
+    {
+      "id": "trade_1791838808594_lbgo",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 1,
+      "entryPrice": 158.695,
+      "exitPrice": 158.595,
+      "entryTime": 1791821442899,
+      "exitTime": 1791838808594,
+      "pipsGain": -10,
+      "realizedPnL": -10000,
+      "exitReason": "STOP_LOSS",
+      "aiAnalysis": "【決済完了: STOP_LOSS】保有時間 289分。スプレッド0環境下で-10 pips (-10,000円)。",
+      "holdingDurationMinutes": 289
+    },
     {
       "id": "trade_1791824524253_y369",
       "pair": "USDJPY",
@@ -258,21 +257,21 @@
     }
   ],
   "metrics": {
-    "totalTrades": 13,
+    "totalTrades": 14,
     "wins": 3,
-    "losses": 10,
-    "winRate": 23.1,
-    "profitFactor": 0.14,
+    "losses": 11,
+    "winRate": 21.4,
+    "profitFactor": 0.12,
     "totalPipsWon": 7.7,
-    "totalPipsLost": 56,
-    "netPips": -48.3,
-    "netProfit": -48300,
-    "maxDrawdown": 48300,
-    "maxDrawdownPercent": 4.83,
+    "totalPipsLost": 66,
+    "netPips": -58.3,
+    "netProfit": -58300,
+    "maxDrawdown": 58300,
+    "maxDrawdownPercent": 5.83,
     "averageWinPips": 2.6,
-    "averageLossPips": 5.6,
-    "riskRewardRatio": 0.46,
-    "expectancyPips": -3.71,
+    "averageLossPips": 6,
+    "riskRewardRatio": 0.43,
+    "expectancyPips": -4.16,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 2,
@@ -337,8 +336,14 @@
       "equity": 945300,
       "balance": 951700,
       "tradeId": "trade_1791824524253_y369"
+    },
+    {
+      "timestamp": 1791838808594,
+      "equity": 933100,
+      "balance": 941700,
+      "tradeId": "trade_1791838808594_lbgo"
     }
   ],
-  "lastUpdated": 1791838071966,
+  "lastUpdated": 1791838808594,
   "startedAt": 1791769904156
 }
