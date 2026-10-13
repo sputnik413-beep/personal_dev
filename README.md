@@ -121,3 +121,41 @@ npm install
 npm run dev
 # -> http://localhost:3000
 ```
+
+---
+
+## ☁️ プロジェクト4: AWS 実装イメージ・アーキテクチャ視覚支援エージェント (AWS Visual Architecture Agent for App Developers)
+
+「アプリ開発経験はあるが、基盤やネットワーク（VPC、サブネット、ルーティング、SG、NAT Gateway、IAM）に苦手意識がある」開発者のための、徹底的に視覚（動的トポロジー図＆パケット通信フロー）で理解できるAWS実装支援エージェントです。
+
+### 🎯 重点対象サービス
+- **Step Functions / SQS / Lambda**: 非同期パイプライン、自動リトライ（指数バックオフ）、デッドレターキュー（DLQ）、Sagaパターン
+- **EventBridge**: カスタムイベントバス、JSONパターンルーティング、マイクロサービス疎結合化
+- **CloudFront / S3**: OAC (Origin Access Control) による完全閉塞、エッジキャッシュ、署名付きURL
+- **OpenSearch Service**: VPCプライベート配置、セキュリティグループ連携、IAM SigV4署名リクエスト認証
+- **FSx for NetApp ONTAP**: Multi-AZ冗長化、SVMマウントターゲット、フローティングIPルートテーブル、NFS/SMB
+- **VPC基礎**: パブリック/プライベートサブネット、NAT Gateway、Gateway型/Interface型VPCエンドポイント
+
+### 💡 主な機能
+1. **💡 AI技術相談 & 動的アーキテクチャ図解生成**:
+   - 質問内容に応じた動的SVG構成図の自動描画、パケット通信ステップのハイライト、Terraform/CDKコード出力
+2. **📐 8大基盤メンタルモデル図解ギャラリー**:
+   - 現場標準のベストプラクティス構成と「なぜこの基盤が必要なのか」を視覚的に追跡
+3. **⚠️ 基盤の落とし穴 ＆ アンチパターン診断スタジオ**:
+   - 「VPC内Lambdaが外部APIに出られない」「CloudFront 403」「SQS二重実行」などの原因と修正コードを即座に診断
+
+### 📁 格納ディレクトリ
+`projects/aws-visual-agent/`
+
+### 🚀 実行方法
+```bash
+# プロジェクトディレクトリへ移動
+cd projects/aws-visual-agent
+
+# 依存パッケージのインストール
+npm install
+
+# 開発サーバー起動（Express + Vite フルスタック）
+npm run dev
+# -> http://localhost:3000
+```
