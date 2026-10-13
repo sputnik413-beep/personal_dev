@@ -69,6 +69,7 @@ export function App() {
   const [isDiagnosisLoading, setIsDiagnosisLoading] = useState<boolean>(false);
   const [isApplyingTuning, setIsApplyingTuning] = useState<boolean>(false);
   const [isTriggeringRelay, setIsTriggeringRelay] = useState<boolean>(false);
+  const [isPullingCloud, setIsPullingCloud] = useState<boolean>(false);
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'info' | 'warn' } | null>(null);
 
   const currentPriceRef = useRef<number>(pair === 'USDJPY' ? 152.45 : 1.0875);
@@ -114,6 +115,10 @@ export function App() {
   useEffect(() => {
     loadServerState();
     loadCandles(pair, timeframe);
+    const interval = setInterval(() => {
+      loadServerState();
+    }, 12000);
+    return () => clearInterval(interval);
   }, [loadServerState, loadCandles, pair, timeframe]);
 
   // Handle Pair / Timeframe change
@@ -338,6 +343,26 @@ export function App() {
     }
   };
 
+  // Pull latest trades directly from GitHub Cloud
+  const handlePullLatestCloudState = async () => {
+    setIsPullingCloud(true);
+    try {
+      const res = await fetch('/api/github/pull-latest', { method: 'POST' });
+      const data = await res.json();
+      if (data.success && data.state) {
+        setState(data.state);
+        showToast(data.message || 'クラウド(GitHub)から最新データを同期しました！', 'success');
+      } else {
+        showToast('クラウドデータの同期に失敗しました', 'warn');
+      }
+    } catch (e) {
+      console.error('Pull cloud state error:', e);
+      showToast('クラウド同期通信エラー', 'warn');
+    } finally {
+      setIsPullingCloud(false);
+    }
+  };
+
   // Real-time Tick Loop (every 3 seconds)
   useEffect(() => {
     const timer = setInterval(async () => {
@@ -464,9 +489,11 @@ export function App() {
           onRefreshDiagnosis={handleRefreshDiagnosis}
           onApplyTuning={handleApplyTuning}
           onTriggerRelayWorkflow={handleTriggerRelayWorkflow}
+          onPullLatestCloudState={handlePullLatestCloudState}
           isAnalyzing={isDiagnosisLoading}
           isApplying={isApplyingTuning}
           isTriggeringRelay={isTriggeringRelay}
+          isPullingCloud={isPullingCloud}
         />
 
         {/* Order Controls & Manual One-Click Scalping */}

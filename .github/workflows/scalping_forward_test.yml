@@ -10,6 +10,10 @@ permissions:
   contents: write
   actions: write
 
+concurrency:
+  group: scalping-forward-test-relay
+  cancel-in-progress: false
+
 jobs:
   run-forward-test:
     runs-on: ubuntu-latest
@@ -36,9 +40,17 @@ jobs:
         run: |
           git config --global user.name "Scalping-ForwardTest-Bot"
           git config --global user.email "bot@scalper.ai"
-          git pull origin main --rebase || true
           git add scalping_state.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-record forward test tick [skip ci]" && git push origin main)
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: auto-record forward test tick [skip ci]" || true
+            for attempt in 1 2 3 4; do
+              echo "Push attempt $attempt..."
+              git pull origin main --rebase -X theirs || git rebase --abort || true
+              git push origin main && break || sleep 3
+            done
+          else
+            echo "No changes in scalping_state.json to commit."
+          fi
 
       - name: Trigger Next Relay Run (Continuous 24/7 Chain)
         if: always()

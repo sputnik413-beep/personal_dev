@@ -99,6 +99,37 @@ function saveStateToFile(state: ForwardTestState) {
   }
 }
 
+export async function fetchLatestFromGitHub(): Promise<ForwardTestState | null> {
+  try {
+    const pat = process.env.GITHUB_PAT || '';
+    const res = await fetch(
+      'https://raw.githubusercontent.com/sputnik413-beep/personal_dev/main/scalping_state.json',
+      {
+        headers: {
+          'Cache-Control': 'no-cache',
+          ...(pat ? { Authorization: `token ${pat}` } : {}),
+        },
+      }
+    );
+    if (res.ok) {
+      const parsed: ForwardTestState = await res.json();
+      if (parsed.account && parsed.config && Array.isArray(parsed.tradeLogs)) {
+        // Keep local aiDiagnosisHistory if remote doesn't have it yet
+        if (currentState?.aiDiagnosisHistory?.length && !parsed.aiDiagnosisHistory?.length) {
+          parsed.aiDiagnosisHistory = currentState.aiDiagnosisHistory;
+        }
+        currentState = parsed;
+        saveStateToFile(currentState);
+        console.log(`[GitHub Live Sync] Refreshed state from cloud! Trades: ${parsed.tradeLogs.length}, Balance: ${parsed.account.balance}, Open: ${parsed.openPositions.length}`);
+        return parsed;
+      }
+    }
+  } catch (e) {
+    console.warn('[GitHub Live Sync] Failed to fetch state from GitHub:', e);
+  }
+  return null;
+}
+
 // -------------------------------------------------------------
 // Market Data API (Yahoo Finance FX Proxy + Real Continuity)
 // -------------------------------------------------------------
@@ -174,7 +205,20 @@ app.get('/api/market/candles', async (req: Request, res: Response) => {
 // -------------------------------------------------------------
 // Scalper State & Control Endpoints
 // -------------------------------------------------------------
-app.get('/api/scalper/state', (req: Request, res: Response) => {
+app.get('/api/scalper/state', async (req: Request, res: Response) => {
+  const forceGithub = req.query.refreshFromGithub === 'true';
+  if (forceGithub) {
+    await fetchLatestFromGitHub();
+  } else if (fs.existsSync(STATE_FILE)) {
+    try {
+      const raw = fs.readFileSync(STATE_FILE, 'utf-8');
+      const parsed = JSON.parse(raw);
+      if (parsed.account && parsed.config) {
+        currentState = parsed;
+      }
+    } catch (e) {}
+  }
+
   res.json({
     success: true,
     state: currentState,
@@ -482,7 +526,7 @@ app.post('/api/github/dispatch-workflow', async (req: Request, res: Response) =>
 });
 
 // -------------------------------------------------------------
-// GitHub Auto-Sync Endpoint
+// GitHub Auto-Sync Endpoint (Commit & Push)
 // -------------------------------------------------------------
 app.post('/api/github/sync', async (req: Request, res: Response) => {
   try {
@@ -493,6 +537,87 @@ app.post('/api/github/sync', async (req: Request, res: Response) => {
     res.json({ success: true, message: 'GitHubへの同期が完了しました！', stdout, stderr });
   } catch (e: any) {
     res.json({ success: false, message: 'GitHub同期: コミット対象の変更がないか、通信中', detail: e.message });
+  }
+});
+
+// -------------------------------------------------------------
+// GitHub Pull Latest State (Instant Cloud Sync)
+// -------------------------------------------------------------
+app.post('/api/github/pull-latest', async (req: Request, res: Response) => {
+  try {
+    const updated = await fetchLatestFromGitHub();
+    if (updated) {
+      res.json({
+        success: true,
+        message: `クラウド(GitHub)から最新データを同期しました！(総取引: ${updated.tradeLogs.length}件, 口座残高: ¥${updated.account.balance.toLocaleString()})`,
+        state: currentState,
+      });
+    } else {
+      res.json({
+        success: true,
+        message: 'ローカル状態を維持（GitHub取得失敗または変更なし）',
+        state: currentState,
+      });
+    }
+  } catch (e: any) {
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
+// -------------------------------------------------------------
+// GitHub Actions Live Status (Monitor 24/7 Cloud Engine)
+// -------------------------------------------------------------
+app.get('/api/github/live-status', async (req: Request, res: Response) => {
+  try {
+    const pat = process.env.GITHUB_PAT || '';
+    const repo = 'sputnik413-beep/personal_dev';
+    const runsRes = await fetch(
+      `https://api.github.com/repos/${repo}/actions/runs?per_page=10`,
+      {
+        headers: {
+          Accept: 'application/vnd.github.v3+json',
+          ...(pat ? { Authorization: `token ${pat}` } : {}),
+          'User-Agent': 'FX-Scalper-Agent',
+        },
+      }
+    );
+
+    if (runsRes.ok) {
+      const data: any = await runsRes.json();
+      const runs = data.workflow_runs || [];
+      const inProgressRuns = runs.filter((r: any) => r.status === 'in_progress');
+      const latestCompleted = runs.find((r: any) => r.status === 'completed');
+
+      res.json({
+        success: true,
+        totalRuns: data.total_count || runs.length,
+        inProgressCount: inProgressRuns.length,
+        latestRun: runs[0]
+          ? {
+              id: runs[0].id,
+              name: runs[0].name,
+              status: runs[0].status,
+              conclusion: runs[0].conclusion,
+              createdAt: runs[0].created_at,
+              updatedAt: runs[0].updated_at,
+              htmlUrl: runs[0].html_url,
+            }
+          : null,
+        latestCompletedConclusion: latestCompleted?.conclusion || null,
+        cloudTradesCount: currentState.tradeLogs.length,
+        openPositionsCount: currentState.openPositions.length,
+        balance: currentState.account.balance,
+        equity: currentState.account.equity,
+      });
+    } else {
+      res.json({
+        success: false,
+        message: 'GitHub API status check failed',
+        status: runsRes.status,
+      });
+    }
+  } catch (e: any) {
+    res.status(500).json({ success: false, error: e.message });
   }
 });
 
@@ -514,8 +639,14 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, () => {
+  app.listen(PORT, async () => {
     console.log(`5-Min Scalping AI Trading Agent Server running on port ${PORT}`);
+    // Sync latest state from GitHub Actions on startup
+    await fetchLatestFromGitHub();
+    // Periodically sync every 30 seconds to follow 24/7 continuous relay
+    setInterval(async () => {
+      await fetchLatestFromGitHub();
+    }, 30000);
   });
 }
 

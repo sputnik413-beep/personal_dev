@@ -20,9 +20,11 @@ interface StrategyPdcaPanelProps {
   onRefreshDiagnosis: () => Promise<void>;
   onApplyTuning: (adjustments: StrategyDiagnosis['suggestedParameterAdjustments']) => Promise<void>;
   onTriggerRelayWorkflow: () => Promise<void>;
+  onPullLatestCloudState: () => Promise<void>;
   isAnalyzing: boolean;
   isApplying: boolean;
   isTriggeringRelay: boolean;
+  isPullingCloud: boolean;
 }
 
 export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
@@ -30,9 +32,11 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
   onRefreshDiagnosis,
   onApplyTuning,
   onTriggerRelayWorkflow,
+  onPullLatestCloudState,
   isAnalyzing,
   isApplying,
   isTriggeringRelay,
+  isPullingCloud,
 }) => {
   const latestDiagnosis = state.aiDiagnosisHistory?.[0];
   const { metrics, config, tradeLogs } = state;
@@ -64,6 +68,16 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
         {/* Action Buttons */}
         <div className="flex items-center gap-2 flex-wrap">
           <button
+            onClick={onPullLatestCloudState}
+            disabled={isPullingCloud}
+            className="px-3.5 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 transition disabled:opacity-50"
+            title="GitHub Actionsで稼働中の最新トレード戦績を取り込む"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 ${isPullingCloud ? 'animate-spin' : ''}`} />
+            <span>{isPullingCloud ? 'クラウド同期中...' : 'クラウド最新戦績を同期'}</span>
+          </button>
+
+          <button
             onClick={onTriggerRelayWorkflow}
             disabled={isTriggeringRelay}
             className="px-3 py-1.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 text-xs font-semibold flex items-center gap-1.5 transition disabled:opacity-50"
@@ -78,31 +92,34 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
             disabled={isAnalyzing}
             className="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-lg shadow-purple-950/50 disabled:opacity-50"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isAnalyzing ? 'animate-spin' : ''}`} />
+            <Brain className={`w-3.5 h-3.5 ${isAnalyzing ? 'animate-spin' : ''}`} />
             <span>{isAnalyzing ? 'AI自己診断中...' : 'AI自己診断を実行'}</span>
           </button>
         </div>
       </div>
 
-      {/* 24/7 Relay & Architecture Live Status Ribbon */}
+      {/* 24/7 Relay & Cloud Sync Live Status Ribbon */}
       <div className="bg-gradient-to-r from-blue-950/40 via-slate-900 to-emerald-950/40 border border-blue-900/50 rounded-xl p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-        <div className="flex items-center gap-2 text-slate-300">
+        <div className="flex items-center gap-2 text-slate-300 flex-wrap">
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
-          <span className="font-semibold text-emerald-300">GitHub Actions 24時間数珠つなぎ稼働:</span>
+          <span className="font-semibold text-emerald-300">GitHub Actions 24時間自律稼働中:</span>
           <span className="text-slate-300">
-            Publicリポジトリ（実行時間無制限・完全無料）で12分間隔リレー継続中
+            PC停止中もクラウド上で連続実行中（総取引: <strong className="text-emerald-400">{tradeLogs.length}件</strong> / 残高: <strong className="text-slate-100">¥{state.account.balance.toLocaleString()}</strong>）
+          </span>
+          <span className="px-2 py-0.5 rounded bg-slate-800 text-[11px] text-amber-300 border border-slate-700">
+            保有中: {state.openPositions.length} / 上限 {config.maxOpenTrades}枠 (安全管理)
           </span>
         </div>
         <a
           href="https://github.com/sputnik413-beep/personal_dev/actions"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-400 hover:text-blue-300 flex items-center gap-1 font-medium underline-offset-2 hover:underline text-[11px]"
+          className="text-blue-400 hover:text-blue-300 flex items-center gap-1 font-medium underline-offset-2 hover:underline text-[11px] shrink-0"
         >
-          <span>Actionsログ確認</span>
+          <span>Actions稼働ログ</span>
           <ExternalLink className="w-3 h-3" />
         </a>
       </div>
