@@ -11,12 +11,10 @@ import {
   Shield,
   Network,
   Lock,
-  ArrowRight,
   ZoomIn,
   ZoomOut,
   RotateCcw,
   Play,
-  CheckCircle2,
   Info
 } from 'lucide-react';
 
@@ -26,7 +24,7 @@ interface Props {
   interactive?: boolean;
 }
 
-export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interactive = true }) => {
+export const VisualDiagram: React.FC<Props> = ({ diagram, height = 390, interactive = true }) => {
   const [selectedNode, setSelectedNode] = useState<AwsDiagramNode | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [activeStepIndex, setActiveStepIndex] = useState<number | null>(null);
@@ -35,12 +33,7 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
     return null;
   }
 
-  // Calculate layout coordinates dynamically by tier
-  // Tier 0: Client/Edge/Internet
-  // Tier 1: Ingress/Router/IGW/EventBus/Queue
-  // Tier 2: Compute/Lambda/StepFunctions/NAT
-  // Tier 3: Internal Queue/Storage/Private Subnet
-  // Tier 4: Backend/DB/S3/OpenSearch/FSx
+  // Group nodes by tier
   const tiers: Record<number, AwsDiagramNode[]> = { 0: [], 1: [], 2: [], 3: [], 4: [] };
   diagram.nodes.forEach(node => {
     const tier = node.tier !== undefined ? node.tier : 2;
@@ -142,7 +135,7 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
         </div>
       </div>
 
-      {/* Packet Flow Stepper Header (if available) */}
+      {/* Packet Flow Stepper (if present) */}
       {diagram.packetFlowSteps && diagram.packetFlowSteps.length > 0 && (
         <div className="px-4 py-2 bg-slate-900/90 border-b border-slate-800 flex items-center gap-2 overflow-x-auto scrollbar-none">
           <span className="text-[11px] font-semibold text-slate-400 whitespace-nowrap flex items-center gap-1">
@@ -168,7 +161,7 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
         </div>
       )}
 
-      {/* Active Step Explanation Callout */}
+      {/* Active Step Description */}
       {activeStep && (
         <div className="px-4 py-2.5 bg-amber-950/30 border-b border-amber-800/40 flex items-start gap-2.5 text-xs text-amber-200 animate-in fade-in duration-200">
           <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
@@ -200,11 +193,11 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              <pattern id="aws-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <pattern id="aws-grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
                 <circle cx="2" cy="2" r="1" fill="#1e293b" opacity="0.6" />
               </pattern>
               <marker
-                id="arrow-aws"
+                id="arrow-aws-default"
                 markerWidth="8"
                 markerHeight="6"
                 refX="7"
@@ -214,7 +207,7 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
                 <polygon points="0 0, 8 3, 0 6" fill="#64748b" />
               </marker>
               <marker
-                id="arrow-aws-active"
+                id="arrow-aws-highlight"
                 markerWidth="8"
                 markerHeight="6"
                 refX="7"
@@ -225,7 +218,7 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
               </marker>
             </defs>
 
-            <rect width="880" height="390" fill="url(#aws-grid)" />
+            <rect width="880" height="390" fill="url(#aws-grid-pattern)" />
 
             {/* Links */}
             {diagram.links.map((link, idx) => {
@@ -253,7 +246,7 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
                     stroke={isHighlighted ? '#f59e0b' : '#334155'}
                     strokeWidth={isHighlighted ? 2.5 : 1.5}
                     strokeDasharray={link.linkType === 'async' || link.linkType === 'event' ? '5,5' : undefined}
-                    markerEnd={isHighlighted ? 'url(#arrow-aws-active)' : 'url(#arrow-aws)'}
+                    markerEnd={isHighlighted ? 'url(#arrow-aws-highlight)' : 'url(#arrow-aws-default)'}
                     className="transition-colors duration-200"
                   />
                   {link.label && (
@@ -297,7 +290,6 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
                     strokeWidth={isSelected || isStepActive ? 2 : 1.2}
                     className="transition-all duration-150 group-hover:stroke-amber-400 shadow-md"
                   />
-                  {/* Title */}
                   <text
                     x="12"
                     y="24"
@@ -308,7 +300,6 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
                   >
                     {node.label.split('\n')[0].substring(0, 18)}
                   </text>
-                  {/* Subtitle / Spec */}
                   <text
                     x="12"
                     y="40"
@@ -318,7 +309,6 @@ export const VisualDiagram: React.FC<Props> = ({ diagram, height = 400, interact
                   >
                     {node.label.split('\n')[1] ? node.label.split('\n')[1].substring(0, 22) : (node.subText || node.type)}
                   </text>
-                  {/* VPC Placement Indicator */}
                   {node.vpcPlacement && (
                     <text
                       x="12"

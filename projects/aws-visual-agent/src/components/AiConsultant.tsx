@@ -209,7 +209,7 @@ export const AiConsultant: React.FC = () => {
                 <h3 className="text-lg sm:text-xl font-bold text-slate-100">{response.title}</h3>
               </div>
               <div className="flex items-center gap-1.5">
-                {response.targetServices.map((srv, sIdx) => (
+                {response.targetServices.map((srv: string, sIdx: number) => (
                   <span
                     key={sIdx}
                     className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-950/80 text-amber-300 border border-amber-700/60"
@@ -257,7 +257,7 @@ export const AiConsultant: React.FC = () => {
 
           {/* Infrastructure Key Points & Pitfalls */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {response.infraKeyPoints.map((kp, kIdx) => (
+            {response.infraKeyPoints.map((kp: any, kIdx: number) => (
               <div
                 key={kIdx}
                 className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg space-y-2.5 flex flex-col justify-between"

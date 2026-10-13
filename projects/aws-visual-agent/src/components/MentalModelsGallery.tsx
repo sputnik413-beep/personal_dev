@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MentalModelTopic } from '../types';
 import { AWS_MENTAL_MODELS } from '../data/awsKnowledge';
 import { VisualDiagram } from './VisualDiagram';
 import {
@@ -17,7 +18,7 @@ export const MentalModelsGallery: React.FC = () => {
   const [activeModelId, setActiveModelId] = useState<string>(AWS_MENTAL_MODELS[0].id);
   const [copiedCode, setCopiedCode] = useState(false);
 
-  const activeModel = AWS_MENTAL_MODELS.find(m => m.id === activeModelId) || AWS_MENTAL_MODELS[0];
+  const activeModel = AWS_MENTAL_MODELS.find((m: MentalModelTopic) => m.id === activeModelId) || AWS_MENTAL_MODELS[0];
 
   const handleCopyCode = (code: string) => {
     navigator.clipboard.writeText(code);
@@ -46,7 +47,7 @@ export const MentalModelsGallery: React.FC = () => {
 
         {/* Model Tabs */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 pt-2">
-          {AWS_MENTAL_MODELS.map(m => {
+          {AWS_MENTAL_MODELS.map((m: any) => {
             const isSelected = m.id === activeModelId;
             return (
               <button
@@ -122,7 +123,7 @@ export const MentalModelsGallery: React.FC = () => {
               <span>なぜこの設計が必要なのか（メリットと理由）</span>
             </h5>
             <ul className="space-y-2.5 text-xs text-slate-300">
-              {activeModel.whyThisWay.map((reason, rIdx) => (
+              {activeModel.whyThisWay.map((reason: string, rIdx: number) => (
                 <li key={rIdx} className="flex items-start gap-2 p-2.5 rounded-lg bg-slate-950 border border-slate-800/80">
                   <ArrowRight className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
                   <span className="leading-relaxed">{reason}</span>
