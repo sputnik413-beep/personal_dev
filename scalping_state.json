@@ -34,13 +34,13 @@
       "lots": 1,
       "entryPrice": 158.067,
       "entryTime": 1791884175289,
-      "currentPrice": 158.074,
+      "currentPrice": 158.137,
       "stopLoss": 157.967,
       "takeProfit": 158.247,
-      "pipsPnL": 0.7,
-      "unrealizedPnL": 700,
+      "pipsPnL": 7,
+      "unrealizedPnL": 7000,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.1,
+      "highestPriceSinceEntry": 158.146,
       "lowestPriceSinceEntry": 158.036
     },
     {
@@ -50,13 +50,13 @@
       "lots": 1,
       "entryPrice": 158.071,
       "entryTime": 1791884266318,
-      "currentPrice": 158.074,
+      "currentPrice": 158.137,
       "stopLoss": 158.171,
       "takeProfit": 157.891,
-      "pipsPnL": -0.3,
-      "unrealizedPnL": -300,
+      "pipsPnL": -6.6,
+      "unrealizedPnL": -6600,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 158.1,
+      "highestPriceSinceEntry": 158.146,
       "lowestPriceSinceEntry": 158.036
     }
   ],
@@ -903,6 +903,6 @@
       "tradeId": "trade_1791884038663_ewaz"
     }
   ],
-  "lastUpdated": 1791886053271,
+  "lastUpdated": 1791886789171,
   "startedAt": 1791769904156
 }
