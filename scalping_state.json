@@ -18,9 +18,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1090300,
-    "equity": 1078000,
-    "freeMargin": 998000,
+    "balance": 1070300,
+    "equity": 1070900,
+    "freeMargin": 990900,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -28,39 +28,69 @@
   },
   "openPositions": [
     {
-      "id": "pos_1792017728345_k45",
+      "id": "pos_1792020745554_w2i",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 1,
-      "entryPrice": 158.115,
-      "entryTime": 1792017728345,
+      "entryPrice": 158.012,
+      "entryTime": 1792020745554,
       "currentPrice": 158.043,
-      "stopLoss": 158.015,
-      "takeProfit": 158.295,
-      "pipsPnL": -7.2,
-      "unrealizedPnL": -7200,
+      "stopLoss": 157.912,
+      "takeProfit": 158.192,
+      "pipsPnL": 3.1,
+      "unrealizedPnL": 3100,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.166,
-      "lowestPriceSinceEntry": 158.031
+      "highestPriceSinceEntry": 158.079,
+      "lowestPriceSinceEntry": 157.995
     },
     {
-      "id": "pos_1792018077862_tr2",
+      "id": "pos_1792020760710_qlx",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 1,
+      "entryPrice": 158.018,
+      "entryTime": 1792020760710,
+      "currentPrice": 158.043,
+      "stopLoss": 158.118,
+      "takeProfit": 157.838,
+      "pipsPnL": -2.5,
+      "unrealizedPnL": -2500,
+      "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
+      "highestPriceSinceEntry": 158.079,
+      "lowestPriceSinceEntry": 157.995
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1792020699994_nb1l",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 1,
       "entryPrice": 158.094,
+      "exitPrice": 157.994,
       "entryTime": 1792018077862,
-      "currentPrice": 158.043,
-      "stopLoss": 157.994,
-      "takeProfit": 158.274,
-      "pipsPnL": -5.1,
-      "unrealizedPnL": -5100,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.166,
-      "lowestPriceSinceEntry": 158.032
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1792020699994,
+      "pipsGain": -10,
+      "realizedPnL": -10000,
+      "exitReason": "STOP_LOSS",
+      "aiAnalysis": "【決済完了: STOP_LOSS】保有時間 44分。スプレッド0環境下で-10 pips (-10,000円)。",
+      "holdingDurationMinutes": 44
+    },
+    {
+      "id": "trade_1792020684838_4e04",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 1,
+      "entryPrice": 158.115,
+      "exitPrice": 158.015,
+      "entryTime": 1792017728345,
+      "exitTime": 1792020684838,
+      "pipsGain": -10,
+      "realizedPnL": -10000,
+      "exitReason": "STOP_LOSS",
+      "aiAnalysis": "【決済完了: STOP_LOSS】保有時間 49分。スプレッド0環境下で-10 pips (-10,000円)。",
+      "holdingDurationMinutes": 49
+    },
     {
       "id": "trade_1792017940906_hyfh",
       "pair": "USDJPY",
@@ -1698,21 +1728,21 @@
     }
   ],
   "metrics": {
-    "totalTrades": 109,
+    "totalTrades": 111,
     "wins": 60,
-    "losses": 49,
-    "winRate": 55,
-    "profitFactor": 1.2,
+    "losses": 51,
+    "winRate": 54.1,
+    "profitFactor": 1.15,
     "totalPipsWon": 536.3,
-    "totalPipsLost": 446,
-    "netPips": 90.3,
-    "netProfit": 90300,
+    "totalPipsLost": 466,
+    "netPips": 70.3,
+    "netProfit": 70300,
     "maxDrawdown": 126700,
-    "maxDrawdownPercent": 10.41,
+    "maxDrawdownPercent": 10.58,
     "averageWinPips": 8.9,
     "averageLossPips": 9.1,
     "riskRewardRatio": 0.98,
-    "expectancyPips": 0.81,
+    "expectancyPips": 0.63,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 6,
@@ -2299,8 +2329,20 @@
       "equity": 1081900,
       "balance": 1090300,
       "tradeId": "trade_1792017940906_hyfh"
+    },
+    {
+      "timestamp": 1792020684838,
+      "equity": 1071400,
+      "balance": 1080300,
+      "tradeId": "trade_1792020684838_4e04"
+    },
+    {
+      "timestamp": 1792020699994,
+      "equity": 1070300,
+      "balance": 1070300,
+      "tradeId": "trade_1792020699994_nb1l"
     }
   ],
-  "lastUpdated": 1792020614366,
+  "lastUpdated": 1792021352004,
   "startedAt": 1791769904156
 }
