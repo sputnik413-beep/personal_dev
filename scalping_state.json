@@ -34,13 +34,13 @@
       "lots": 1,
       "entryPrice": 158.249,
       "entryTime": 1792011662401,
-      "currentPrice": 158.288,
+      "currentPrice": 158.285,
       "stopLoss": 158.149,
       "takeProfit": 158.429,
-      "pipsPnL": 3.9,
-      "unrealizedPnL": 3900,
+      "pipsPnL": 3.6,
+      "unrealizedPnL": 3600,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.307,
+      "highestPriceSinceEntry": 158.308,
       "lowestPriceSinceEntry": 158.222
     },
     {
@@ -50,13 +50,13 @@
       "lots": 1,
       "entryPrice": 158.28,
       "entryTime": 1792011723115,
-      "currentPrice": 158.288,
+      "currentPrice": 158.285,
       "stopLoss": 158.38,
       "takeProfit": 158.1,
-      "pipsPnL": -0.8,
-      "unrealizedPnL": -800,
+      "pipsPnL": -0.5,
+      "unrealizedPnL": -500,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.307,
+      "highestPriceSinceEntry": 158.308,
       "lowestPriceSinceEntry": 158.224
     }
   ],
@@ -2238,6 +2238,6 @@
       "tradeId": "trade_1792011677573_ioys"
     }
   ],
-  "lastUpdated": 1792012467599,
+  "lastUpdated": 1792013212503,
   "startedAt": 1791769904156
 }
