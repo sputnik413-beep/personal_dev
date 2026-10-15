@@ -16,6 +16,8 @@ import {
   Cpu,
   Server,
   Zap,
+  Building2,
+  Landmark,
 } from 'lucide-react';
 import { TradeLog, ScalperConfig } from '../types/scalper';
 
@@ -48,6 +50,23 @@ export const DualLayerSlEvaluationModal: React.FC<DualLayerSlEvaluationModalProp
   const [xmSpreadPips, setXmSpreadPips] = useState<number>(0.15); // 0.15 pips minimal spread
   const [usdjpyRate, setUsdjpyRate] = useState<number>(158.5); // USDJPY conversion
 
+  // Active Broker Selection (XM vs OANDA Japan Domestic FX)
+  const [selectedBroker, setSelectedBroker] = useState<'XM_ZERO' | 'OANDA_02' | 'OANDA_03' | 'CUSTOM'>('OANDA_02');
+
+  const handleSelectBroker = (broker: 'XM_ZERO' | 'OANDA_02' | 'OANDA_03') => {
+    setSelectedBroker(broker);
+    if (broker === 'OANDA_02') {
+      setXmCommissionUsd(0);
+      setXmSpreadPips(0.20);
+    } else if (broker === 'OANDA_03') {
+      setXmCommissionUsd(0);
+      setXmSpreadPips(0.30);
+    } else if (broker === 'XM_ZERO') {
+      setXmCommissionUsd(5.0);
+      setXmSpreadPips(0.15);
+    }
+  };
+
   // Active Preset
   const [activePreset, setActivePreset] = useState<'RAW' | 'XM_BASE' | 'CONSERVATIVE' | 'MODERATE' | 'IDEAL' | 'CUSTOM'>('MODERATE');
 
@@ -58,26 +77,22 @@ export const DualLayerSlEvaluationModal: React.FC<DualLayerSlEvaluationModalProp
       setBreakSlippage(0);
       setXmCommissionUsd(0);
       setXmSpreadPips(0);
+      setSelectedBroker('CUSTOM');
     } else if (preset === 'XM_BASE') {
       setAvoidanceRate(0);
       setBreakSlippage(0);
       setXmCommissionUsd(5.0);
       setXmSpreadPips(0.15);
+      setSelectedBroker('XM_ZERO');
     } else if (preset === 'CONSERVATIVE') {
       setAvoidanceRate(20);
       setBreakSlippage(1.5);
-      setXmCommissionUsd(5.0);
-      setXmSpreadPips(0.15);
     } else if (preset === 'MODERATE') {
       setAvoidanceRate(30);
       setBreakSlippage(1.2);
-      setXmCommissionUsd(5.0);
-      setXmSpreadPips(0.15);
     } else if (preset === 'IDEAL') {
       setAvoidanceRate(50);
       setBreakSlippage(1.0);
-      setXmCommissionUsd(5.0);
-      setXmSpreadPips(0.15);
     }
   };
 
@@ -189,6 +204,67 @@ export const DualLayerSlEvaluationModal: React.FC<DualLayerSlEvaluationModalProp
 
         {/* Modal Scrollable Body */}
         <div className="p-4 sm:p-6 overflow-y-auto space-y-6 text-xs text-slate-300">
+          {/* Broker Selector Strip (Domestic FX vs Offshore Zero) */}
+          <div className="bg-[#121926] border border-slate-800 rounded-xl p-3.5 space-y-2.5">
+            <div className="flex items-center justify-between text-xs font-bold text-white flex-wrap gap-2">
+              <span className="flex items-center gap-1.5 text-cyan-300">
+                <Landmark className="w-4 h-4 text-cyan-400" /> ブローカー環境を選択（国内FX vs 海外ゼロ口座）:
+              </span>
+              <span className="text-[11px] text-slate-400 font-normal">
+                適用コスト: <strong className="text-cyan-300 font-mono">{totalCostPerTradePips.toFixed(2)} pips / 回</strong>（約{Math.round(totalCostPerTradePips * 1000)}円/lot）
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <button
+                onClick={() => handleSelectBroker('OANDA_02')}
+                className={`p-2.5 rounded-xl border text-left transition ${
+                  selectedBroker === 'OANDA_02'
+                    ? 'bg-cyan-950/60 border-cyan-500 text-white shadow-md shadow-cyan-950/50 ring-1 ring-cyan-500/30'
+                    : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-xs text-cyan-300">OANDA Japan（プロ/TY3）</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700/60 font-semibold">国内FX 最安</span>
+                </div>
+                <div className="text-[11px] text-slate-200 mt-1 font-semibold">手数料 0円 / 原則固定 0.2 pips</div>
+                <div className="text-[10px] text-slate-400 mt-0.5">1回 200円（XMの1/4以下の極低コスト）</div>
+              </button>
+
+              <button
+                onClick={() => handleSelectBroker('OANDA_03')}
+                className={`p-2.5 rounded-xl border text-left transition ${
+                  selectedBroker === 'OANDA_03'
+                    ? 'bg-blue-950/60 border-blue-500 text-white shadow-md shadow-blue-950/50 ring-1 ring-blue-500/30'
+                    : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-xs text-blue-300">OANDA Japan（一般口座）</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-semibold">国内FX 標準</span>
+                </div>
+                <div className="text-[11px] text-slate-200 mt-1 font-semibold">手数料 0円 / 原則固定 0.3 pips</div>
+                <div className="text-[10px] text-slate-400 mt-0.5">1回 300円（GMO・DMM等と同等水準）</div>
+              </button>
+
+              <button
+                onClick={() => handleSelectBroker('XM_ZERO')}
+                className={`p-2.5 rounded-xl border text-left transition ${
+                  selectedBroker === 'XM_ZERO'
+                    ? 'bg-purple-950/60 border-purple-500 text-white shadow-md shadow-purple-950/50 ring-1 ring-purple-500/30'
+                    : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-xs text-purple-300">XM Trading Zero口座</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-700/60 font-semibold">海外ゼロ口座</span>
+                </div>
+                <div className="text-[11px] text-slate-200 mt-1 font-semibold">手数料 往復$5 (0.79p) + 生0.15p</div>
+                <div className="text-[10px] text-slate-400 mt-0.5">1回 約943円（スキャルピング高頻度だと負担大）</div>
+              </button>
+            </div>
+          </div>
+
           {/* Preset Buttons */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400">
@@ -512,6 +588,106 @@ export const DualLayerSlEvaluationModal: React.FC<DualLayerSlEvaluationModalProp
               </p>
             </div>
           </div>
+
+          {/* Domestic FX (OANDA Japan) vs Offshore (XM) Comprehensive Comparison Table */}
+          <div className="bg-[#111823] border border-slate-800 rounded-xl p-4 space-y-3">
+            <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
+              <div className="flex items-center gap-2 text-xs font-bold text-white">
+                <Building2 className="w-4 h-4 text-cyan-400" />
+                <span>国内FX（OANDA Japan等）vs 海外（XM Zero）徹底比較マトリクス</span>
+              </div>
+              <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+                国内FXなら手数料0円で約13万円のコスト削減
+              </span>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-[11px]">
+                <thead>
+                  <tr className="border-b border-slate-800 text-slate-400 font-semibold bg-slate-900/50">
+                    <th className="p-2.5">比較項目</th>
+                    <th className="p-2.5 text-purple-300">XM Trading Zero口座</th>
+                    <th className="p-2.5 text-cyan-300 bg-cyan-950/30">OANDA Japan（プロ TY3）</th>
+                    <th className="p-2.5 text-blue-300">OANDA Japan（一般）</th>
+                    <th className="p-2.5 text-slate-300">国内大手 (GMO / DMM)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 font-mono">
+                  <tr>
+                    <td className="p-2.5 text-slate-400 font-sans">取引手数料 (往復)</td>
+                    <td className="p-2.5 text-rose-400 font-bold">$5.0 / lot (792.5円 ≒ 0.79p)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold bg-cyan-950/20">0円 (完全無料)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold">0円 (完全無料)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold">0円 (完全無料)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2.5 text-slate-400 font-sans">ドル円スプレッド</td>
+                    <td className="p-2.5 text-slate-300">平均 0.15 pips (150円)</td>
+                    <td className="p-2.5 text-cyan-300 font-bold bg-cyan-950/20">原則固定 0.20 pips (200円)</td>
+                    <td className="p-2.5 text-slate-300">原則固定 0.30 pips (300円)</td>
+                    <td className="p-2.5 text-slate-300">原則固定 0.20 pips (200円)</td>
+                  </tr>
+                  <tr className="bg-slate-900/40">
+                    <td className="p-2.5 text-slate-300 font-sans font-bold">1取引あたり総コスト</td>
+                    <td className="p-2.5 text-rose-400 font-bold">約 943 円 (0.94 pips)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold bg-cyan-950/30">200 円 (0.20 pips)</td>
+                    <td className="p-2.5 text-blue-300 font-bold">300 円 (0.30 pips)</td>
+                    <td className="p-2.5 text-slate-200 font-bold">200 円 (0.20 pips)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2.5 text-slate-400 font-sans">直近176回 コスト累計</td>
+                    <td className="p-2.5 text-rose-400 font-bold">-165,880 円 (-165.9p)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold bg-cyan-950/20">-35,200 円 (-35.2p)</td>
+                    <td className="p-2.5 text-blue-400 font-bold">-52,800 円 (-52.8p)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold">-35,200 円 (-35.2p)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2.5 text-slate-400 font-sans">単一SL時 実質純損益</td>
+                    <td className="p-2.5 text-rose-400 font-bold">-21,680 円 (赤字)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold bg-cyan-950/20">+109,000 円 (+109.0p)</td>
+                    <td className="p-2.5 text-blue-400 font-bold">+91,400 円 (+91.4p)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold">+109,000 円 (+109.0p)</td>
+                  </tr>
+                  <tr className="bg-emerald-950/20">
+                    <td className="p-2.5 text-emerald-300 font-sans font-bold">二重SL時 (標準30%回避)</td>
+                    <td className="p-2.5 text-purple-300 font-bold">+311,920 円 (+311.9p)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold bg-cyan-950/40 text-xs">+442,600 円 (+442.6p)</td>
+                    <td className="p-2.5 text-blue-300 font-bold">+425,000 円 (+425.0p)</td>
+                    <td className="p-2.5 text-emerald-300 font-bold">+442,600 円 (+442.6p)</td>
+                  </tr>
+                  <tr className="bg-slate-900/60 font-sans">
+                    <td className="p-2.5 text-slate-400 font-sans">手元資金の差額優位性</td>
+                    <td className="p-2.5 text-slate-500">基準 (±0円)</td>
+                    <td className="p-2.5 text-emerald-400 font-bold bg-cyan-950/30">+130,680 円 手元に残る</td>
+                    <td className="p-2.5 text-blue-400 font-bold">+113,080 円 手元に残る</td>
+                    <td className="p-2.5 text-emerald-400 font-bold">+130,680 円 手元に残る</td>
+                  </tr>
+                  <tr className="font-sans text-[10px]">
+                    <td className="p-2.5 text-slate-400">レバレッジ / 必要証拠金</td>
+                    <td className="p-2.5 text-slate-300">最大500倍 (約3.1万円/lot)</td>
+                    <td className="p-2.5 text-slate-300 bg-cyan-950/20">最大25倍 (約63.4万円/lot)</td>
+                    <td className="p-2.5 text-slate-300">最大25倍 (約63.4万円/lot)</td>
+                    <td className="p-2.5 text-slate-300">最大25倍 (約63.4万円/lot)</td>
+                  </tr>
+                  <tr className="font-sans text-[10px]">
+                    <td className="p-2.5 text-slate-400">税制区分</td>
+                    <td className="p-2.5 text-amber-400">雑所得・総合課税 (最大55%)</td>
+                    <td className="p-2.5 text-emerald-400 bg-cyan-950/20">申告分離課税 一律20.315% (3年繰越可)</td>
+                    <td className="p-2.5 text-emerald-400">申告分離課税 一律20.315% (3年繰越可)</td>
+                    <td className="p-2.5 text-emerald-400">申告分離課税 一律20.315% (3年繰越可)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-slate-900/60 border border-slate-800 rounded-lg p-3 text-[11px] text-slate-300 leading-relaxed">
+              <span className="text-cyan-300 font-bold">国内FX（OANDA Japan）の結論的メリット:</span><br />
+              1. <strong>取引手数料が0円</strong>であるため、XMゼロ口座の最大の弱点（1取引あたり約792円の手数料負け）が完全に消滅します。<br />
+              2. スプレッドが0.2p〜0.3p（200円〜300円）発生しても、XMゼロ口座（手数料+生スプレッド計943円）の<strong>3分の1以下のコスト</strong>で済みます。<br />
+              3. 単一SLのままでも<strong>+10.9万円〜+14.9万円の利益</strong>が手元に残り、二重ストップロスを組み合わせると<strong>+44.2万円（+442.6 pips）</strong>まで利益が跳ね上がります。<br />
+              4. 唯一の制約は金融庁レバレッジ規制（25倍＝1ロット約63万円の必要証拠金）のため、資金100万円での運用時は0.5ロット〜1ロットでの安全運用が推奨されます。
+            </div>
+          </div>
         </div>
 
         {/* Modal Footer */}
@@ -536,15 +712,16 @@ export const DualLayerSlEvaluationModal: React.FC<DualLayerSlEvaluationModalProp
                     softStopLossPips: 10.0,
                     hardStopLossPips: 18.0,
                     softStopHoldSeconds: 20,
-                    accountType: 'XM_ZERO',
-                    xmCommissionUsdPerLot: xmCommissionUsd,
+                    accountType: selectedBroker === 'XM_ZERO' ? 'XM_ZERO' : 'STANDARD_ZERO',
+                    spreadPips: selectedBroker === 'OANDA_02' ? 0.20 : selectedBroker === 'OANDA_03' ? 0.30 : 0.0,
+                    xmCommissionUsdPerLot: selectedBroker === 'XM_ZERO' ? xmCommissionUsd : 0,
                   });
                   onClose();
                 }}
                 className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold flex items-center gap-1.5 transition shadow-lg shadow-cyan-950/50"
               >
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>この二重SL設定をボットへ本適用</span>
+                <span>この環境（{selectedBroker === 'XM_ZERO' ? 'XM Zero' : selectedBroker === 'OANDA_02' ? 'OANDA 0.2p' : 'OANDA 0.3p'}）設定をボットへ本適用</span>
               </button>
             )}
           </div>
