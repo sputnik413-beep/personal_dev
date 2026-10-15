@@ -59,6 +59,10 @@ export interface Position {
   stopLoss: number;
   takeProfit: number;
   trailingStop?: number;
+  hardStopLoss?: number; // Layer 1: Broker-side emergency hard stop (e.g. -18 pips)
+  softStopLoss?: number; // Layer 2: Software logical stop with time filter (e.g. -10 pips)
+  softStopTriggeredTime?: number | null; // Timestamp when price first breached soft SL
+  spikeAvoidanceCount?: number; // Count of transient spike absorptions
   pipsPnL: number;
   unrealizedPnL: number;
   signalReason: string;
@@ -69,6 +73,8 @@ export interface Position {
 export type ExitReason =
   | 'TAKE_PROFIT'
   | 'STOP_LOSS'
+  | 'SOFT_STOP_LOSS'
+  | 'HARD_STOP_LOSS'
   | 'TRAILING_STOP'
   | 'TIME_EXPIRY'
   | 'SIGNAL_REVERSAL'
@@ -85,6 +91,8 @@ export interface TradeLog {
   exitTime: number;
   pipsGain: number;
   realizedPnL: number;
+  commissionFee?: number; // XM Zero commission in JPY
+  netRealizedPnL?: number; // PnL after commission & spread
   exitReason: ExitReason;
   aiAnalysis: string;
   holdingDurationMinutes: number;
@@ -162,6 +170,14 @@ export interface ScalperConfig {
   selectedStrategy: 'ALL' | 'BOB_VOLMAN_PULLBACK' | 'BB_BREAKOUT' | 'VOLMAN_BLOCK_BREAK';
   simulationSpeedMultiplier?: number;
   trendSlopeFilter?: boolean;
+  // Dual-Layer Stop-Loss Architecture
+  useDualLayerStopLoss?: boolean;
+  softStopLossPips?: number; // Layer 2: Logical stop (e.g. 10.0 pips)
+  hardStopLossPips?: number; // Layer 1: Broker emergency stop (e.g. 18.0 pips)
+  softStopHoldSeconds?: number; // Delay to confirm breakout vs transient spike (e.g. 20-30s)
+  // Broker Realism Settings
+  accountType?: 'XM_ZERO' | 'STANDARD_ZERO' | 'RAW_ECN';
+  xmCommissionUsdPerLot?: number; // Default $5.0 round-turn / lot
 }
 
 export interface EquityPoint {

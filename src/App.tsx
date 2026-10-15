@@ -490,6 +490,7 @@ export function App() {
           onApplyTuning={handleApplyTuning}
           onTriggerRelayWorkflow={handleTriggerRelayWorkflow}
           onPullLatestCloudState={handlePullLatestCloudState}
+          onUpdateConfig={handleUpdateConfig}
           isAnalyzing={isDiagnosisLoading}
           isApplying={isApplyingTuning}
           isTriggeringRelay={isTriggeringRelay}

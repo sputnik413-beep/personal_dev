@@ -58,6 +58,15 @@ function loadState(): ForwardTestState {
         loaded.config.trailingStopPips = 5.0;
         loaded.config.trendSlopeFilter = true;
       }
+      if (loaded.config && loaded.config.useDualLayerStopLoss === undefined) {
+        console.log('Initializing Dual-Layer Stop-Loss (Soft: 10p, Hard: 18p) & XM Zero Account settings...');
+        loaded.config.useDualLayerStopLoss = true;
+        loaded.config.softStopLossPips = 10.0;
+        loaded.config.hardStopLossPips = 18.0;
+        loaded.config.softStopHoldSeconds = 20;
+        loaded.config.accountType = 'XM_ZERO';
+        loaded.config.xmCommissionUsdPerLot = 5.0;
+      }
       return loaded;
     } catch (e) {
       console.warn('Could not parse scalping_state.json, creating initial state.');

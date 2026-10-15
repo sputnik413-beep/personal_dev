@@ -14,6 +14,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { ForwardTestState, StrategyDiagnosis, ScalperConfig } from '../types/scalper';
+import { DualLayerSlEvaluationModal } from './DualLayerSlEvaluationModal';
 
 interface StrategyPdcaPanelProps {
   state: ForwardTestState;
@@ -21,6 +22,7 @@ interface StrategyPdcaPanelProps {
   onApplyTuning: (adjustments: StrategyDiagnosis['suggestedParameterAdjustments']) => Promise<void>;
   onTriggerRelayWorkflow: () => Promise<void>;
   onPullLatestCloudState: () => Promise<void>;
+  onUpdateConfig?: (adjustments: Partial<ScalperConfig>) => Promise<void>;
   isAnalyzing: boolean;
   isApplying: boolean;
   isTriggeringRelay: boolean;
@@ -33,11 +35,13 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
   onApplyTuning,
   onTriggerRelayWorkflow,
   onPullLatestCloudState,
+  onUpdateConfig,
   isAnalyzing,
   isApplying,
   isTriggeringRelay,
   isPullingCloud,
 }) => {
+  const [isDualLayerModalOpen, setIsDualLayerModalOpen] = useState<boolean>(false);
   const latestDiagnosis = state.aiDiagnosisHistory?.[0];
   const { metrics, config, tradeLogs } = state;
   const isVolmanCompliant = config.stopLossPips >= 9.0 && config.takeProfitPips >= 15.0;
@@ -88,6 +92,15 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
           </button>
 
           <button
+            onClick={() => setIsDualLayerModalOpen(true)}
+            className="px-3.5 py-1.5 rounded-xl bg-cyan-600/20 hover:bg-cyan-600/30 border border-cyan-500/40 text-cyan-300 text-xs font-bold flex items-center gap-1.5 transition shadow-sm"
+            title="二重ストップロス構造（ヒゲ狩り耐性）とXMゼロ口座取引手数料の精密シミュレーション"
+          >
+            <Layers className="w-3.5 h-3.5 text-cyan-400" />
+            <span>二重SL & XM手数料検証</span>
+          </button>
+
+          <button
             onClick={onRefreshDiagnosis}
             disabled={isAnalyzing}
             className="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-lg shadow-purple-950/50 disabled:opacity-50"
@@ -122,6 +135,33 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
           <span>Actions稼働ログ</span>
           <ExternalLink className="w-3 h-3" />
         </a>
+      </div>
+
+      {/* Dual-Layer SL & XM Zero Cost Spotlight Banner */}
+      <div className="bg-gradient-to-r from-cyan-950/30 via-[#101724] to-blue-950/30 border border-cyan-800/40 rounded-xl p-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
+        <div className="flex items-start sm:items-center gap-3">
+          <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 shrink-0">
+            <Layers className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-white text-xs">二重ストップロス構造（Dual-Layer SL）× XMゼロ口座 取引コスト検証</span>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 font-semibold border border-cyan-700/50">
+                ヒゲ狩り耐性＆手数料完全控除
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-400 mt-0.5">
+              XMゼロ口座往復$5手数料（-0.79p）控除後の実質純利益と、ヒゲ狩り回避シミュレーションをワンクリックで分析
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={() => setIsDualLayerModalOpen(true)}
+          className="px-3.5 py-1.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition shadow-lg shadow-cyan-950/50 shrink-0"
+        >
+          <Sliders className="w-3.5 h-3.5" />
+          <span>詳細シミュレーターを開く</span>
+        </button>
       </div>
 
       {/* KPI Cards */}
@@ -280,6 +320,15 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
           </button>
         </div>
       )}
+
+      {/* Dual-Layer Stop-Loss & XM Zero Interactive Simulator Modal */}
+      <DualLayerSlEvaluationModal
+        isOpen={isDualLayerModalOpen}
+        onClose={() => setIsDualLayerModalOpen(false)}
+        tradeLogs={tradeLogs}
+        config={config}
+        onUpdateConfig={onUpdateConfig}
+      />
     </div>
   );
 };

@@ -27,6 +27,13 @@ export const DEFAULT_CONFIG: ScalperConfig = {
   timeExpiryCandles: 18,
   selectedStrategy: 'ALL',
   trendSlopeFilter: true,
+  // Dual-Layer Stop-Loss (二重ストップロス構造)
+  useDualLayerStopLoss: true,
+  softStopLossPips: 10.0, // 判定用ソフトSL（確定足・持続時間フィルター）
+  hardStopLossPips: 18.0, // ブローカー常駐型非常用ハードSL
+  softStopHoldSeconds: 20, // 20秒間継続割り込みで本損切り（ヒゲスパイクを吸収）
+  accountType: 'XM_ZERO', // XM ゼロ口座
+  xmCommissionUsdPerLot: 5.0, // XM ゼロ口座 往復手数料 $5.0 / 1ロット
 };
 
 export const INITIAL_ACCOUNT: AccountState = {
@@ -253,30 +260,84 @@ export function updatePositionsOnTick(
       updatedPos.trailingStop = newSL;
     }
 
-    // Check Take Profit Hit
+    // Check Emergency Hard Stop Hit (Layer 1: Broker-side Safety Net)
     let isClosed = false;
     let exitReason: ExitReason = 'MANUAL';
     let exitPrice = currentPrice;
 
-    if (pos.direction === 'BUY') {
-      if (currentPrice >= pos.takeProfit) {
+    const hardSL = updatedPos.hardStopLoss;
+    const softSL = updatedPos.softStopLoss || updatedPos.stopLoss;
+
+    if (config.useDualLayerStopLoss && hardSL) {
+      if (pos.direction === 'BUY' && currentPrice <= hardSL) {
         isClosed = true;
-        exitReason = 'TAKE_PROFIT';
-        exitPrice = pos.takeProfit;
-      } else if (currentPrice <= updatedPos.stopLoss) {
+        exitReason = 'HARD_STOP_LOSS';
+        exitPrice = hardSL;
+      } else if (pos.direction === 'SELL' && currentPrice >= hardSL) {
         isClosed = true;
-        exitReason = updatedPos.trailingStop ? 'TRAILING_STOP' : 'STOP_LOSS';
-        exitPrice = updatedPos.stopLoss;
+        exitReason = 'HARD_STOP_LOSS';
+        exitPrice = hardSL;
       }
-    } else {
-      if (currentPrice <= pos.takeProfit) {
+    }
+
+    // Check Take Profit Hit
+    if (!isClosed) {
+      if (pos.direction === 'BUY' && currentPrice >= pos.takeProfit) {
         isClosed = true;
         exitReason = 'TAKE_PROFIT';
         exitPrice = pos.takeProfit;
-      } else if (currentPrice >= updatedPos.stopLoss) {
+      } else if (pos.direction === 'SELL' && currentPrice <= pos.takeProfit) {
         isClosed = true;
-        exitReason = updatedPos.trailingStop ? 'TRAILING_STOP' : 'STOP_LOSS';
-        exitPrice = updatedPos.stopLoss;
+        exitReason = 'TAKE_PROFIT';
+        exitPrice = pos.takeProfit;
+      }
+    }
+
+    // Check Trailing Stop Hit (if activated)
+    if (!isClosed && updatedPos.trailingStop) {
+      if (pos.direction === 'BUY' && currentPrice <= updatedPos.trailingStop) {
+        isClosed = true;
+        exitReason = 'TRAILING_STOP';
+        exitPrice = updatedPos.trailingStop;
+      } else if (pos.direction === 'SELL' && currentPrice >= updatedPos.trailingStop) {
+        isClosed = true;
+        exitReason = 'TRAILING_STOP';
+        exitPrice = updatedPos.trailingStop;
+      }
+    }
+
+    // Check Soft Stop Loss (Layer 2: Software Filtered SL)
+    if (!isClosed) {
+      const isBreachingSoftSL =
+        pos.direction === 'BUY' ? currentPrice <= softSL : currentPrice >= softSL;
+
+      if (config.useDualLayerStopLoss) {
+        if (isBreachingSoftSL) {
+          if (!updatedPos.softStopTriggeredTime) {
+            // Rate touched soft SL: start grace window timer, do not close immediately
+            updatedPos.softStopTriggeredTime = now;
+          } else {
+            const elapsedSec = (now - updatedPos.softStopTriggeredTime) / 1000;
+            const thresholdSec = config.softStopHoldSeconds || 20;
+            if (elapsedSec >= thresholdSec) {
+              // Soft SL sustained beyond grace threshold: confirm trend break & exit
+              isClosed = true;
+              exitReason = 'SOFT_STOP_LOSS';
+              exitPrice = currentPrice;
+            }
+          }
+        } else if (updatedPos.softStopTriggeredTime) {
+          // Price rebounded back above soft SL! Transient spike successfully absorbed!
+          updatedPos.softStopTriggeredTime = null;
+          updatedPos.spikeAvoidanceCount = (updatedPos.spikeAvoidanceCount || 0) + 1;
+        }
+      } else {
+        // Classic Instant Stop Loss
+        if (isBreachingSoftSL) {
+          isClosed = true;
+          exitReason = 'STOP_LOSS';
+          exitPrice = softSL;
+        }
       }
     }
 
@@ -284,10 +345,20 @@ export function updatePositionsOnTick(
       const finalDiff =
         pos.direction === 'BUY' ? exitPrice - pos.entryPrice : pos.entryPrice - exitPrice;
       const finalPips = priceDiffToPips(pos.pair, finalDiff);
-      const realizedPnL = calculateProfitInCurrency(pos.pair, pos.lots, finalPips, exitPrice);
+      const grossPnL = calculateProfitInCurrency(pos.pair, pos.lots, finalPips, exitPrice);
 
-      addedPnL += realizedPnL;
+      // XM Zero Account Commission: $5.0 USD per lot round-turn
+      const commissionUsd = (config.xmCommissionUsdPerLot || 5.0) * pos.lots;
+      const approxJpyRate = pos.pair === 'USDJPY' ? exitPrice : 158.5;
+      const commissionFee = Math.round(commissionUsd * approxJpyRate);
+      const netRealizedPnL = grossPnL - commissionFee;
+
+      addedPnL += grossPnL;
       const durationMinutes = Math.max(1, Math.round((now - pos.entryTime) / 60000));
+
+      const spikeBadge = (updatedPos.spikeAvoidanceCount || 0) > 0
+        ? ` [ヒゲ狩り${updatedPos.spikeAvoidanceCount}回吸収耐性]`
+        : '';
 
       newlyClosedLogs.unshift({
         id: `trade_${now}_${Math.random().toString(36).substring(2, 6)}`,
@@ -299,9 +370,11 @@ export function updatePositionsOnTick(
         entryTime: pos.entryTime,
         exitTime: now,
         pipsGain: finalPips,
-        realizedPnL,
+        realizedPnL: grossPnL,
+        commissionFee,
+        netRealizedPnL,
         exitReason,
-        aiAnalysis: `【決済完了: ${exitReason}】保有時間 ${durationMinutes}分。スプレッド0環境下で${finalPips >= 0 ? '+' : ''}${finalPips} pips (${realizedPnL >= 0 ? '+' : ''}${realizedPnL.toLocaleString()}円)。`,
+        aiAnalysis: `【決済完了: ${exitReason}${spikeBadge}】保有時間 ${durationMinutes}分。損益: ${finalPips >= 0 ? '+' : ''}${finalPips} pips (${grossPnL >= 0 ? '+' : ''}${grossPnL.toLocaleString()}円 / XM手数料控除後: ${netRealizedPnL.toLocaleString()}円)。`,
         holdingDurationMinutes: durationMinutes,
       });
     } else {
@@ -356,6 +429,21 @@ export function openPositionFromSignal(
   }
 
   const posLots = lots || state.config.defaultLots;
+  const hardStopPips = state.config.hardStopLossPips || 18.0;
+  const softStopPips = state.config.softStopLossPips || state.config.stopLossPips || 10.0;
+  const hardDiff = pipsToPriceDiff(signal.pair, hardStopPips);
+  const softDiff = pipsToPriceDiff(signal.pair, softStopPips);
+
+  const hardStopLoss =
+    signal.direction === 'BUY'
+      ? Number((signal.price - hardDiff).toFixed(signal.pair === 'USDJPY' ? 3 : 5))
+      : Number((signal.price + hardDiff).toFixed(signal.pair === 'USDJPY' ? 3 : 5));
+
+  const softStopLoss =
+    signal.direction === 'BUY'
+      ? Number((signal.price - softDiff).toFixed(signal.pair === 'USDJPY' ? 3 : 5))
+      : Number((signal.price + softDiff).toFixed(signal.pair === 'USDJPY' ? 3 : 5));
+
   const newPos: Position = {
     id: `pos_${Date.now()}_${Math.random().toString(36).substring(2, 5)}`,
     pair: signal.pair,
@@ -366,6 +454,10 @@ export function openPositionFromSignal(
     currentPrice: signal.price,
     stopLoss: signal.suggestedSL,
     takeProfit: signal.suggestedTP,
+    hardStopLoss,
+    softStopLoss,
+    softStopTriggeredTime: null,
+    spikeAvoidanceCount: 0,
     pipsPnL: 0,
     unrealizedPnL: 0,
     signalReason: `${signal.strategy} (信頼度: ${signal.confidence}%)`,
