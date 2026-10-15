@@ -25,8 +25,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1199500,
-    "equity": 1203600,
-    "freeMargin": 1123600,
+    "equity": 1202800,
+    "freeMargin": 1122800,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -40,15 +40,15 @@
       "lots": 1,
       "entryPrice": 158.164,
       "entryTime": 1792076759410,
-      "currentPrice": 158.175,
+      "currentPrice": 158.171,
       "stopLoss": 158.064,
       "takeProfit": 158.344,
       "hardStopLoss": 157.984,
       "softStopLoss": 158.064,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 1.1,
-      "unrealizedPnL": 1100,
+      "pipsPnL": 0.7,
+      "unrealizedPnL": 700,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 158.242,
       "lowestPriceSinceEntry": 158.079
@@ -60,15 +60,15 @@
       "lots": 1,
       "entryPrice": 158.145,
       "entryTime": 1792081905874,
-      "currentPrice": 158.175,
+      "currentPrice": 158.171,
       "stopLoss": 158.045,
       "takeProfit": 158.325,
       "hardStopLoss": 157.965,
       "softStopLoss": 158.045,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3,
-      "unrealizedPnL": 3000,
+      "pipsPnL": 2.6,
+      "unrealizedPnL": 2600,
       "signalReason": "BB Trend Expansion (トレンド同調バンドブレイク) (信頼度: 84%)",
       "highestPriceSinceEntry": 158.215,
       "lowestPriceSinceEntry": 158.079
@@ -3676,6 +3676,6 @@
       "tradeId": "trade_1792081875706_taha"
     }
   ],
-  "lastUpdated": 1792085767283,
+  "lastUpdated": 1792086509939,
   "startedAt": 1791769904156
 }
