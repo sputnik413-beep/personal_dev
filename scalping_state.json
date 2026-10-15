@@ -18,9 +18,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1059400,
-    "equity": 1067600,
-    "freeMargin": 1027600,
+    "balance": 1073300,
+    "equity": 1070200,
+    "freeMargin": 1030200,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -28,24 +28,53 @@
   },
   "openPositions": [
     {
-      "id": "pos_1792024790924_qxa",
+      "id": "pos_1792025544855_oiw",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 1,
+      "entryPrice": 157.856,
+      "entryTime": 1792025544855,
+      "currentPrice": 157.887,
+      "stopLoss": 157.956,
+      "takeProfit": 157.676,
+      "pipsPnL": -3.1,
+      "unrealizedPnL": -3100,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 94%)",
+      "highestPriceSinceEntry": 157.939,
+      "lowestPriceSinceEntry": 157.854
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1792025802321_8y0e",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 1,
+      "entryPrice": 157.811,
+      "exitPrice": 157.88899999999998,
+      "entryTime": 1792025105175,
+      "exitTime": 1792025802321,
+      "pipsGain": 7.8,
+      "realizedPnL": 7800,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 12分。スプレッド0環境下で+7.8 pips (+7,800円)。",
+      "holdingDurationMinutes": 12
+    },
+    {
+      "id": "trade_1792025377834_6dzr",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 1,
       "entryPrice": 157.878,
+      "exitPrice": 157.817,
       "entryTime": 1792024790924,
-      "currentPrice": 157.796,
-      "stopLoss": 157.846,
-      "takeProfit": 157.698,
-      "pipsPnL": 8.2,
-      "unrealizedPnL": 8200,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.881,
-      "lowestPriceSinceEntry": 157.796,
-      "trailingStop": 157.846
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1792025377834,
+      "pipsGain": 6.1,
+      "realizedPnL": 6100,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 10分。スプレッド0環境下で+6.1 pips (+6,100円)。",
+      "holdingDurationMinutes": 10
+    },
     {
       "id": "trade_1792024971839_dt7r",
       "pair": "USDJPY",
@@ -1803,39 +1832,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 117,
-    "wins": 63,
+    "totalTrades": 119,
+    "wins": 65,
     "losses": 54,
-    "winRate": 53.8,
-    "profitFactor": 1.12,
-    "totalPipsWon": 555.4,
+    "winRate": 54.6,
+    "profitFactor": 1.15,
+    "totalPipsWon": 569.3,
     "totalPipsLost": 496,
-    "netPips": 59.4,
-    "netProfit": 59400,
+    "netPips": 73.3,
+    "netProfit": 73300,
     "maxDrawdown": 126700,
-    "maxDrawdownPercent": 10.68,
+    "maxDrawdownPercent": 10.56,
     "averageWinPips": 8.8,
     "averageLossPips": 9.2,
     "riskRewardRatio": 0.96,
-    "expectancyPips": 0.49,
+    "expectancyPips": 0.63,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 6,
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1791813917951,
-      "equity": 974500,
-      "balance": 974500,
-      "tradeId": "trade_1791813917951_u0bf"
-    },
-    {
-      "timestamp": 1791814304943,
-      "equity": 965500,
-      "balance": 965500,
-      "tradeId": "trade_1791814304943_p07l"
-    },
     {
       "timestamp": 1791818710656,
       "equity": 965100,
@@ -2423,8 +2440,20 @@
       "equity": 1064100,
       "balance": 1059400,
       "tradeId": "trade_1792024971839_dt7r"
+    },
+    {
+      "timestamp": 1792025377834,
+      "equity": 1066200,
+      "balance": 1065500,
+      "tradeId": "trade_1792025377834_6dzr"
+    },
+    {
+      "timestamp": 1792025802321,
+      "equity": 1070200,
+      "balance": 1073300,
+      "tradeId": "trade_1792025802321_8y0e"
     }
   ],
-  "lastUpdated": 1792025062318,
+  "lastUpdated": 1792025802321,
   "startedAt": 1791769904156
 }
