@@ -18,9 +18,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1095300,
-    "equity": 1121500,
-    "freeMargin": 1041500,
+    "balance": 1113300,
+    "equity": 1125600,
+    "freeMargin": 1045600,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -28,41 +28,55 @@
   },
   "openPositions": [
     {
-      "id": "pos_1792036546922_q0c",
-      "pair": "USDJPY",
-      "direction": "BUY",
-      "lots": 1,
-      "entryPrice": 157.657,
-      "entryTime": 1792036546922,
-      "currentPrice": 157.815,
-      "stopLoss": 157.765,
-      "takeProfit": 157.837,
-      "pipsPnL": 15.8,
-      "unrealizedPnL": 15800,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.815,
-      "lowestPriceSinceEntry": 157.639,
-      "trailingStop": 157.765
-    },
-    {
       "id": "pos_1792037165655_9m6",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 1,
       "entryPrice": 157.711,
       "entryTime": 1792037165655,
-      "currentPrice": 157.815,
-      "stopLoss": 157.765,
+      "currentPrice": 157.845,
+      "stopLoss": 157.81199999999998,
       "takeProfit": 157.891,
-      "pipsPnL": 10.4,
-      "unrealizedPnL": 10400,
+      "pipsPnL": 13.4,
+      "unrealizedPnL": 13400,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.815,
+      "highestPriceSinceEntry": 157.862,
       "lowestPriceSinceEntry": 157.711,
-      "trailingStop": 157.765
+      "trailingStop": 157.81199999999998
+    },
+    {
+      "id": "pos_1792037902963_k5t",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 1,
+      "entryPrice": 157.834,
+      "entryTime": 1792037902963,
+      "currentPrice": 157.845,
+      "stopLoss": 157.934,
+      "takeProfit": 157.654,
+      "pipsPnL": -1.1,
+      "unrealizedPnL": -1100,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 157.862,
+      "lowestPriceSinceEntry": 157.834
     }
   ],
   "tradeLogs": [
+    {
+      "id": "trade_1792037767139_0gk0",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 1,
+      "entryPrice": 157.657,
+      "exitPrice": 157.837,
+      "entryTime": 1792036546922,
+      "exitTime": 1792037767139,
+      "pipsGain": 18,
+      "realizedPnL": 18000,
+      "exitReason": "TAKE_PROFIT",
+      "aiAnalysis": "【決済完了: TAKE_PROFIT】保有時間 20分。スプレッド0環境下で+18 pips (+18,000円)。",
+      "holdingDurationMinutes": 20
+    },
     {
       "id": "trade_1792037090303_hz46",
       "pair": "USDJPY",
@@ -2030,33 +2044,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 131,
-    "wins": 73,
+    "totalTrades": 132,
+    "wins": 74,
     "losses": 58,
-    "winRate": 55.7,
-    "profitFactor": 1.18,
-    "totalPipsWon": 631.3,
+    "winRate": 56.1,
+    "profitFactor": 1.21,
+    "totalPipsWon": 649.3,
     "totalPipsLost": 536,
-    "netPips": 95.3,
-    "netProfit": 95300,
+    "netPips": 113.3,
+    "netProfit": 113300,
     "maxDrawdown": 126700,
-    "maxDrawdownPercent": 10.37,
-    "averageWinPips": 8.6,
+    "maxDrawdownPercent": 10.22,
+    "averageWinPips": 8.8,
     "averageLossPips": 9.2,
-    "riskRewardRatio": 0.93,
-    "expectancyPips": 0.72,
+    "riskRewardRatio": 0.96,
+    "expectancyPips": 0.89,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 6,
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1791856570083,
-      "equity": 900600,
-      "balance": 894500,
-      "tradeId": "trade_1791856570083_9ptj"
-    },
     {
       "timestamp": 1791857192479,
       "equity": 896500,
@@ -2650,8 +2658,14 @@
       "equity": 1102100,
       "balance": 1095300,
       "tradeId": "trade_1792037090303_hz46"
+    },
+    {
+      "timestamp": 1792037767139,
+      "equity": 1126200,
+      "balance": 1113300,
+      "tradeId": "trade_1792037767139_0gk0"
     }
   ],
-  "lastUpdated": 1792037663452,
+  "lastUpdated": 1792038401005,
   "startedAt": 1791769904156
 }
