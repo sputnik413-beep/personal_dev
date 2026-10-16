@@ -59,13 +59,19 @@ function loadState(): ForwardTestState {
         loaded.config.trendSlopeFilter = true;
       }
       if (loaded.config && loaded.config.useDualLayerStopLoss === undefined) {
-        console.log('Initializing Dual-Layer Stop-Loss (Soft: 10p, Hard: 18p) & XM Zero Account settings...');
+        console.log('Initializing Dual-Layer Stop-Loss (Soft: 10p, Hard: 18p)...');
         loaded.config.useDualLayerStopLoss = true;
         loaded.config.softStopLossPips = 10.0;
         loaded.config.hardStopLossPips = 18.0;
         loaded.config.softStopHoldSeconds = 20;
-        loaded.config.accountType = 'XM_ZERO';
-        loaded.config.xmCommissionUsdPerLot = 5.0;
+      }
+      if (loaded.config && (!loaded.config.brokerMode || loaded.config.accountType === 'XM_ZERO')) {
+        console.log('Switching bot execution premise to OANDA Japan (Tokyo Server TY3 / 0.20p spread / 0 fee)...');
+        loaded.config.brokerMode = 'OANDA_JAPAN_TY3';
+        loaded.config.accountType = 'OANDA_JAPAN';
+        loaded.config.spreadPips = 0.20;
+        loaded.config.xmCommissionUsdPerLot = 0.0;
+        loaded.config.defaultLots = 0.5; // Domestic 25x margin safe default
       }
       return loaded;
     } catch (e) {
@@ -99,6 +105,41 @@ function saveState(state: ForwardTestState) {
   }
 }
 
+async function fetchOandaQuote(state: ForwardTestState): Promise<number | null> {
+  const token = process.env.OANDA_API_TOKEN || state.config.oandaApiConfig?.apiToken;
+  const accountId = process.env.OANDA_ACCOUNT_ID || state.config.oandaApiConfig?.accountId;
+  const isLive = state.config.oandaApiConfig?.environment === 'live';
+  const host = isLive ? 'api-fxtrade.oanda.com' : 'api-fxpractice.oanda.com';
+  const pair = state.config.pair;
+  const instrument = pair === 'USDJPY' ? 'USD_JPY' : 'EUR_USD';
+
+  if (token && accountId) {
+    try {
+      const url = `https://${host}/v3/accounts/${accountId}/pricing?instruments=${instrument}`;
+      const res = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'User-Agent': 'Oanda-Scalper-Daemon/1.0',
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const price = data.prices?.[0];
+        if (price) {
+          const bid = parseFloat(price.bids?.[0]?.price || '0');
+          const ask = parseFloat(price.asks?.[0]?.price || '0');
+          if (bid > 0 && ask > 0) {
+            return Number(((bid + ask) / 2).toFixed(pair === 'USDJPY' ? 3 : 5));
+          }
+        }
+      }
+    } catch (e) {
+      // Fall through to Yahoo
+    }
+  }
+  return null;
+}
+
 async function fetchYahooQuote(pair: CurrencyPair): Promise<number | null> {
   const symbol = pair === 'USDJPY' ? 'USDJPY=X' : 'EURUSD=X';
   try {
@@ -124,7 +165,11 @@ async function stepBot(state: ForwardTestState): Promise<ForwardTestState> {
   const timeframe = state.config.timeframe;
   const isMarketOpen = isFxMarketOpen();
 
-  let livePrice = await fetchYahooQuote(pair);
+  // 1. Try OANDA REST-v20 quote first, then Yahoo quote fallback
+  let livePrice = await fetchOandaQuote(state);
+  if (!livePrice) {
+    livePrice = await fetchYahooQuote(pair);
+  }
 
   if (!livePrice) {
     // Fallback or weekend continuation
