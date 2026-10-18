@@ -41,18 +41,18 @@
       "lots": 0.5,
       "entryPrice": 157.836,
       "entryTime": 1792361876929,
-      "currentPrice": 157.827,
+      "currentPrice": 157.868,
       "stopLoss": 157.736,
       "takeProfit": 158.016,
       "hardStopLoss": 157.656,
       "softStopLoss": 157.736,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -0.9,
-      "unrealizedPnL": -450,
+      "pipsPnL": 3.2,
+      "unrealizedPnL": 1600,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 157.872,
-      "lowestPriceSinceEntry": 157.827
+      "highestPriceSinceEntry": 157.891,
+      "lowestPriceSinceEntry": 157.79
     },
     {
       "id": "pos_1792361907107_ep7",
@@ -61,18 +61,18 @@
       "lots": 0.5,
       "entryPrice": 157.859,
       "entryTime": 1792361907107,
-      "currentPrice": 157.827,
+      "currentPrice": 157.868,
       "stopLoss": 157.959,
       "takeProfit": 157.679,
       "hardStopLoss": 158.039,
       "softStopLoss": 157.959,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.2,
-      "unrealizedPnL": 1600,
+      "pipsPnL": -0.9,
+      "unrealizedPnL": -450,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 157.872,
-      "lowestPriceSinceEntry": 157.827
+      "highestPriceSinceEntry": 157.891,
+      "lowestPriceSinceEntry": 157.79
     }
   ],
   "tradeLogs": [
@@ -4663,6 +4663,6 @@
       "tradeId": "trade_1792361801455_3m7e"
     }
   ],
-  "lastUpdated": 1792362073136,
+  "lastUpdated": 1792362808941,
   "startedAt": 1791769904156
 }
