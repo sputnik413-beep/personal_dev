@@ -12,9 +12,12 @@ import {
   ShieldCheck,
   ChevronRight,
   ExternalLink,
+  HelpCircle,
+  FileCode,
 } from 'lucide-react';
 import { ForwardTestState, StrategyDiagnosis, ScalperConfig } from '../types/scalper';
 import { DualLayerSlEvaluationModal } from './DualLayerSlEvaluationModal';
+import { Mt5ExportModal } from './Mt5ExportModal';
 
 interface StrategyPdcaPanelProps {
   state: ForwardTestState;
@@ -42,6 +45,7 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
   isPullingCloud,
 }) => {
   const [isDualLayerModalOpen, setIsDualLayerModalOpen] = useState<boolean>(false);
+  const [isMt5ModalOpen, setIsMt5ModalOpen] = useState<boolean>(false);
   const latestDiagnosis = state.aiDiagnosisHistory?.[0];
   const { metrics, config, tradeLogs } = state;
   const isVolmanCompliant = config.stopLossPips >= 9.0 && config.takeProfitPips >= 15.0;
@@ -97,7 +101,16 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
             title="二重ストップロス構造（ヒゲ狩り耐性）とXMゼロ口座取引手数料の精密シミュレーション"
           >
             <Layers className="w-3.5 h-3.5 text-cyan-400" />
-            <span>二重SL & XM手数料検証</span>
+            <span>二重SL & ブローカー検証</span>
+          </button>
+
+          <button
+            onClick={() => setIsMt5ModalOpen(true)}
+            className="px-3.5 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center gap-1.5 transition shadow-sm"
+            title="OANDA東京 / 国内低スプレッドMT5で動かすMQL5 EAコードを生成"
+          >
+            <FileCode className="w-3.5 h-3.5 text-emerald-400" />
+            <span>MT5 EA (.mq5) 生成</span>
           </button>
 
           <button
@@ -328,6 +341,13 @@ export const StrategyPdcaPanel: React.FC<StrategyPdcaPanelProps> = ({
         tradeLogs={tradeLogs}
         config={config}
         onUpdateConfig={onUpdateConfig}
+      />
+
+      {/* MetaTrader 5 (MT5) EA Generator Modal */}
+      <Mt5ExportModal
+        isOpen={isMt5ModalOpen}
+        onClose={() => setIsMt5ModalOpen(false)}
+        config={config}
       />
     </div>
   );
