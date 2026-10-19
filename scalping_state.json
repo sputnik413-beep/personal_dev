@@ -53,7 +53,7 @@
       "pipsPnL": -2.5,
       "unrealizedPnL": -1250,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.521,
+      "highestPriceSinceEntry": 158.534,
       "lowestPriceSinceEntry": 158.486
     },
     {
@@ -73,7 +73,7 @@
       "pipsPnL": 1.6,
       "unrealizedPnL": 800,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.521,
+      "highestPriceSinceEntry": 158.534,
       "lowestPriceSinceEntry": 158.486
     }
   ],
@@ -5277,6 +5277,6 @@
       "tradeId": "trade_1792433585548_6h1l"
     }
   ],
-  "lastUpdated": 1792436086425,
+  "lastUpdated": 1792436834323,
   "startedAt": 1791769904156
 }
