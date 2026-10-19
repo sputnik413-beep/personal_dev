@@ -80,6 +80,23 @@ export function evaluateScalperStrategy(
     regimeDescription = '20EMA収束・保ち合い局面（ビルドアップ形成待ち）';
   }
 
+  // Session Time Filter (Filter out historical net-loss hours: 18-20 JST, 00-02 JST, 06-08 JST)
+  const candleTime = currentCandle.time || Date.now();
+  const jstHour = (new Date(candleTime).getUTCHours() + 9) % 24;
+  const isRolloverHours = jstHour >= 6 && jstHour < 8; // NY close to Tokyo pre-market (spreads widen)
+  const isLondonFixChop = jstHour >= 18 && jstHour < 20; // London fix transition chop
+  const isLateNyChop = jstHour >= 0 && jstHour < 2; // NY lunchtime / option expiry chop
+  const isTrapHour = isRolloverHours || isLondonFixChop || isLateNyChop;
+
+  if (config.sessionTimeFilter && isTrapHour) {
+    return {
+      signal: null,
+      indicators,
+      marketRegime,
+      regimeDescription: `【取引停止フィルター作動中】日本時間 ${jstHour}:00台は市場流動性低下・ダマシ多発時間帯（過去データで純損失ゾーン）のため、AIエージェントが新規エントリーを一時見合わせています。`,
+    };
+  }
+
   let generatedSignal: TradeSignal | null = null;
   const pipsTP = config.takeProfitPips || 18.0;
   const pipsSL = config.stopLossPips || 10.0;
