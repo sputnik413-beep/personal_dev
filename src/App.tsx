@@ -8,7 +8,9 @@ import { OpenPositionsCard } from './components/OpenPositionsCard';
 import { TradeHistoryTable } from './components/TradeHistoryTable';
 import { EquityCurveChart } from './components/EquityCurveChart';
 import { StrategyPdcaPanel } from './components/StrategyPdcaPanel';
+import { InstitutionalProAdvisorAgent } from './components/InstitutionalProAdvisorAgent';
 import { Setup24x7Modal } from './components/Setup24x7Modal';
+import { OandaConnectionModal } from './components/OandaConnectionModal';
 import {
   CurrencyPair,
   Timeframe,
@@ -65,6 +67,7 @@ export function App() {
   const [isAiAnalyzing, setIsAiAnalyzing] = useState<boolean>(false);
 
   const [is24x7ModalOpen, setIs24x7ModalOpen] = useState<boolean>(false);
+  const [isOandaModalOpen, setIsOandaModalOpen] = useState<boolean>(false);
   const [isSyncingGithub, setIsSyncingGithub] = useState<boolean>(false);
   const [isDiagnosisLoading, setIsDiagnosisLoading] = useState<boolean>(false);
   const [isApplyingTuning, setIsApplyingTuning] = useState<boolean>(false);
@@ -446,6 +449,7 @@ export function App() {
         config={state.config}
         onToggleAutoTrade={handleToggleAutoTrade}
         onOpen24x7Guide={() => setIs24x7ModalOpen(true)}
+        onOpenOandaModal={() => setIsOandaModalOpen(true)}
         onSyncGithub={handleSyncGithub}
         isSyncingGithub={isSyncingGithub}
       />
@@ -467,6 +471,17 @@ export function App() {
           openPositions={state.openPositions}
           tradeLogs={state.tradeLogs}
           currentPrice={currentPriceRef.current}
+        />
+
+        {/* Institutional FX Pro Advisor Agent (Ruthless Real-World Trap Detector & Blueprint) */}
+        <InstitutionalProAdvisorAgent
+          pair={pair}
+          currentPrice={currentPriceRef.current}
+          candles={candles}
+          indicators={indicators}
+          latestSignal={latestSignal}
+          config={state.config}
+          onUpdateConfig={handleUpdateConfig}
         />
 
         {/* Indicator Radar & Gemini AI Verdict */}
@@ -533,6 +548,14 @@ export function App() {
         onClose={() => setIs24x7ModalOpen(false)}
         onSyncGithub={handleSyncGithub}
         isSyncingGithub={isSyncingGithub}
+      />
+
+      {/* OANDA Japan Connection & Live Feed Modal */}
+      <OandaConnectionModal
+        isOpen={isOandaModalOpen}
+        onClose={() => setIsOandaModalOpen(false)}
+        config={state.config}
+        onUpdateConfig={handleUpdateConfig}
       />
     </div>
   );
