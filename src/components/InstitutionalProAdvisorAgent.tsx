@@ -86,8 +86,8 @@ export const InstitutionalProAdvisorAgent: React.FC<InstitutionalProAdvisorAgent
 
   // Chasing FOMO & Liquidity Void Detection
   const fomoAnalysis = useMemo(() => {
-    if (candles.length < 5) {
-      return { fomoScore: 20, isStretched: false, verdict: '足数不足', detail: '待機中' };
+    if (!candles || candles.length < 5) {
+      return { fomoScore: 20, isStretched: false, verdict: '足数不足', detail: '待機中', riskFactors: [] };
     }
     const current = candles[candles.length - 1];
     const prev = candles[candles.length - 2];
@@ -340,8 +340,8 @@ export const InstitutionalProAdvisorAgent: React.FC<InstitutionalProAdvisorAgent
                 />
               </div>
               <div className="text-[11px] text-slate-300">
-                {fomoAnalysis.riskFactors.length > 0 ? (
-                  <span className="text-amber-300 font-medium">⚠️ {fomoAnalysis.riskFactors[0]}</span>
+                {(fomoAnalysis.riskFactors?.length || 0) > 0 ? (
+                  <span className="text-amber-300 font-medium">⚠️ {fomoAnalysis.riskFactors?.[0]}</span>
                 ) : (
                   <span className="text-emerald-400 font-medium">✓ 20EMA近傍で健全。飛びつきリスクなし</span>
                 )}
