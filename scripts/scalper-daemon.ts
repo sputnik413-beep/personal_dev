@@ -73,6 +73,11 @@ function loadState(): ForwardTestState {
         loaded.config.xmCommissionUsdPerLot = 0.0;
         loaded.config.defaultLots = 0.5; // Domestic 25x margin safe default
       }
+      if (loaded.config && loaded.config.sessionTimeFilter === undefined) {
+        console.log('Enabling Session Time Filter & 0.3p Slippage Buffer...');
+        loaded.config.sessionTimeFilter = true;
+        loaded.config.slippagePips = 0.3;
+      }
       return loaded;
     } catch (e) {
       console.warn('Could not parse scalping_state.json, creating initial state.');
