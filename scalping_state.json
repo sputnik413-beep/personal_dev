@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1281750,
-    "equity": 1291750,
-    "freeMargin": 1211750,
+    "equity": 1297150,
+    "freeMargin": 1217150,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,19 +43,19 @@
       "lots": 0.5,
       "entryPrice": 158.25,
       "entryTime": 1792548519057,
-      "currentPrice": 158.151,
-      "stopLoss": 158.185,
+      "currentPrice": 158.097,
+      "stopLoss": 158.138,
       "takeProfit": 158.07,
       "hardStopLoss": 158.43,
       "softStopLoss": 158.35,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 9.9,
-      "unrealizedPnL": 4950,
+      "pipsPnL": 15.3,
+      "unrealizedPnL": 7650,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 158.274,
-      "lowestPriceSinceEntry": 158.135,
-      "trailingStop": 158.185
+      "lowestPriceSinceEntry": 158.088,
+      "trailingStop": 158.138
     },
     {
       "id": "pos_1792551319110_7l5",
@@ -64,19 +64,19 @@
       "lots": 0.5,
       "entryPrice": 158.252,
       "entryTime": 1792551319110,
-      "currentPrice": 158.151,
-      "stopLoss": 158.185,
+      "currentPrice": 158.097,
+      "stopLoss": 158.138,
       "takeProfit": 158.072,
       "hardStopLoss": 158.432,
       "softStopLoss": 158.352,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 10.1,
-      "unrealizedPnL": 5050,
+      "pipsPnL": 15.5,
+      "unrealizedPnL": 7750,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 158.274,
-      "lowestPriceSinceEntry": 158.135,
-      "trailingStop": 158.185
+      "lowestPriceSinceEntry": 158.088,
+      "trailingStop": 158.138
     }
   ],
   "tradeLogs": [
@@ -6078,6 +6078,6 @@
       "tradeId": "trade_1792551273585_nl0q"
     }
   ],
-  "lastUpdated": 1792554622307,
+  "lastUpdated": 1792555355443,
   "startedAt": 1791769904156
 }
