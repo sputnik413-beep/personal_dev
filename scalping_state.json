@@ -27,16 +27,91 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1416150,
-    "equity": 1416150,
-    "freeMargin": 1416150,
+    "balance": 1425100,
+    "equity": 1426500,
+    "freeMargin": 1346500,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
     "slippagePips": 0
   },
-  "openPositions": [],
+  "openPositions": [
+    {
+      "id": "pos_1792760061569_zb1",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 156.373,
+      "entryTime": 1792760061569,
+      "currentPrice": 156.382,
+      "stopLoss": 156.273,
+      "takeProfit": 156.553,
+      "hardStopLoss": 156.193,
+      "softStopLoss": 156.273,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 0.9,
+      "unrealizedPnL": 450,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 156.382,
+      "lowestPriceSinceEntry": 156.331
+    },
+    {
+      "id": "pos_1792760076982_akg",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 156.363,
+      "entryTime": 1792760076982,
+      "currentPrice": 156.382,
+      "stopLoss": 156.263,
+      "takeProfit": 156.543,
+      "hardStopLoss": 156.183,
+      "softStopLoss": 156.263,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 1.9,
+      "unrealizedPnL": 950,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 156.382,
+      "lowestPriceSinceEntry": 156.331
+    }
+  ],
   "tradeLogs": [
+    {
+      "id": "trade_1792760061569_hfgt",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 156.462,
+      "exitPrice": 156.36800000000002,
+      "entryTime": 1792759620045,
+      "exitTime": 1792760061569,
+      "pipsGain": 9.4,
+      "realizedPnL": 4700,
+      "commissionFee": 391,
+      "netRealizedPnL": 4309,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 7分。損益: +9.4 pips (+4,700円 / XM手数料控除後: 4,309円)。",
+      "holdingDurationMinutes": 7
+    },
+    {
+      "id": "trade_1792760061569_cofz",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 156.453,
+      "exitPrice": 156.36800000000002,
+      "entryTime": 1792759574279,
+      "exitTime": 1792760061569,
+      "pipsGain": 8.5,
+      "realizedPnL": 4250,
+      "commissionFee": 391,
+      "netRealizedPnL": 3859,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 8分。損益: +8.5 pips (+4,250円 / XM手数料控除後: 3,859円)。",
+      "holdingDurationMinutes": 8
+    },
     {
       "id": "trade_1792759468784_yzyt",
       "pair": "USDJPY",
@@ -8218,33 +8293,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 503,
-    "wins": 307,
+    "totalTrades": 505,
+    "wins": 309,
     "losses": 196,
-    "winRate": 61,
+    "winRate": 61.2,
     "profitFactor": 1.27,
-    "totalPipsWon": 2753.9,
+    "totalPipsWon": 2771.8,
     "totalPipsLost": 2110.8,
-    "netPips": 643.1,
-    "netProfit": 416150,
+    "netPips": 661,
+    "netProfit": 425100,
     "maxDrawdown": 126700,
-    "maxDrawdownPercent": 8.21,
+    "maxDrawdownPercent": 8.16,
     "averageWinPips": 9,
     "averageLossPips": 10.8,
     "riskRewardRatio": 0.83,
-    "expectancyPips": 1.28,
+    "expectancyPips": 1.32,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1792654729145,
-      "equity": 1335100,
-      "balance": 1335100,
-      "tradeId": "trade_1792654729145_omoe"
-    },
     {
       "timestamp": 1792655077403,
       "equity": 1324900,
@@ -8838,8 +8907,14 @@
       "equity": 1416150,
       "balance": 1416150,
       "tradeId": "trade_1792759468784_yzyt"
+    },
+    {
+      "timestamp": 1792760061569,
+      "equity": 1425100,
+      "balance": 1425100,
+      "tradeId": "trade_1792760061569_hfgt"
     }
   ],
-  "lastUpdated": 1792759468784,
+  "lastUpdated": 1792760244336,
   "startedAt": 1791769904156
 }
