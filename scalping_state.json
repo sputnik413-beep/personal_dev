@@ -73,8 +73,8 @@
       "pipsPnL": -0.2,
       "unrealizedPnL": -100,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 156.878,
-      "lowestPriceSinceEntry": 156.854
+      "highestPriceSinceEntry": 156.88,
+      "lowestPriceSinceEntry": 156.835
     }
   ],
   "tradeLogs": [
@@ -9204,6 +9204,6 @@
       "tradeId": "trade_1792781658584_6jsy"
     }
   ],
-  "lastUpdated": 1792781779998,
+  "lastUpdated": 1792782517570,
   "startedAt": 1791769904156
 }
