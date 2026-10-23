@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1393200,
-    "equity": 1391350,
-    "freeMargin": 1351350,
+    "equity": 1391700,
+    "freeMargin": 1311700,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,38 @@
       "lots": 0.5,
       "entryPrice": 156.817,
       "entryTime": 1792744117774,
-      "currentPrice": 156.78,
+      "currentPrice": 156.807,
       "stopLoss": 156.717,
       "takeProfit": 156.997,
       "hardStopLoss": 156.637,
       "softStopLoss": 156.717,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -3.7,
-      "unrealizedPnL": -1850,
+      "pipsPnL": -1,
+      "unrealizedPnL": -500,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 156.896,
       "lowestPriceSinceEntry": 156.721
+    },
+    {
+      "id": "pos_1792745511943_g2p",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 156.787,
+      "entryTime": 1792745511943,
+      "currentPrice": 156.807,
+      "stopLoss": 156.887,
+      "takeProfit": 156.607,
+      "hardStopLoss": 156.967,
+      "softStopLoss": 156.887,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": -2,
+      "unrealizedPnL": -1000,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 94%)",
+      "highestPriceSinceEntry": 156.836,
+      "lowestPriceSinceEntry": 156.743
     }
   ],
   "tradeLogs": [
@@ -8725,6 +8745,6 @@
       "tradeId": "trade_1792745352481_dqvq"
     }
   ],
-  "lastUpdated": 1792745473675,
+  "lastUpdated": 1792746209123,
   "startedAt": 1791769904156
 }
