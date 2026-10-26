@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1380900,
-    "equity": 1381250,
-    "freeMargin": 1301250,
+    "balance": 1382500,
+    "equity": 1381450,
+    "freeMargin": 1301450,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,41 +43,58 @@
       "lots": 0.5,
       "entryPrice": 156.727,
       "entryTime": 1792980320270,
-      "currentPrice": 156.723,
+      "currentPrice": 156.706,
       "stopLoss": 156.627,
       "takeProfit": 156.907,
       "hardStopLoss": 156.547,
       "softStopLoss": 156.627,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -0.4,
-      "unrealizedPnL": -200,
+      "pipsPnL": -2.1,
+      "unrealizedPnL": -1050,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
       "highestPriceSinceEntry": 156.764,
-      "lowestPriceSinceEntry": 156.669
+      "lowestPriceSinceEntry": 156.652
     },
     {
-      "id": "pos_1792980380785_fww",
+      "id": "pos_1792982829955_dsi",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 156.706,
+      "entryTime": 1792982829955,
+      "currentPrice": 156.706,
+      "stopLoss": 156.806,
+      "takeProfit": 156.526,
+      "hardStopLoss": 156.886,
+      "softStopLoss": 156.806,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 0,
+      "unrealizedPnL": 0,
+      "signalReason": "BB Trend Expansion (トレンド同調バンドブレイク) (信頼度: 84%)",
+      "highestPriceSinceEntry": 156.727,
+      "lowestPriceSinceEntry": 156.7
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1792982799744_q2cx",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 156.734,
+      "exitPrice": 156.702,
       "entryTime": 1792980380785,
-      "currentPrice": 156.723,
-      "stopLoss": 156.834,
-      "takeProfit": 156.554,
-      "hardStopLoss": 156.914,
-      "softStopLoss": 156.834,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 1.1,
-      "unrealizedPnL": 550,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 156.764,
-      "lowestPriceSinceEntry": 156.669
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1792982799744,
+      "pipsGain": 3.2,
+      "realizedPnL": 1600,
+      "commissionFee": 392,
+      "netRealizedPnL": 1208,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 40分。損益: +3.2 pips (+1,600円 / XM手数料控除後: 1,208円)。",
+      "holdingDurationMinutes": 40
+    },
     {
       "id": "trade_1792980289860_eokq",
       "pair": "USDJPY",
@@ -8956,33 +8973,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 544,
-    "wins": 328,
+    "totalTrades": 545,
+    "wins": 329,
     "losses": 216,
-    "winRate": 60.3,
+    "winRate": 60.4,
     "profitFactor": 1.23,
-    "totalPipsWon": 2916.4,
+    "totalPipsWon": 2919.6,
     "totalPipsLost": 2343.8,
-    "netPips": 572.6,
-    "netProfit": 380900,
+    "netPips": 575.8,
+    "netProfit": 382500,
     "maxDrawdown": 126700,
     "maxDrawdownPercent": 8.4,
     "averageWinPips": 8.9,
     "averageLossPips": 10.9,
     "riskRewardRatio": 0.82,
-    "expectancyPips": 1.04,
+    "expectancyPips": 1.05,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1792694103710,
-      "equity": 1403300,
-      "balance": 1403800,
-      "tradeId": "trade_1792694103710_2it3"
-    },
     {
       "timestamp": 1792694800706,
       "equity": 1409100,
@@ -9576,8 +9587,14 @@
       "equity": 1380900,
       "balance": 1380900,
       "tradeId": "trade_1792980289860_eokq"
+    },
+    {
+      "timestamp": 1792982799744,
+      "equity": 1381300,
+      "balance": 1382500,
+      "tradeId": "trade_1792982799744_q2cx"
     }
   ],
-  "lastUpdated": 1792982165128,
+  "lastUpdated": 1792982905788,
   "startedAt": 1791769904156
 }
