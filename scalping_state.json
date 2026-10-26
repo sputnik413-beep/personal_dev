@@ -53,7 +53,7 @@
       "pipsPnL": -7.1,
       "unrealizedPnL": -3550,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 156.96,
+      "highestPriceSinceEntry": 156.97,
       "lowestPriceSinceEntry": 156.827
     },
     {
@@ -69,11 +69,11 @@
       "hardStopLoss": 157.045,
       "softStopLoss": 156.965,
       "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
+      "spikeAvoidanceCount": 1,
       "pipsPnL": -8,
       "unrealizedPnL": -4000,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 156.96,
+      "highestPriceSinceEntry": 156.97,
       "lowestPriceSinceEntry": 156.858
     }
   ],
@@ -9680,6 +9680,6 @@
       "tradeId": "trade_1792987636206_r9wm"
     }
   ],
-  "lastUpdated": 1792991029726,
+  "lastUpdated": 1792991766336,
   "startedAt": 1791769904156
 }
