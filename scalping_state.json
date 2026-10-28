@@ -54,7 +54,7 @@
       "unrealizedPnL": 1950,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 157.821,
-      "lowestPriceSinceEntry": 157.76
+      "lowestPriceSinceEntry": 157.75
     },
     {
       "id": "pos_1793164219815_6km",
@@ -74,7 +74,7 @@
       "unrealizedPnL": 1300,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 157.82,
-      "lowestPriceSinceEntry": 157.761
+      "lowestPriceSinceEntry": 157.75
     }
   ],
   "tradeLogs": [
@@ -10853,6 +10853,6 @@
       "tradeId": "trade_1793164189228_imyx"
     }
   ],
-  "lastUpdated": 1793165812770,
+  "lastUpdated": 1793166553360,
   "startedAt": 1791769904156
 }
