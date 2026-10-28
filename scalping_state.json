@@ -27,57 +27,50 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1318100,
-    "equity": 1309200,
-    "freeMargin": 1229200,
+    "balance": 1307450,
+    "equity": 1307450,
+    "freeMargin": 1307450,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
     "slippagePips": 0
   },
-  "openPositions": [
+  "openPositions": [],
+  "tradeLogs": [
     {
-      "id": "pos_1793176074406_bn1",
+      "id": "trade_1793179379350_aadr",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 157.68,
+      "exitPrice": 157.79,
       "entryTime": 1793176074406,
-      "currentPrice": 157.766,
-      "stopLoss": 157.78,
-      "takeProfit": 157.5,
-      "hardStopLoss": 157.86,
-      "softStopLoss": 157.78,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -8.6,
-      "unrealizedPnL": -4300,
-      "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 157.766,
-      "lowestPriceSinceEntry": 157.674
+      "exitTime": 1793179379350,
+      "pipsGain": -11,
+      "realizedPnL": -5500,
+      "commissionFee": 394,
+      "netRealizedPnL": -5894,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 55分。損益: -11 pips (-5,500円 / XM手数料控除後: -5,894円)。",
+      "holdingDurationMinutes": 55
     },
     {
-      "id": "pos_1793177303606_jr7",
+      "id": "trade_1793179318834_iasn",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 157.674,
+      "exitPrice": 157.777,
       "entryTime": 1793177303606,
-      "currentPrice": 157.766,
-      "stopLoss": 157.774,
-      "takeProfit": 157.494,
-      "hardStopLoss": 157.854,
-      "softStopLoss": 157.774,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -9.2,
-      "unrealizedPnL": -4600,
-      "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 157.766,
-      "lowestPriceSinceEntry": 157.674
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1793179318834,
+      "pipsGain": -10.3,
+      "realizedPnL": -5150,
+      "commissionFee": 394,
+      "netRealizedPnL": -5544,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 34分。損益: -10.3 pips (-5,150円 / XM手数料控除後: -5,544円)。",
+      "holdingDurationMinutes": 34
+    },
     {
       "id": "trade_1793177273383_lzo9",
       "pair": "USDJPY",
@@ -10350,39 +10343,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 626,
+    "totalTrades": 628,
     "wins": 371,
-    "losses": 255,
-    "winRate": 59.3,
-    "profitFactor": 1.17,
+    "losses": 257,
+    "winRate": 59.1,
+    "profitFactor": 1.16,
     "totalPipsWon": 3238.3,
-    "totalPipsLost": 2791.3,
-    "netPips": 447,
-    "netProfit": 318100,
+    "totalPipsLost": 2812.6,
+    "netPips": 425.7,
+    "netProfit": 307450,
     "maxDrawdown": 127350,
-    "maxDrawdownPercent": 8.81,
+    "maxDrawdownPercent": 8.88,
     "averageWinPips": 8.7,
     "averageLossPips": 10.9,
     "riskRewardRatio": 0.8,
-    "expectancyPips": 0.72,
+    "expectancyPips": 0.68,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1792765875411,
-      "equity": 1411950,
-      "balance": 1411950,
-      "tradeId": "trade_1792765875411_3afb"
-    },
-    {
-      "timestamp": 1792767195938,
-      "equity": 1416650,
-      "balance": 1416650,
-      "tradeId": "trade_1792767195938_rbmf"
-    },
     {
       "timestamp": 1792767844019,
       "equity": 1417250,
@@ -10970,8 +10951,20 @@
       "equity": 1316600,
       "balance": 1318100,
       "tradeId": "trade_1793177273383_lzo9"
+    },
+    {
+      "timestamp": 1793179318834,
+      "equity": 1308100,
+      "balance": 1312950,
+      "tradeId": "trade_1793179318834_iasn"
+    },
+    {
+      "timestamp": 1793179379350,
+      "equity": 1307450,
+      "balance": 1307450,
+      "tradeId": "trade_1793179379350_aadr"
     }
   ],
-  "lastUpdated": 1793179183976,
+  "lastUpdated": 1793179379350,
   "startedAt": 1791769904156
 }
