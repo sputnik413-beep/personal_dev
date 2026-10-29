@@ -54,7 +54,7 @@
       "unrealizedPnL": -1600,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
       "highestPriceSinceEntry": 157.776,
-      "lowestPriceSinceEntry": 157.703
+      "lowestPriceSinceEntry": 157.695
     },
     {
       "id": "pos_1793315695559_fsc",
@@ -73,8 +73,8 @@
       "pipsPnL": 0.8,
       "unrealizedPnL": 400,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 157.735,
-      "lowestPriceSinceEntry": 157.703
+      "highestPriceSinceEntry": 157.74,
+      "lowestPriceSinceEntry": 157.695
     }
   ],
   "tradeLogs": [
@@ -12315,6 +12315,6 @@
       "tradeId": "trade_1793315665445_fap1"
     }
   ],
-  "lastUpdated": 1793316012502,
+  "lastUpdated": 1793316750532,
   "startedAt": 1791769904156
 }
