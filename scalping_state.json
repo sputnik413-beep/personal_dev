@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1307300,
-    "equity": 1306900,
-    "freeMargin": 1226900,
+    "balance": 1306250,
+    "equity": 1306300,
+    "freeMargin": 1266300,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -37,47 +37,61 @@
   },
   "openPositions": [
     {
-      "id": "pos_1793350234824_drv",
+      "id": "pos_1793350911502_aar",
       "pair": "USDJPY",
-      "direction": "SELL",
+      "direction": "BUY",
       "lots": 0.5,
-      "entryPrice": 157.234,
-      "entryTime": 1793350234824,
-      "currentPrice": 157.264,
-      "stopLoss": 157.334,
-      "takeProfit": 157.054,
-      "hardStopLoss": 157.414,
-      "softStopLoss": 157.334,
+      "entryPrice": 157.344,
+      "entryTime": 1793350911502,
+      "currentPrice": 157.345,
+      "stopLoss": 157.244,
+      "takeProfit": 157.524,
+      "hardStopLoss": 157.164,
+      "softStopLoss": 157.244,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -3,
-      "unrealizedPnL": -1500,
-      "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 157.272,
-      "lowestPriceSinceEntry": 157.227
-    },
+      "pipsPnL": 0.1,
+      "unrealizedPnL": 50,
+      "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
+      "highestPriceSinceEntry": 157.381,
+      "lowestPriceSinceEntry": 157.319
+    }
+  ],
+  "tradeLogs": [
     {
-      "id": "pos_1793350325497_ctc",
+      "id": "trade_1793351137732_grj0",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 0.5,
       "entryPrice": 157.242,
+      "exitPrice": 157.331,
       "entryTime": 1793350325497,
-      "currentPrice": 157.264,
-      "stopLoss": 157.142,
-      "takeProfit": 157.422,
-      "hardStopLoss": 157.062,
-      "softStopLoss": 157.142,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 2.2,
-      "unrealizedPnL": 1100,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.272,
-      "lowestPriceSinceEntry": 157.241
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1793351137732,
+      "pipsGain": 8.9,
+      "realizedPnL": 4450,
+      "commissionFee": 393,
+      "netRealizedPnL": 4057,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 14分。損益: +8.9 pips (+4,450円 / XM手数料控除後: 4,057円)。",
+      "holdingDurationMinutes": 14
+    },
+    {
+      "id": "trade_1793350911501_svwo",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 157.234,
+      "exitPrice": 157.344,
+      "entryTime": 1793350234824,
+      "exitTime": 1793350911501,
+      "pipsGain": -11,
+      "realizedPnL": -5500,
+      "commissionFee": 393,
+      "netRealizedPnL": -5893,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 11分。損益: -11 pips (-5,500円 / XM手数料控除後: -5,893円)。",
+      "holdingDurationMinutes": 11
+    },
     {
       "id": "trade_1793350204701_shob",
       "pair": "USDJPY",
@@ -12526,15 +12540,15 @@
     }
   ],
   "metrics": {
-    "totalTrades": 754,
-    "wins": 443,
-    "losses": 311,
-    "winRate": 58.8,
+    "totalTrades": 756,
+    "wins": 444,
+    "losses": 312,
+    "winRate": 58.7,
     "profitFactor": 1.14,
-    "totalPipsWon": 3903.8,
-    "totalPipsLost": 3478.4,
-    "netPips": 425.4,
-    "netProfit": 307300,
+    "totalPipsWon": 3912.7,
+    "totalPipsLost": 3489.4,
+    "netPips": 423.3,
+    "netProfit": 306250,
     "maxDrawdown": 144200,
     "maxDrawdownPercent": 10.06,
     "averageWinPips": 8.8,
@@ -12547,18 +12561,6 @@
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1793213197344,
-      "equity": 1301600,
-      "balance": 1306500,
-      "tradeId": "trade_1793213197344_0ubn"
-    },
-    {
-      "timestamp": 1793213665646,
-      "equity": 1307000,
-      "balance": 1308600,
-      "tradeId": "trade_1793213665646_875v"
-    },
     {
       "timestamp": 1793213802156,
       "equity": 1296550,
@@ -13146,8 +13148,20 @@
       "equity": 1307300,
       "balance": 1307300,
       "tradeId": "trade_1793350204701_shob"
+    },
+    {
+      "timestamp": 1793350911501,
+      "equity": 1306900,
+      "balance": 1301800,
+      "tradeId": "trade_1793350911501_svwo"
+    },
+    {
+      "timestamp": 1793351137732,
+      "equity": 1305500,
+      "balance": 1306250,
+      "tradeId": "trade_1793351137732_grj0"
     }
   ],
-  "lastUpdated": 1793350717387,
+  "lastUpdated": 1793351454280,
   "startedAt": 1791769904156
 }
