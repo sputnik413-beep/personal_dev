@@ -43,18 +43,18 @@
       "lots": 0.5,
       "entryPrice": 157.949,
       "entryTime": 1793589796264,
-      "currentPrice": 157.924,
+      "currentPrice": 157.933,
       "stopLoss": 158.049,
       "takeProfit": 157.769,
       "hardStopLoss": 158.129,
       "softStopLoss": 158.049,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 2.5,
-      "unrealizedPnL": 1250,
+      "pipsPnL": 1.6,
+      "unrealizedPnL": 800,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 157.958,
-      "lowestPriceSinceEntry": 157.922
+      "lowestPriceSinceEntry": 157.909
     },
     {
       "id": "pos_1793589977287_7lg",
@@ -63,18 +63,18 @@
       "lots": 0.5,
       "entryPrice": 157.942,
       "entryTime": 1793589977287,
-      "currentPrice": 157.924,
+      "currentPrice": 157.933,
       "stopLoss": 157.842,
       "takeProfit": 158.122,
       "hardStopLoss": 157.762,
       "softStopLoss": 157.842,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -1.8,
-      "unrealizedPnL": -900,
+      "pipsPnL": -0.9,
+      "unrealizedPnL": -450,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 157.954,
-      "lowestPriceSinceEntry": 157.922
+      "lowestPriceSinceEntry": 157.909
     }
   ],
   "tradeLogs": [
@@ -13896,6 +13896,6 @@
       "tradeId": "trade_1793589645617_4vny"
     }
   ],
-  "lastUpdated": 1793590293800,
+  "lastUpdated": 1793591038824,
   "startedAt": 1791769904156
 }
