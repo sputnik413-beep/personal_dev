@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1220000,
-    "equity": 1230350,
-    "freeMargin": 1150350,
+    "equity": 1231150,
+    "freeMargin": 1151150,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,19 +43,19 @@
       "lots": 0.5,
       "entryPrice": 158.187,
       "entryTime": 1793703957162,
-      "currentPrice": 158.291,
-      "stopLoss": 158.243,
+      "currentPrice": 158.299,
+      "stopLoss": 158.25,
       "takeProfit": 158.367,
       "hardStopLoss": 158.007,
       "softStopLoss": 158.087,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 10.4,
-      "unrealizedPnL": 5200,
+      "pipsPnL": 11.2,
+      "unrealizedPnL": 5600,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.293,
+      "highestPriceSinceEntry": 158.3,
       "lowestPriceSinceEntry": 158.185,
-      "trailingStop": 158.243
+      "trailingStop": 158.25
     },
     {
       "id": "pos_1793704002493_arm",
@@ -64,19 +64,19 @@
       "lots": 0.5,
       "entryPrice": 158.188,
       "entryTime": 1793704002493,
-      "currentPrice": 158.291,
-      "stopLoss": 158.243,
+      "currentPrice": 158.299,
+      "stopLoss": 158.25,
       "takeProfit": 158.368,
       "hardStopLoss": 158.008,
       "softStopLoss": 158.088,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 10.3,
-      "unrealizedPnL": 5150,
+      "pipsPnL": 11.1,
+      "unrealizedPnL": 5550,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.293,
+      "highestPriceSinceEntry": 158.3,
       "lowestPriceSinceEntry": 158.185,
-      "trailingStop": 158.243
+      "trailingStop": 158.25
     }
   ],
   "tradeLogs": [
@@ -14561,6 +14561,6 @@
       "tradeId": "trade_1793698369662_mr77"
     }
   ],
-  "lastUpdated": 1793705748857,
+  "lastUpdated": 1793706485219,
   "startedAt": 1791769904156
 }
