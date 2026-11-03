@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1220000,
-    "equity": 1230150,
-    "freeMargin": 1150150,
+    "equity": 1230350,
+    "freeMargin": 1150350,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,19 +43,19 @@
       "lots": 0.5,
       "entryPrice": 158.187,
       "entryTime": 1793703957162,
-      "currentPrice": 158.289,
-      "stopLoss": 158.24099999999999,
+      "currentPrice": 158.291,
+      "stopLoss": 158.243,
       "takeProfit": 158.367,
       "hardStopLoss": 158.007,
       "softStopLoss": 158.087,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 10.2,
-      "unrealizedPnL": 5100,
+      "pipsPnL": 10.4,
+      "unrealizedPnL": 5200,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.291,
+      "highestPriceSinceEntry": 158.293,
       "lowestPriceSinceEntry": 158.185,
-      "trailingStop": 158.24099999999999
+      "trailingStop": 158.243
     },
     {
       "id": "pos_1793704002493_arm",
@@ -64,19 +64,19 @@
       "lots": 0.5,
       "entryPrice": 158.188,
       "entryTime": 1793704002493,
-      "currentPrice": 158.289,
-      "stopLoss": 158.24099999999999,
+      "currentPrice": 158.291,
+      "stopLoss": 158.243,
       "takeProfit": 158.368,
       "hardStopLoss": 158.008,
       "softStopLoss": 158.088,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 10.1,
-      "unrealizedPnL": 5050,
+      "pipsPnL": 10.3,
+      "unrealizedPnL": 5150,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.291,
+      "highestPriceSinceEntry": 158.293,
       "lowestPriceSinceEntry": 158.185,
-      "trailingStop": 158.24099999999999
+      "trailingStop": 158.243
     }
   ],
   "tradeLogs": [
@@ -14561,6 +14561,6 @@
       "tradeId": "trade_1793698369662_mr77"
     }
   ],
-  "lastUpdated": 1793705014061,
+  "lastUpdated": 1793705748857,
   "startedAt": 1791769904156
 }
