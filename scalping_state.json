@@ -27,57 +27,50 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1258950,
-    "equity": 1257550,
-    "freeMargin": 1177550,
+    "balance": 1255550,
+    "equity": 1255550,
+    "freeMargin": 1255550,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
     "slippagePips": 0
   },
-  "openPositions": [
+  "openPositions": [],
+  "tradeLogs": [
     {
-      "id": "pos_1793768633108_8cg",
-      "pair": "USDJPY",
-      "direction": "BUY",
-      "lots": 0.5,
-      "entryPrice": 157.903,
-      "entryTime": 1793768633108,
-      "currentPrice": 157.881,
-      "stopLoss": 157.803,
-      "takeProfit": 158.083,
-      "hardStopLoss": 157.723,
-      "softStopLoss": 157.803,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -2.2,
-      "unrealizedPnL": -1100,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 157.937,
-      "lowestPriceSinceEntry": 157.863
-    },
-    {
-      "id": "pos_1793768876175_fn9",
+      "id": "trade_1793769887507_plyc",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 157.875,
+      "exitPrice": 157.985,
       "entryTime": 1793768876175,
-      "currentPrice": 157.881,
-      "stopLoss": 157.975,
-      "takeProfit": 157.695,
-      "hardStopLoss": 158.055,
-      "softStopLoss": 157.975,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -0.6,
-      "unrealizedPnL": -300,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.937,
-      "lowestPriceSinceEntry": 157.863
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1793769887507,
+      "pipsGain": -11,
+      "realizedPnL": -5500,
+      "commissionFee": 395,
+      "netRealizedPnL": -5895,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS [ヒゲ狩り3回吸収耐性]】保有時間 17分。損益: -11 pips (-5,500円 / XM手数料控除後: -5,895円)。",
+      "holdingDurationMinutes": 17
+    },
+    {
+      "id": "trade_1793769766983_1kkq",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 157.903,
+      "exitPrice": 157.945,
+      "entryTime": 1793768633108,
+      "exitTime": 1793769766983,
+      "pipsGain": 4.2,
+      "realizedPnL": 2100,
+      "commissionFee": 395,
+      "netRealizedPnL": 1705,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 19分。損益: +4.2 pips (+2,100円 / XM手数料控除後: 1,705円)。",
+      "holdingDurationMinutes": 19
+    },
     {
       "id": "trade_1793768876174_n5ug",
       "pair": "USDJPY",
@@ -14991,17 +14984,17 @@
     }
   ],
   "metrics": {
-    "totalTrades": 899,
-    "wins": 520,
-    "losses": 379,
+    "totalTrades": 901,
+    "wins": 521,
+    "losses": 380,
     "winRate": 57.8,
     "profitFactor": 1.1,
-    "totalPipsWon": 4612.1,
-    "totalPipsLost": 4283.4,
-    "netPips": 328.7,
-    "netProfit": 258950,
+    "totalPipsWon": 4616.3,
+    "totalPipsLost": 4294.4,
+    "netPips": 321.9,
+    "netProfit": 255550,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.38,
+    "maxDrawdownPercent": 17.42,
     "averageWinPips": 8.9,
     "averageLossPips": 11.3,
     "riskRewardRatio": 0.79,
@@ -15012,18 +15005,6 @@
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1793388971122,
-      "equity": 1284650,
-      "balance": 1289400,
-      "tradeId": "trade_1793388971122_31ms"
-    },
-    {
-      "timestamp": 1793389395513,
-      "equity": 1284450,
-      "balance": 1284200,
-      "tradeId": "trade_1793389395513_lkq9"
-    },
     {
       "timestamp": 1793393403539,
       "equity": 1284500,
@@ -15611,8 +15592,20 @@
       "equity": 1257550,
       "balance": 1258950,
       "tradeId": "trade_1793768876174_n5ug"
+    },
+    {
+      "timestamp": 1793769766983,
+      "equity": 1258250,
+      "balance": 1261050,
+      "tradeId": "trade_1793769766983_1kkq"
+    },
+    {
+      "timestamp": 1793769887507,
+      "equity": 1255550,
+      "balance": 1255550,
+      "tradeId": "trade_1793769887507_plyc"
     }
   ],
-  "lastUpdated": 1793769180172,
+  "lastUpdated": 1793769887507,
   "startedAt": 1791769904156
 }
