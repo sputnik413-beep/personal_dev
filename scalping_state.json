@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1255550,
-    "equity": 1251950,
-    "freeMargin": 1171950,
+    "equity": 1264350,
+    "freeMargin": 1184350,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 157.934,
       "entryTime": 1793770052692,
-      "currentPrice": 157.896,
-      "stopLoss": 157.834,
+      "currentPrice": 158.02,
+      "stopLoss": 157.99099999999999,
       "takeProfit": 158.114,
       "hardStopLoss": 157.754,
       "softStopLoss": 157.834,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -3.8,
-      "unrealizedPnL": -1900,
+      "pipsPnL": 8.6,
+      "unrealizedPnL": 4300,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.97,
-      "lowestPriceSinceEntry": 157.886
+      "highestPriceSinceEntry": 158.041,
+      "lowestPriceSinceEntry": 157.872,
+      "trailingStop": 157.99099999999999
     },
     {
       "id": "pos_1793770158333_hdq",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 157.93,
       "entryTime": 1793770158333,
-      "currentPrice": 157.896,
-      "stopLoss": 157.83,
+      "currentPrice": 158.02,
+      "stopLoss": 157.99099999999999,
       "takeProfit": 158.11,
       "hardStopLoss": 157.75,
       "softStopLoss": 157.83,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -3.4,
-      "unrealizedPnL": -1700,
+      "pipsPnL": 9,
+      "unrealizedPnL": 4500,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 157.97,
-      "lowestPriceSinceEntry": 157.886
+      "highestPriceSinceEntry": 158.041,
+      "lowestPriceSinceEntry": 157.872,
+      "trailingStop": 157.99099999999999
     }
   ],
   "tradeLogs": [
@@ -15647,6 +15649,6 @@
       "tradeId": "trade_1793769887507_plyc"
     }
   ],
-  "lastUpdated": 1793771390779,
+  "lastUpdated": 1793772126433,
   "startedAt": 1791769904156
 }
