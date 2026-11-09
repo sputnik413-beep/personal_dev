@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1305250,
-    "equity": 1304550,
-    "freeMargin": 1224550,
+    "balance": 1293750,
+    "equity": 1293300,
+    "freeMargin": 1253300,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -37,47 +37,81 @@
   },
   "openPositions": [
     {
-      "id": "pos_1794229600193_uhv",
+      "id": "pos_1794235029562_txw",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
-      "entryPrice": 157.906,
-      "entryTime": 1794229600193,
-      "currentPrice": 157.935,
-      "stopLoss": 158.006,
-      "takeProfit": 157.726,
-      "hardStopLoss": 158.086,
-      "softStopLoss": 158.006,
+      "entryPrice": 158.041,
+      "entryTime": 1794235029562,
+      "currentPrice": 158.05,
+      "stopLoss": 158.141,
+      "takeProfit": 157.861,
+      "hardStopLoss": 158.221,
+      "softStopLoss": 158.141,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -2.9,
-      "unrealizedPnL": -1450,
+      "pipsPnL": -0.9,
+      "unrealizedPnL": -450,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 157.973,
-      "lowestPriceSinceEntry": 157.847
+      "highestPriceSinceEntry": 158.063,
+      "lowestPriceSinceEntry": 158.012
     },
     {
-      "id": "pos_1794233161456_0d1",
+      "id": "pos_1794235421793_1j7",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 158.05,
+      "entryTime": 1794235421793,
+      "currentPrice": 158.05,
+      "stopLoss": 158.15,
+      "takeProfit": 157.87,
+      "hardStopLoss": 158.23,
+      "softStopLoss": 158.15,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 0,
+      "unrealizedPnL": 0,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 158.05,
+      "lowestPriceSinceEntry": 158.05
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1794235346431_9ol0",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 157.95,
+      "exitPrice": 158.054,
       "entryTime": 1794233161456,
-      "currentPrice": 157.935,
-      "stopLoss": 158.05,
-      "takeProfit": 157.77,
-      "hardStopLoss": 158.13,
-      "softStopLoss": 158.05,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 1.5,
-      "unrealizedPnL": 750,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 157.973,
-      "lowestPriceSinceEntry": 157.886
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1794235346431,
+      "pipsGain": -10.4,
+      "realizedPnL": -5200,
+      "commissionFee": 395,
+      "netRealizedPnL": -5595,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS [ヒゲ狩り2回吸収耐性]】保有時間 36分。損益: -10.4 pips (-5,200円 / XM手数料控除後: -5,595円)。",
+      "holdingDurationMinutes": 36
+    },
+    {
+      "id": "trade_1794234923943_zp8o",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 157.906,
+      "exitPrice": 158.032,
+      "entryTime": 1794229600193,
+      "exitTime": 1794234923943,
+      "pipsGain": -12.6,
+      "realizedPnL": -6300,
+      "commissionFee": 395,
+      "netRealizedPnL": -6695,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS [ヒゲ狩り1回吸収耐性]】保有時間 89分。損益: -12.6 pips (-6,300円 / XM手数料控除後: -6,695円)。",
+      "holdingDurationMinutes": 89
+    },
     {
       "id": "trade_1794233161456_nr0m",
       "pair": "USDJPY",
@@ -18629,39 +18663,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1113,
+    "totalTrades": 1115,
     "wins": 651,
-    "losses": 462,
-    "winRate": 58.5,
-    "profitFactor": 1.1,
+    "losses": 464,
+    "winRate": 58.4,
+    "profitFactor": 1.09,
     "totalPipsWon": 5696.8,
-    "totalPipsLost": 5275.5,
-    "netPips": 421.3,
-    "netProfit": 305250,
+    "totalPipsLost": 5298.5,
+    "netPips": 398.3,
+    "netProfit": 293750,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 16.82,
+    "maxDrawdownPercent": 16.95,
     "averageWinPips": 8.8,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.77,
-    "expectancyPips": 0.42,
+    "expectancyPips": 0.39,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 6
   },
   "equityHistory": [
-    {
-      "timestamp": 1793921465543,
-      "equity": 1269100,
-      "balance": 1269100,
-      "tradeId": "trade_1793921465543_uhq6"
-    },
-    {
-      "timestamp": 1793923318417,
-      "equity": 1257250,
-      "balance": 1257250,
-      "tradeId": "trade_1793923318417_356u"
-    },
     {
       "timestamp": 1793924239405,
       "equity": 1255750,
@@ -19249,8 +19271,20 @@
       "equity": 1303050,
       "balance": 1305250,
       "tradeId": "trade_1794233161456_nr0m"
+    },
+    {
+      "timestamp": 1794234923943,
+      "equity": 1294850,
+      "balance": 1298950,
+      "tradeId": "trade_1794234923943_zp8o"
+    },
+    {
+      "timestamp": 1794235346431,
+      "equity": 1293100,
+      "balance": 1293750,
+      "tradeId": "trade_1794235346431_9ol0"
     }
   ],
-  "lastUpdated": 1794234683817,
+  "lastUpdated": 1794235421793,
   "startedAt": 1791769904156
 }
