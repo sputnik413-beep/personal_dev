@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1286150,
-    "equity": 1290800,
-    "freeMargin": 1210800,
+    "equity": 1294100,
+    "freeMargin": 1214100,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 158.113,
       "entryTime": 1794301305646,
-      "currentPrice": 158.162,
-      "stopLoss": 158.013,
+      "currentPrice": 158.195,
+      "stopLoss": 158.148,
       "takeProfit": 158.293,
       "hardStopLoss": 157.933,
       "softStopLoss": 158.013,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 1,
-      "pipsPnL": 4.9,
-      "unrealizedPnL": 2450,
+      "pipsPnL": 8.2,
+      "unrealizedPnL": 4100,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.186,
-      "lowestPriceSinceEntry": 158.006
+      "highestPriceSinceEntry": 158.198,
+      "lowestPriceSinceEntry": 158.006,
+      "trailingStop": 158.148
     },
     {
       "id": "pos_1794308730061_8td",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 158.118,
       "entryTime": 1794308730061,
-      "currentPrice": 158.162,
-      "stopLoss": 158.018,
+      "currentPrice": 158.195,
+      "stopLoss": 158.148,
       "takeProfit": 158.298,
       "hardStopLoss": 157.938,
       "softStopLoss": 158.018,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 4.4,
-      "unrealizedPnL": 2200,
+      "pipsPnL": 7.7,
+      "unrealizedPnL": 3850,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 158.186,
-      "lowestPriceSinceEntry": 158.113
+      "highestPriceSinceEntry": 158.198,
+      "lowestPriceSinceEntry": 158.113,
+      "trailingStop": 158.148
     }
   ],
   "tradeLogs": [
@@ -19574,6 +19576,6 @@
       "tradeId": "trade_1794302153530_644d"
     }
   ],
-  "lastUpdated": 1794310690367,
+  "lastUpdated": 1794311424783,
   "startedAt": 1791769904156
 }
