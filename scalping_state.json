@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1293550,
-    "equity": 1288150,
-    "freeMargin": 1208150,
+    "balance": 1287700,
+    "equity": 1293150,
+    "freeMargin": 1213150,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,41 +43,58 @@
       "lots": 0.5,
       "entryPrice": 158.537,
       "entryTime": 1794319030936,
-      "currentPrice": 158.497,
+      "currentPrice": 158.572,
       "stopLoss": 158.437,
       "takeProfit": 158.717,
       "hardStopLoss": 158.357,
       "softStopLoss": 158.437,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -4,
-      "unrealizedPnL": -2000,
+      "pipsPnL": 3.5,
+      "unrealizedPnL": 1750,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.574,
-      "lowestPriceSinceEntry": 158.485
+      "highestPriceSinceEntry": 158.575,
+      "lowestPriceSinceEntry": 158.448
     },
     {
-      "id": "pos_1794319689839_2ew",
+      "id": "pos_1794320525511_xit",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 158.498,
+      "entryTime": 1794320525511,
+      "currentPrice": 158.572,
+      "stopLoss": 158.398,
+      "takeProfit": 158.678,
+      "hardStopLoss": 158.318,
+      "softStopLoss": 158.398,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 7.4,
+      "unrealizedPnL": 3700,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
+      "highestPriceSinceEntry": 158.575,
+      "lowestPriceSinceEntry": 158.498
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1794320388549_vb4t",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 0.5,
       "entryPrice": 158.565,
+      "exitPrice": 158.448,
       "entryTime": 1794319689839,
-      "currentPrice": 158.497,
-      "stopLoss": 158.465,
-      "takeProfit": 158.745,
-      "hardStopLoss": 158.385,
-      "softStopLoss": 158.465,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -6.8,
-      "unrealizedPnL": -3400,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 158.571,
-      "lowestPriceSinceEntry": 158.485
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1794320388549,
+      "pipsGain": -11.7,
+      "realizedPnL": -5850,
+      "commissionFee": 396,
+      "netRealizedPnL": -6246,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 12分。損益: -11.7 pips (-5,850円 / XM手数料控除後: -6,246円)。",
+      "holdingDurationMinutes": 12
+    },
     {
       "id": "trade_1794319518391_zojh",
       "pair": "USDJPY",
@@ -19054,33 +19071,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1138,
+    "totalTrades": 1139,
     "wins": 665,
-    "losses": 473,
+    "losses": 474,
     "winRate": 58.4,
     "profitFactor": 1.09,
     "totalPipsWon": 5794.3,
-    "totalPipsLost": 5396.4,
-    "netPips": 397.9,
-    "netProfit": 293550,
+    "totalPipsLost": 5408.1,
+    "netPips": 386.2,
+    "netProfit": 287700,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 16.95,
+    "maxDrawdownPercent": 17.02,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.35,
+    "expectancyPips": 0.34,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 7
   },
   "equityHistory": [
-    {
-      "timestamp": 1793943342045,
-      "equity": 1257150,
-      "balance": 1257150,
-      "tradeId": "trade_1793943342045_lw6o"
-    },
     {
       "timestamp": 1793946292802,
       "equity": 1256650,
@@ -19674,8 +19685,14 @@
       "equity": 1294850,
       "balance": 1293550,
       "tradeId": "trade_1794319518391_zojh"
+    },
+    {
+      "timestamp": 1794320388549,
+      "equity": 1283250,
+      "balance": 1287700,
+      "tradeId": "trade_1794320388549_vb4t"
     }
   ],
-  "lastUpdated": 1794320297272,
+  "lastUpdated": 1794321041998,
   "startedAt": 1791769904156
 }
