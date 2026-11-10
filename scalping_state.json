@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1286150,
-    "equity": 1286350,
-    "freeMargin": 1246350,
+    "equity": 1285350,
+    "freeMargin": 1245350,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,15 +43,15 @@
       "lots": 0.5,
       "entryPrice": 158.113,
       "entryTime": 1794301305646,
-      "currentPrice": 158.117,
+      "currentPrice": 158.097,
       "stopLoss": 158.013,
       "takeProfit": 158.293,
       "hardStopLoss": 157.933,
       "softStopLoss": 158.013,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 1,
-      "pipsPnL": 0.4,
-      "unrealizedPnL": 200,
+      "pipsPnL": -1.6,
+      "unrealizedPnL": -800,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 158.163,
       "lowestPriceSinceEntry": 158.006
@@ -19554,6 +19554,6 @@
       "tradeId": "trade_1794302153530_644d"
     }
   ],
-  "lastUpdated": 1794304052639,
+  "lastUpdated": 1794304787467,
   "startedAt": 1791769904156
 }
