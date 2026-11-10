@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1287700,
-    "equity": 1293150,
-    "freeMargin": 1213150,
+    "equity": 1300250,
+    "freeMargin": 1220250,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 158.537,
       "entryTime": 1794319030936,
-      "currentPrice": 158.572,
-      "stopLoss": 158.437,
+      "currentPrice": 158.643,
+      "stopLoss": 158.593,
       "takeProfit": 158.717,
       "hardStopLoss": 158.357,
       "softStopLoss": 158.437,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.5,
-      "unrealizedPnL": 1750,
+      "pipsPnL": 10.6,
+      "unrealizedPnL": 5300,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.575,
-      "lowestPriceSinceEntry": 158.448
+      "highestPriceSinceEntry": 158.643,
+      "lowestPriceSinceEntry": 158.448,
+      "trailingStop": 158.593
     },
     {
       "id": "pos_1794320525511_xit",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 158.498,
       "entryTime": 1794320525511,
-      "currentPrice": 158.572,
-      "stopLoss": 158.398,
+      "currentPrice": 158.643,
+      "stopLoss": 158.593,
       "takeProfit": 158.678,
       "hardStopLoss": 158.318,
       "softStopLoss": 158.398,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 7.4,
-      "unrealizedPnL": 3700,
+      "pipsPnL": 14.5,
+      "unrealizedPnL": 7250,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.575,
-      "lowestPriceSinceEntry": 158.498
+      "highestPriceSinceEntry": 158.643,
+      "lowestPriceSinceEntry": 158.498,
+      "trailingStop": 158.593
     }
   ],
   "tradeLogs": [
@@ -19693,6 +19695,6 @@
       "tradeId": "trade_1794320388549_vb4t"
     }
   ],
-  "lastUpdated": 1794321041998,
+  "lastUpdated": 1794321780832,
   "startedAt": 1791769904156
 }
