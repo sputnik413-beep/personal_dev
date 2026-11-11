@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1278100,
-    "equity": 1277350,
-    "freeMargin": 1197350,
+    "balance": 1275850,
+    "equity": 1272450,
+    "freeMargin": 1192450,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,18 @@
       "lots": 0.5,
       "entryPrice": 158.887,
       "entryTime": 1794360953282,
-      "currentPrice": 158.848,
+      "currentPrice": 158.823,
       "stopLoss": 158.787,
       "takeProfit": 159.067,
       "hardStopLoss": 158.707,
       "softStopLoss": 158.787,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -3.9,
-      "unrealizedPnL": -1950,
+      "pipsPnL": -6.4,
+      "unrealizedPnL": -3200,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 158.947,
-      "lowestPriceSinceEntry": 158.806
+      "lowestPriceSinceEntry": 158.792
     },
     {
       "id": "pos_1794363754697_wp3",
@@ -86,15 +86,21 @@
       "entryPrice": 158.827,
       "exitPrice": 158.87199999999999,
       "entryTime": 1794362822946,
-      "exitTime": 1794363709454,
-      "pipsGain": 4.5,
-      "realizedPnL": 2250,
-      "commissionFee": 397,
-      "netRealizedPnL": 1853,
-      "exitReason": "TRAILING_STOP",
-      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 15分。損益: +4.5 pips (+2,250円 / XM手数料控除後: 1,853円)。",
-      "holdingDurationMinutes": 15
-    },
+      "currentPrice": 158.823,
+      "stopLoss": 158.727,
+      "takeProfit": 159.007,
+      "hardStopLoss": 158.647,
+      "softStopLoss": 158.727,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": -0.4,
+      "unrealizedPnL": -200,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
+      "highestPriceSinceEntry": 158.902,
+      "lowestPriceSinceEntry": 158.792
+    }
+  ],
+  "tradeLogs": [
     {
       "id": "trade_1794362716835_skpj",
       "pair": "USDJPY",
@@ -19982,6 +19988,6 @@
       "tradeId": "trade_1794363709454_syr6"
     }
   ],
-  "lastUpdated": 1794363905474,
+  "lastUpdated": 1794364644084,
   "startedAt": 1791769904156
 }
