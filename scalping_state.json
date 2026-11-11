@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1268200,
-    "equity": 1268200,
-    "freeMargin": 1268200,
+    "balance": 1267500,
+    "equity": 1267500,
+    "freeMargin": 1267500,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -38,38 +38,38 @@
   "openPositions": [],
   "tradeLogs": [
     {
-      "id": "trade_1794391775526_c7cm",
+      "id": "trade_1794391953981_8jtu",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 158.872,
-      "exitPrice": 158.988,
+      "exitPrice": 158.995,
       "entryTime": 1794383917861,
-      "exitTime": 1794391775526,
-      "pipsGain": -11.6,
-      "realizedPnL": -5800,
+      "exitTime": 1794391953981,
+      "pipsGain": -12.3,
+      "realizedPnL": -6150,
       "commissionFee": 397,
-      "netRealizedPnL": -6197,
+      "netRealizedPnL": -6547,
       "exitReason": "SOFT_STOP_LOSS",
-      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS [ヒゲ狩り1回吸収耐性]】保有時間 131分。損益: -11.6 pips (-5,800円 / XM手数料控除後: -6,197円)。",
-      "holdingDurationMinutes": 131
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 134分。損益: -12.3 pips (-6,150円 / XM手数料控除後: -6,547円)。",
+      "holdingDurationMinutes": 134
     },
     {
-      "id": "trade_1794391775526_hrs9",
+      "id": "trade_1794391953981_rs8x",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 158.875,
-      "exitPrice": 158.988,
+      "exitPrice": 158.995,
       "entryTime": 1794383789506,
-      "exitTime": 1794391775526,
-      "pipsGain": -11.3,
-      "realizedPnL": -5650,
+      "exitTime": 1794391953981,
+      "pipsGain": -12,
+      "realizedPnL": -6000,
       "commissionFee": 397,
-      "netRealizedPnL": -6047,
+      "netRealizedPnL": -6397,
       "exitReason": "SOFT_STOP_LOSS",
-      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 133分。損益: -11.3 pips (-5,650円 / XM手数料控除後: -6,047円)。",
-      "holdingDurationMinutes": 133
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 136分。損益: -12 pips (-6,000円 / XM手数料控除後: -6,397円)。",
+      "holdingDurationMinutes": 136
     },
     {
       "id": "trade_1794383744082_wun4",
@@ -19512,11 +19512,11 @@
     "winRate": 58.2,
     "profitFactor": 1.08,
     "totalPipsWon": 5920.2,
-    "totalPipsLost": 5561.1,
-    "netPips": 359.1,
-    "netProfit": 274150,
+    "totalPipsLost": 5562.5,
+    "netPips": 357.7,
+    "netProfit": 273450,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.19,
+    "maxDrawdownPercent": 17.2,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
@@ -20122,12 +20122,12 @@
       "tradeId": "trade_1794383744082_wun4"
     },
     {
-      "timestamp": 1794391775526,
-      "equity": 1268200,
-      "balance": 1268200,
-      "tradeId": "trade_1794391775526_c7cm"
+      "timestamp": 1794391953981,
+      "equity": 1267500,
+      "balance": 1267500,
+      "tradeId": "trade_1794391953981_8jtu"
     }
   ],
-  "lastUpdated": 1794391775526,
+  "lastUpdated": 1794391953981,
   "startedAt": 1791769904156
 }
