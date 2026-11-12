@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1244350,
-    "equity": 1249600,
-    "freeMargin": 1169600,
+    "equity": 1252500,
+    "freeMargin": 1172500,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 159.713,
       "entryTime": 1794450795075,
-      "currentPrice": 159.771,
-      "stopLoss": 159.613,
+      "currentPrice": 159.8,
+      "stopLoss": 159.761,
       "takeProfit": 159.893,
       "hardStopLoss": 159.533,
       "softStopLoss": 159.613,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 5.8,
-      "unrealizedPnL": 2900,
+      "pipsPnL": 8.7,
+      "unrealizedPnL": 4350,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.777,
-      "lowestPriceSinceEntry": 159.685
+      "highestPriceSinceEntry": 159.811,
+      "lowestPriceSinceEntry": 159.685,
+      "trailingStop": 159.761
     },
     {
       "id": "pos_1794451007211_64h",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 159.724,
       "entryTime": 1794451007211,
-      "currentPrice": 159.771,
-      "stopLoss": 159.624,
+      "currentPrice": 159.8,
+      "stopLoss": 159.761,
       "takeProfit": 159.904,
       "hardStopLoss": 159.544,
       "softStopLoss": 159.624,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 4.7,
-      "unrealizedPnL": 2350,
+      "pipsPnL": 7.6,
+      "unrealizedPnL": 3800,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.777,
-      "lowestPriceSinceEntry": 159.724
+      "highestPriceSinceEntry": 159.811,
+      "lowestPriceSinceEntry": 159.724,
+      "trailingStop": 159.761
     }
   ],
   "tradeLogs": [
@@ -20543,6 +20545,6 @@
       "tradeId": "trade_1794450734580_hywz"
     }
   ],
-  "lastUpdated": 1794451416634,
+  "lastUpdated": 1794452153597,
   "startedAt": 1791769904156
 }
