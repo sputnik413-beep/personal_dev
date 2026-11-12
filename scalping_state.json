@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1249950,
-    "equity": 1246650,
-    "freeMargin": 1166650,
+    "equity": 1252650,
+    "freeMargin": 1172650,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,18 @@
       "lots": 0.5,
       "entryPrice": 159.803,
       "entryTime": 1794464148930,
-      "currentPrice": 159.755,
+      "currentPrice": 159.815,
       "stopLoss": 159.703,
       "takeProfit": 159.983,
       "hardStopLoss": 159.623,
       "softStopLoss": 159.703,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -4.8,
-      "unrealizedPnL": -2400,
+      "pipsPnL": 1.2,
+      "unrealizedPnL": 600,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.811,
-      "lowestPriceSinceEntry": 159.753
+      "highestPriceSinceEntry": 159.821,
+      "lowestPriceSinceEntry": 159.746
     },
     {
       "id": "pos_1794464285607_n84",
@@ -63,18 +63,18 @@
       "lots": 0.5,
       "entryPrice": 159.773,
       "entryTime": 1794464285607,
-      "currentPrice": 159.755,
+      "currentPrice": 159.815,
       "stopLoss": 159.673,
       "takeProfit": 159.953,
       "hardStopLoss": 159.593,
       "softStopLoss": 159.673,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -1.8,
-      "unrealizedPnL": -900,
+      "pipsPnL": 4.2,
+      "unrealizedPnL": 2100,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 159.783,
-      "lowestPriceSinceEntry": 159.753
+      "highestPriceSinceEntry": 159.821,
+      "lowestPriceSinceEntry": 159.746
     }
   ],
   "tradeLogs": [
@@ -20074,21 +20074,21 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1197,
+    "totalTrades": 1198,
     "wins": 694,
-    "losses": 503,
-    "winRate": 58,
-    "profitFactor": 1.08,
+    "losses": 504,
+    "winRate": 57.9,
+    "profitFactor": 1.07,
     "totalPipsWon": 6062,
-    "totalPipsLost": 5739.4,
-    "netPips": 322.6,
-    "netProfit": 255900,
+    "totalPipsLost": 5750.2,
+    "netPips": 311.8,
+    "netProfit": 250500,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.42,
+    "maxDrawdownPercent": 17.48,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.25,
+    "expectancyPips": 0.24,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
@@ -20696,6 +20696,6 @@
       "tradeId": "trade_1794464240086_erkx"
     }
   ],
-  "lastUpdated": 1794464710826,
+  "lastUpdated": 1794465457281,
   "startedAt": 1791769904156
 }
