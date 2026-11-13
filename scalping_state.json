@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1293100,
-    "equity": 1293100,
-    "freeMargin": 1293100,
+    "balance": 1280900,
+    "equity": 1280900,
+    "freeMargin": 1280900,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -37,6 +37,40 @@
   },
   "openPositions": [],
   "tradeLogs": [
+    {
+      "id": "trade_1794594181320_e5zp",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 159.661,
+      "exitPrice": 159.531,
+      "entryTime": 1794593786243,
+      "exitTime": 1794594181320,
+      "pipsGain": -13,
+      "realizedPnL": -6500,
+      "commissionFee": 399,
+      "netRealizedPnL": -6899,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 7分。損益: -13 pips (-6,500円 / XM手数料控除後: -6,899円)。",
+      "holdingDurationMinutes": 7
+    },
+    {
+      "id": "trade_1794594135753_9n3p",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 159.685,
+      "exitPrice": 159.571,
+      "entryTime": 1794593710281,
+      "exitTime": 1794594135753,
+      "pipsGain": -11.4,
+      "realizedPnL": -5700,
+      "commissionFee": 399,
+      "netRealizedPnL": -6099,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS】保有時間 7分。損益: -11.4 pips (-5,700円 / XM手数料控除後: -6,099円)。",
+      "holdingDurationMinutes": 7
+    },
     {
       "id": "trade_1794593485245_uxlh",
       "pair": "USDJPY",
@@ -21002,39 +21036,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1255,
+    "totalTrades": 1257,
     "wins": 732,
-    "losses": 523,
-    "winRate": 58.3,
+    "losses": 525,
+    "winRate": 58.2,
     "profitFactor": 1.08,
     "totalPipsWon": 6384,
-    "totalPipsLost": 5985.9,
-    "netPips": 398.1,
-    "netProfit": 293650,
+    "totalPipsLost": 6010.3,
+    "netPips": 373.7,
+    "netProfit": 281450,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 16.95,
+    "maxDrawdownPercent": 17.1,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.32,
+    "expectancyPips": 0.31,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 7
   },
   "equityHistory": [
-    {
-      "timestamp": 1794332460615,
-      "equity": 1302400,
-      "balance": 1305100,
-      "tradeId": "trade_1794332460615_wo9r"
-    },
-    {
-      "timestamp": 1794339267857,
-      "equity": 1303150,
-      "balance": 1300100,
-      "tradeId": "trade_1794339267857_o2vx"
-    },
     {
       "timestamp": 1794342329051,
       "equity": 1303250,
@@ -21622,8 +21644,20 @@
       "equity": 1293100,
       "balance": 1293100,
       "tradeId": "trade_1794593485245_uxlh"
+    },
+    {
+      "timestamp": 1794594135753,
+      "equity": 1282900,
+      "balance": 1287400,
+      "tradeId": "trade_1794594135753_9n3p"
+    },
+    {
+      "timestamp": 1794594181320,
+      "equity": 1280900,
+      "balance": 1280900,
+      "tradeId": "trade_1794594181320_e5zp"
     }
   ],
-  "lastUpdated": 1794593485245,
+  "lastUpdated": 1794594181320,
   "startedAt": 1791769904156
 }
