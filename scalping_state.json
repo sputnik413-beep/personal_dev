@@ -27,57 +27,50 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1282050,
-    "equity": 1276650,
-    "freeMargin": 1196650,
+    "balance": 1296000,
+    "equity": 1296000,
+    "freeMargin": 1296000,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
     "slippagePips": 0
   },
-  "openPositions": [
+  "openPositions": [],
+  "tradeLogs": [
     {
-      "id": "pos_1794596943259_k6m",
+      "id": "trade_1794603947063_vrqo",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 159.736,
+      "exitPrice": 159.637,
       "entryTime": 1794596943259,
-      "currentPrice": 159.809,
-      "stopLoss": 159.836,
-      "takeProfit": 159.556,
-      "hardStopLoss": 159.916,
-      "softStopLoss": 159.836,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 1,
-      "pipsPnL": -7.3,
-      "unrealizedPnL": -3650,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.842,
-      "lowestPriceSinceEntry": 159.71
+      "exitTime": 1794603947063,
+      "pipsGain": 9.9,
+      "realizedPnL": 4950,
+      "commissionFee": 399,
+      "netRealizedPnL": 4551,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP [ヒゲ狩り1回吸収耐性]】保有時間 117分。損益: +9.9 pips (+4,950円 / XM手数料控除後: 4,551円)。",
+      "holdingDurationMinutes": 117
     },
     {
-      "id": "pos_1794601717983_egu",
+      "id": "trade_1794603916707_4kdk",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 159.774,
+      "exitPrice": 159.594,
       "entryTime": 1794601717983,
-      "currentPrice": 159.809,
-      "stopLoss": 159.874,
-      "takeProfit": 159.594,
-      "hardStopLoss": 159.954,
-      "softStopLoss": 159.874,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -3.5,
-      "unrealizedPnL": -1750,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.842,
-      "lowestPriceSinceEntry": 159.742
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1794603916707,
+      "pipsGain": 18,
+      "realizedPnL": 9000,
+      "commissionFee": 399,
+      "netRealizedPnL": 8601,
+      "exitReason": "TAKE_PROFIT",
+      "aiAnalysis": "【決済完了: TAKE_PROFIT】保有時間 37分。損益: +18 pips (+9,000円 / XM手数料控除後: 8,601円)。",
+      "holdingDurationMinutes": 37
+    },
     {
       "id": "trade_1794601627370_7dqp",
       "pair": "USDJPY",
@@ -21128,39 +21121,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1260,
-    "wins": 734,
+    "totalTrades": 1262,
+    "wins": 736,
     "losses": 526,
     "winRate": 58.3,
     "profitFactor": 1.08,
-    "totalPipsWon": 6397.2,
+    "totalPipsWon": 6425.1,
     "totalPipsLost": 6021.2,
-    "netPips": 376,
-    "netProfit": 282600,
+    "netPips": 403.9,
+    "netProfit": 296550,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.09,
+    "maxDrawdownPercent": 16.92,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.31,
+    "expectancyPips": 0.32,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 7
   },
   "equityHistory": [
-    {
-      "timestamp": 1794355756597,
-      "equity": 1281800,
-      "balance": 1286400,
-      "tradeId": "trade_1794355756597_qor7"
-    },
-    {
-      "timestamp": 1794355875407,
-      "equity": 1281200,
-      "balance": 1281200,
-      "tradeId": "trade_1794355875407_waax"
-    },
     {
       "timestamp": 1794358407546,
       "equity": 1283250,
@@ -21748,8 +21729,20 @@
       "equity": 1280750,
       "balance": 1282050,
       "tradeId": "trade_1794601627370_7dqp"
+    },
+    {
+      "timestamp": 1794603916707,
+      "equity": 1298500,
+      "balance": 1291050,
+      "tradeId": "trade_1794603916707_4kdk"
+    },
+    {
+      "timestamp": 1794603947063,
+      "equity": 1296000,
+      "balance": 1296000,
+      "tradeId": "trade_1794603947063_vrqo"
     }
   ],
-  "lastUpdated": 1794603251067,
+  "lastUpdated": 1794603947063,
   "startedAt": 1791769904156
 }
