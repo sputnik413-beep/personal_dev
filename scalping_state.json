@@ -43,15 +43,15 @@
       "lots": 0.5,
       "entryPrice": 159.918,
       "entryTime": 1794557377203,
-      "currentPrice": 159.852,
+      "currentPrice": 159.878,
       "stopLoss": 159.818,
       "takeProfit": 160.098,
       "hardStopLoss": 159.738,
       "softStopLoss": 159.818,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -6.6,
-      "unrealizedPnL": -3300,
+      "pipsPnL": -4,
+      "unrealizedPnL": -2000,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 159.946,
       "lowestPriceSinceEntry": 159.845
@@ -63,15 +63,15 @@
       "lots": 0.5,
       "entryPrice": 159.871,
       "entryTime": 1794557467648,
-      "currentPrice": 159.852,
+      "currentPrice": 159.878,
       "stopLoss": 159.971,
       "takeProfit": 159.691,
       "hardStopLoss": 160.051,
       "softStopLoss": 159.971,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 1.9,
-      "unrealizedPnL": 950,
+      "pipsPnL": -0.7,
+      "unrealizedPnL": -350,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 159.946,
       "lowestPriceSinceEntry": 159.845
@@ -21410,6 +21410,6 @@
       "tradeId": "trade_1794557467648_kaix"
     }
   ],
-  "lastUpdated": 1794564112276,
+  "lastUpdated": 1794564850517,
   "startedAt": 1791769904156
 }
