@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1325900,
-    "equity": 1326200,
-    "freeMargin": 1246200,
+    "equity": 1323700,
+    "freeMargin": 1243700,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,18 @@
       "lots": 0.5,
       "entryPrice": 159.363,
       "entryTime": 1794884682229,
-      "currentPrice": 159.336,
+      "currentPrice": 159.311,
       "stopLoss": 159.263,
       "takeProfit": 159.543,
       "hardStopLoss": 159.183,
       "softStopLoss": 159.263,
       "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -2.7,
-      "unrealizedPnL": -1350,
+      "spikeAvoidanceCount": 2,
+      "pipsPnL": -5.2,
+      "unrealizedPnL": -2600,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 159.392,
-      "lowestPriceSinceEntry": 159.301
+      "lowestPriceSinceEntry": 159.253
     },
     {
       "id": "pos_1794887340574_jea",
@@ -63,18 +63,18 @@
       "lots": 0.5,
       "entryPrice": 159.303,
       "entryTime": 1794887340574,
-      "currentPrice": 159.336,
+      "currentPrice": 159.311,
       "stopLoss": 159.203,
       "takeProfit": 159.483,
       "hardStopLoss": 159.123,
       "softStopLoss": 159.203,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.3,
-      "unrealizedPnL": 1650,
+      "pipsPnL": 0.8,
+      "unrealizedPnL": 400,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 159.336,
-      "lowestPriceSinceEntry": 159.302
+      "highestPriceSinceEntry": 159.354,
+      "lowestPriceSinceEntry": 159.253
     }
   ],
   "tradeLogs": [
@@ -22753,6 +22753,6 @@
       "tradeId": "trade_1794887310338_x7lg"
     }
   ],
-  "lastUpdated": 1794887521735,
+  "lastUpdated": 1794888260795,
   "startedAt": 1791769904156
 }
