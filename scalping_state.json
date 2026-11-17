@@ -43,15 +43,15 @@
       "lots": 0.5,
       "entryPrice": 159.314,
       "entryTime": 1794940468030,
-      "currentPrice": 159.372,
+      "currentPrice": 159.369,
       "stopLoss": 159.214,
       "takeProfit": 159.494,
       "hardStopLoss": 159.134,
       "softStopLoss": 159.214,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 5.8,
-      "unrealizedPnL": 2900,
+      "pipsPnL": 5.5,
+      "unrealizedPnL": 2750,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 159.392,
       "lowestPriceSinceEntry": 159.271
@@ -63,15 +63,15 @@
       "lots": 0.5,
       "entryPrice": 159.315,
       "entryTime": 1794944396355,
-      "currentPrice": 159.372,
+      "currentPrice": 159.369,
       "stopLoss": 159.415,
       "takeProfit": 159.135,
       "hardStopLoss": 159.495,
       "softStopLoss": 159.415,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -5.7,
-      "unrealizedPnL": -2850,
+      "pipsPnL": -5.4,
+      "unrealizedPnL": -2700,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
       "highestPriceSinceEntry": 159.392,
       "lowestPriceSinceEntry": 159.289
@@ -23195,6 +23195,6 @@
       "tradeId": "trade_1794944303517_bkav"
     }
   ],
-  "lastUpdated": 1794951709561,
+  "lastUpdated": 1794952449015,
   "startedAt": 1791769904156
 }
