@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1295400,
-    "equity": 1299350,
-    "freeMargin": 1219350,
+    "equity": 1303350,
+    "freeMargin": 1223350,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 159.337,
       "entryTime": 1795000114151,
-      "currentPrice": 159.378,
-      "stopLoss": 159.237,
+      "currentPrice": 159.418,
+      "stopLoss": 159.38799999999998,
       "takeProfit": 159.517,
       "hardStopLoss": 159.157,
       "softStopLoss": 159.237,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 4.1,
-      "unrealizedPnL": 2050,
+      "pipsPnL": 8.1,
+      "unrealizedPnL": 4050,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.392,
-      "lowestPriceSinceEntry": 159.285
+      "highestPriceSinceEntry": 159.438,
+      "lowestPriceSinceEntry": 159.285,
+      "trailingStop": 159.38799999999998
     },
     {
       "id": "pos_1795000443513_ugq",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 159.34,
       "entryTime": 1795000443513,
-      "currentPrice": 159.378,
-      "stopLoss": 159.24,
+      "currentPrice": 159.418,
+      "stopLoss": 159.38799999999998,
       "takeProfit": 159.52,
       "hardStopLoss": 159.16,
       "softStopLoss": 159.24,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.8,
-      "unrealizedPnL": 1900,
+      "pipsPnL": 7.8,
+      "unrealizedPnL": 3900,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.392,
-      "lowestPriceSinceEntry": 159.285
+      "highestPriceSinceEntry": 159.438,
+      "lowestPriceSinceEntry": 159.285,
+      "trailingStop": 159.38799999999998
     }
   ],
   "tradeLogs": [
@@ -23620,6 +23622,6 @@
       "tradeId": "trade_1794996703570_gy49"
     }
   ],
-  "lastUpdated": 1795004815736,
+  "lastUpdated": 1795005547554,
   "startedAt": 1791769904156
 }
