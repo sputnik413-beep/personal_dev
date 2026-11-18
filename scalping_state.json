@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1261500,
-    "equity": 1258500,
-    "freeMargin": 1178500,
+    "balance": 1256300,
+    "equity": 1257950,
+    "freeMargin": 1217950,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,41 +43,38 @@
       "lots": 0.5,
       "entryPrice": 159.332,
       "entryTime": 1795027656071,
-      "currentPrice": 159.373,
+      "currentPrice": 159.365,
       "stopLoss": 159.232,
       "takeProfit": 159.512,
       "hardStopLoss": 159.152,
       "softStopLoss": 159.232,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 4.1,
-      "unrealizedPnL": 2050,
+      "pipsPnL": 3.3,
+      "unrealizedPnL": 1650,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 159.396,
-      "lowestPriceSinceEntry": 159.26
-    },
-    {
-      "id": "pos_1795034036948_vm2",
-      "pair": "USDJPY",
-      "direction": "SELL",
-      "lots": 0.5,
-      "entryPrice": 159.272,
-      "entryTime": 1795034036948,
-      "currentPrice": 159.373,
-      "stopLoss": 159.372,
-      "takeProfit": 159.092,
-      "hardStopLoss": 159.452,
-      "softStopLoss": 159.372,
-      "softStopTriggeredTime": 1795038103297,
-      "spikeAvoidanceCount": 2,
-      "pipsPnL": -10.1,
-      "unrealizedPnL": -5050,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.374,
       "lowestPriceSinceEntry": 159.26
     }
   ],
   "tradeLogs": [
+    {
+      "id": "trade_1795038135632_luso",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 159.272,
+      "exitPrice": 159.376,
+      "entryTime": 1795034036948,
+      "exitTime": 1795038135632,
+      "pipsGain": -10.4,
+      "realizedPnL": -5200,
+      "commissionFee": 398,
+      "netRealizedPnL": -5598,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS [ヒゲ狩り2回吸収耐性]】保有時間 68分。損益: -10.4 pips (-5,200円 / XM手数料控除後: -5,598円)。",
+      "holdingDurationMinutes": 68
+    },
     {
       "id": "trade_1795033961118_y3jx",
       "pair": "USDJPY",
@@ -23168,33 +23165,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1380,
+    "totalTrades": 1381,
     "wins": 800,
-    "losses": 580,
-    "winRate": 58,
+    "losses": 581,
+    "winRate": 57.9,
     "profitFactor": 1.07,
     "totalPipsWon": 6964.4,
-    "totalPipsLost": 6629.5,
-    "netPips": 334.9,
-    "netProfit": 262050,
+    "totalPipsLost": 6639.9,
+    "netPips": 324.5,
+    "netProfit": 256850,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.34,
+    "maxDrawdownPercent": 17.4,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.25,
+    "expectancyPips": 0.24,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
-    "maxConsecutiveLosses": 8
+    "maxConsecutiveLosses": 9
   },
   "equityHistory": [
-    {
-      "timestamp": 1794783725012,
-      "equity": 1312200,
-      "balance": 1303550,
-      "tradeId": "trade_1794783725012_ygl9"
-    },
     {
       "timestamp": 1794783785466,
       "equity": 1312550,
@@ -23788,8 +23779,14 @@
       "equity": 1258100,
       "balance": 1261500,
       "tradeId": "trade_1795033961118_y3jx"
+    },
+    {
+      "timestamp": 1795038135632,
+      "equity": 1258500,
+      "balance": 1256300,
+      "tradeId": "trade_1795038135632_luso"
     }
   ],
-  "lastUpdated": 1795038103297,
+  "lastUpdated": 1795038844732,
   "startedAt": 1791769904156
 }
