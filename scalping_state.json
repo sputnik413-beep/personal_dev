@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1256300,
-    "equity": 1257950,
-    "freeMargin": 1217950,
+    "equity": 1255150,
+    "freeMargin": 1215150,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,15 +43,15 @@
       "lots": 0.5,
       "entryPrice": 159.332,
       "entryTime": 1795027656071,
-      "currentPrice": 159.365,
+      "currentPrice": 159.309,
       "stopLoss": 159.232,
       "takeProfit": 159.512,
       "hardStopLoss": 159.152,
       "softStopLoss": 159.232,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.3,
-      "unrealizedPnL": 1650,
+      "pipsPnL": -2.3,
+      "unrealizedPnL": -1150,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
       "highestPriceSinceEntry": 159.396,
       "lowestPriceSinceEntry": 159.26
@@ -23787,6 +23787,6 @@
       "tradeId": "trade_1795038135632_luso"
     }
   ],
-  "lastUpdated": 1795038844732,
+  "lastUpdated": 1795039582073,
   "startedAt": 1791769904156
 }
