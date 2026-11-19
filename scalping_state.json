@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1234400,
-    "equity": 1235300,
-    "freeMargin": 1155300,
+    "balance": 1229350,
+    "equity": 1230300,
+    "freeMargin": 1150300,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,41 +43,58 @@
       "lots": 0.5,
       "entryPrice": 159.616,
       "entryTime": 1795071897009,
-      "currentPrice": 159.592,
+      "currentPrice": 159.639,
       "stopLoss": 159.716,
       "takeProfit": 159.436,
       "hardStopLoss": 159.796,
       "softStopLoss": 159.716,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 2.4,
-      "unrealizedPnL": 1200,
+      "pipsPnL": -2.3,
+      "unrealizedPnL": -1150,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.655,
-      "lowestPriceSinceEntry": 159.58
+      "highestPriceSinceEntry": 159.693,
+      "lowestPriceSinceEntry": 159.576
     },
     {
-      "id": "pos_1795072238604_qi1",
+      "id": "pos_1795073388094_8c9",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 159.681,
+      "entryTime": 1795073388094,
+      "currentPrice": 159.639,
+      "stopLoss": 159.781,
+      "takeProfit": 159.501,
+      "hardStopLoss": 159.861,
+      "softStopLoss": 159.781,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 4.2,
+      "unrealizedPnL": 2100,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 159.681,
+      "lowestPriceSinceEntry": 159.639
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1795073266514_vwsc",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 159.586,
+      "exitPrice": 159.687,
       "entryTime": 1795072238604,
-      "currentPrice": 159.592,
-      "stopLoss": 159.686,
-      "takeProfit": 159.406,
-      "hardStopLoss": 159.766,
-      "softStopLoss": 159.686,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -0.6,
-      "unrealizedPnL": -300,
-      "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 159.602,
-      "lowestPriceSinceEntry": 159.58
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1795073266514,
+      "pipsGain": -10.1,
+      "realizedPnL": -5050,
+      "commissionFee": 399,
+      "netRealizedPnL": -5449,
+      "exitReason": "SOFT_STOP_LOSS",
+      "aiAnalysis": "【決済完了: SOFT_STOP_LOSS [ヒゲ狩り1回吸収耐性]】保有時間 17分。損益: -10.1 pips (-5,050円 / XM手数料控除後: -5,449円)。",
+      "holdingDurationMinutes": 17
+    },
     {
       "id": "trade_1795072208443_gpld",
       "pair": "USDJPY",
@@ -23389,33 +23406,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1393,
+    "totalTrades": 1394,
     "wins": 805,
-    "losses": 588,
-    "winRate": 57.8,
+    "losses": 589,
+    "winRate": 57.7,
     "profitFactor": 1.06,
     "totalPipsWon": 6996.9,
-    "totalPipsLost": 6716.2,
-    "netPips": 280.7,
-    "netProfit": 234950,
+    "totalPipsLost": 6726.3,
+    "netPips": 270.6,
+    "netProfit": 229900,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.68,
+    "maxDrawdownPercent": 17.75,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.22,
+    "expectancyPips": 0.21,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 9
   },
   "equityHistory": [
-    {
-      "timestamp": 1794810762957,
-      "equity": 1308100,
-      "balance": 1308250,
-      "tradeId": "trade_1794810762957_4qom"
-    },
     {
       "timestamp": 1794812673164,
       "equity": 1309550,
@@ -24009,8 +24020,14 @@
       "equity": 1235450,
       "balance": 1234400,
       "tradeId": "trade_1795072208443_gpld"
+    },
+    {
+      "timestamp": 1795073266514,
+      "equity": 1225800,
+      "balance": 1229350,
+      "tradeId": "trade_1795073266514_vwsc"
     }
   ],
-  "lastUpdated": 1795072751248,
+  "lastUpdated": 1795073494370,
   "startedAt": 1791769904156
 }
