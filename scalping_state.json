@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1221100,
-    "equity": 1234500,
-    "freeMargin": 1154500,
+    "equity": 1235200,
+    "freeMargin": 1155200,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,19 +43,19 @@
       "lots": 0.5,
       "entryPrice": 159.76,
       "entryTime": 1795076559638,
-      "currentPrice": 159.882,
-      "stopLoss": 159.843,
+      "currentPrice": 159.889,
+      "stopLoss": 159.845,
       "takeProfit": 159.94,
       "hardStopLoss": 159.58,
       "softStopLoss": 159.66,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 12.2,
-      "unrealizedPnL": 6100,
+      "pipsPnL": 12.9,
+      "unrealizedPnL": 6450,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 159.893,
+      "highestPriceSinceEntry": 159.895,
       "lowestPriceSinceEntry": 159.736,
-      "trailingStop": 159.843
+      "trailingStop": 159.845
     },
     {
       "id": "pos_1795076710305_r5s",
@@ -64,19 +64,19 @@
       "lots": 0.5,
       "entryPrice": 159.736,
       "entryTime": 1795076710305,
-      "currentPrice": 159.882,
-      "stopLoss": 159.843,
+      "currentPrice": 159.889,
+      "stopLoss": 159.845,
       "takeProfit": 159.916,
       "hardStopLoss": 159.556,
       "softStopLoss": 159.636,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 14.6,
-      "unrealizedPnL": 7300,
+      "pipsPnL": 15.3,
+      "unrealizedPnL": 7650,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.893,
+      "highestPriceSinceEntry": 159.895,
       "lowestPriceSinceEntry": 159.736,
-      "trailingStop": 159.843
+      "trailingStop": 159.845
     }
   ],
   "tradeLogs": [
@@ -24081,6 +24081,6 @@
       "tradeId": "trade_1795076665083_0ydd"
     }
   ],
-  "lastUpdated": 1795083068753,
+  "lastUpdated": 1795083807494,
   "startedAt": 1791769904156
 }
