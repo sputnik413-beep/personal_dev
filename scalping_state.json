@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1205750,
-    "equity": 1211350,
-    "freeMargin": 1131350,
+    "equity": 1213450,
+    "freeMargin": 1133450,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 159.098,
       "entryTime": 1795156683207,
-      "currentPrice": 159.175,
-      "stopLoss": 158.998,
+      "currentPrice": 159.196,
+      "stopLoss": 159.188,
       "takeProfit": 159.278,
       "hardStopLoss": 158.918,
       "softStopLoss": 158.998,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 7.7,
-      "unrealizedPnL": 3850,
+      "pipsPnL": 9.8,
+      "unrealizedPnL": 4900,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 159.175,
-      "lowestPriceSinceEntry": 159.095
+      "highestPriceSinceEntry": 159.238,
+      "lowestPriceSinceEntry": 159.095,
+      "trailingStop": 159.188
     },
     {
       "id": "pos_1795157189852_bff",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 159.14,
       "entryTime": 1795157189852,
-      "currentPrice": 159.175,
-      "stopLoss": 159.04,
+      "currentPrice": 159.196,
+      "stopLoss": 159.188,
       "takeProfit": 159.32,
       "hardStopLoss": 158.96,
       "softStopLoss": 159.04,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.5,
-      "unrealizedPnL": 1750,
+      "pipsPnL": 5.6,
+      "unrealizedPnL": 2800,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.175,
-      "lowestPriceSinceEntry": 159.112
+      "highestPriceSinceEntry": 159.238,
+      "lowestPriceSinceEntry": 159.112,
+      "trailingStop": 159.188
     }
   ],
   "tradeLogs": [
@@ -24708,6 +24710,6 @@
       "tradeId": "trade_1795157159664_wz9o"
     }
   ],
-  "lastUpdated": 1795157626932,
+  "lastUpdated": 1795158363009,
   "startedAt": 1791769904156
 }
