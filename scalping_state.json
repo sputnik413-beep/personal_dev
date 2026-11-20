@@ -73,8 +73,8 @@
       "pipsPnL": -0.1,
       "unrealizedPnL": -50,
       "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.816,
-      "lowestPriceSinceEntry": 158.76
+      "highestPriceSinceEntry": 158.821,
+      "lowestPriceSinceEntry": 158.742
     }
   ],
   "tradeLogs": [
@@ -24929,6 +24929,6 @@
       "tradeId": "trade_1795173840047_v3u1"
     }
   ],
-  "lastUpdated": 1795174548820,
+  "lastUpdated": 1795175284945,
   "startedAt": 1791769904156
 }
