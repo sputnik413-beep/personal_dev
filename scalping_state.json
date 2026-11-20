@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1228300,
-    "equity": 1228050,
-    "freeMargin": 1148050,
+    "balance": 1230250,
+    "equity": 1227900,
+    "freeMargin": 1147900,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,41 +43,58 @@
       "lots": 0.5,
       "entryPrice": 158.706,
       "entryTime": 1795182692180,
-      "currentPrice": 158.746,
+      "currentPrice": 158.751,
       "stopLoss": 158.806,
       "takeProfit": 158.526,
       "hardStopLoss": 158.886,
       "softStopLoss": 158.806,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -4,
-      "unrealizedPnL": -2000,
+      "pipsPnL": -4.5,
+      "unrealizedPnL": -2250,
       "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 158.746,
+      "highestPriceSinceEntry": 158.8,
       "lowestPriceSinceEntry": 158.65
     },
     {
-      "id": "pos_1795183328739_1nn",
+      "id": "pos_1795183970311_vww",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 158.753,
+      "entryTime": 1795183970311,
+      "currentPrice": 158.751,
+      "stopLoss": 158.653,
+      "takeProfit": 158.933,
+      "hardStopLoss": 158.573,
+      "softStopLoss": 158.653,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": -0.2,
+      "unrealizedPnL": -100,
+      "signalReason": "Volman Block Breakout (ビルドアップ上方ブレイク) (信頼度: 88%)",
+      "highestPriceSinceEntry": 158.781,
+      "lowestPriceSinceEntry": 158.745
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1795183955190_40ik",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 0.5,
       "entryPrice": 158.711,
+      "exitPrice": 158.75,
       "entryTime": 1795183328739,
-      "currentPrice": 158.746,
-      "stopLoss": 158.611,
-      "takeProfit": 158.891,
-      "hardStopLoss": 158.531,
-      "softStopLoss": 158.611,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.5,
-      "unrealizedPnL": 1750,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.746,
-      "lowestPriceSinceEntry": 158.711
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1795183955190,
+      "pipsGain": 3.9,
+      "realizedPnL": 1950,
+      "commissionFee": 397,
+      "netRealizedPnL": 1553,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 10分。損益: +3.9 pips (+1,950円 / XM手数料控除後: 1,553円)。",
+      "holdingDurationMinutes": 10
+    },
     {
       "id": "trade_1795183268108_jwlv",
       "pair": "USDJPY",
@@ -24494,33 +24511,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1458,
-    "wins": 843,
+    "totalTrades": 1459,
+    "wins": 844,
     "losses": 615,
     "winRate": 57.8,
     "profitFactor": 1.06,
-    "totalPipsWon": 7287.5,
+    "totalPipsWon": 7291.4,
     "totalPipsLost": 7019,
-    "netPips": 268.5,
-    "netProfit": 228850,
+    "netPips": 272.4,
+    "netProfit": 230800,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.76,
+    "maxDrawdownPercent": 17.74,
     "averageWinPips": 8.6,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.75,
-    "expectancyPips": 0.16,
+    "expectancyPips": 0.17,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 9
   },
   "equityHistory": [
-    {
-      "timestamp": 1794929870939,
-      "equity": 1332750,
-      "balance": 1336100,
-      "tradeId": "trade_1794929870939_xm8e"
-    },
     {
       "timestamp": 1794930068222,
       "equity": 1330250,
@@ -25114,8 +25125,14 @@
       "equity": 1228200,
       "balance": 1228300,
       "tradeId": "trade_1795183268108_jwlv"
+    },
+    {
+      "timestamp": 1795183955190,
+      "equity": 1228450,
+      "balance": 1230250,
+      "tradeId": "trade_1795183955190_40ik"
     }
   ],
-  "lastUpdated": 1795183404540,
+  "lastUpdated": 1795184151493,
   "startedAt": 1791769904156
 }
