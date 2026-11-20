@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1192100,
-    "equity": 1194000,
-    "freeMargin": 1114000,
+    "balance": 1195800,
+    "equity": 1196300,
+    "freeMargin": 1116300,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,42 +43,58 @@
       "lots": 0.5,
       "entryPrice": 159.188,
       "entryTime": 1795141374327,
-      "currentPrice": 159.236,
+      "currentPrice": 159.184,
       "stopLoss": 159.288,
       "takeProfit": 159.008,
       "hardStopLoss": 159.368,
       "softStopLoss": 159.288,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -4.8,
-      "unrealizedPnL": -2400,
+      "pipsPnL": 0.4,
+      "unrealizedPnL": 200,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 94%)",
       "highestPriceSinceEntry": 159.278,
       "lowestPriceSinceEntry": 159.111
     },
     {
-      "id": "pos_1795144367340_24m",
+      "id": "pos_1795147843955_ynb",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 159.19,
+      "entryTime": 1795147843955,
+      "currentPrice": 159.184,
+      "stopLoss": 159.29,
+      "takeProfit": 159.01,
+      "hardStopLoss": 159.37,
+      "softStopLoss": 159.29,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 0.6,
+      "unrealizedPnL": 300,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 159.2,
+      "lowestPriceSinceEntry": 159.175
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1795147708178_ibyd",
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 0.5,
       "entryPrice": 159.15,
+      "exitPrice": 159.224,
       "entryTime": 1795144367340,
-      "currentPrice": 159.236,
-      "stopLoss": 159.201,
-      "takeProfit": 159.33,
-      "hardStopLoss": 158.97,
-      "softStopLoss": 159.05,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 8.6,
-      "unrealizedPnL": 4300,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.251,
-      "lowestPriceSinceEntry": 159.111,
-      "trailingStop": 159.201
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1795147708178,
+      "pipsGain": 7.4,
+      "realizedPnL": 3700,
+      "commissionFee": 398,
+      "netRealizedPnL": 3302,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 56分。損益: +7.4 pips (+3,700円 / XM手数料控除後: 3,302円)。",
+      "holdingDurationMinutes": 56
+    },
     {
       "id": "trade_1795144186247_n166",
       "pair": "USDJPY",
@@ -23968,33 +23984,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1427,
-    "wins": 820,
+    "totalTrades": 1428,
+    "wins": 821,
     "losses": 607,
     "winRate": 57.5,
     "profitFactor": 1.05,
-    "totalPipsWon": 7125.6,
+    "totalPipsWon": 7133,
     "totalPipsLost": 6929.5,
-    "netPips": 196.1,
-    "netProfit": 192650,
+    "netPips": 203.5,
+    "netProfit": 196350,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 18.25,
+    "maxDrawdownPercent": 18.2,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.15,
+    "expectancyPips": 0.16,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 9
   },
   "equityHistory": [
-    {
-      "timestamp": 1794878780256,
-      "equity": 1336500,
-      "balance": 1338100,
-      "tradeId": "trade_1794878780256_7oxx"
-    },
     {
       "timestamp": 1794881717881,
       "equity": 1338500,
@@ -24588,8 +24598,14 @@
       "equity": 1193700,
       "balance": 1192100,
       "tradeId": "trade_1795144186247_n166"
+    },
+    {
+      "timestamp": 1795147708178,
+      "equity": 1194050,
+      "balance": 1195800,
+      "tradeId": "trade_1795147708178_ibyd"
     }
   ],
-  "lastUpdated": 1795147333420,
+  "lastUpdated": 1795148069952,
   "startedAt": 1791769904156
 }
