@@ -28,8 +28,8 @@
   "account": {
     "initialBalance": 1000000,
     "balance": 1220050,
-    "equity": 1221750,
-    "freeMargin": 1141750,
+    "equity": 1232950,
+    "freeMargin": 1152950,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,18 +43,19 @@
       "lots": 0.5,
       "entryPrice": 159.086,
       "entryTime": 1795160016394,
-      "currentPrice": 159.085,
-      "stopLoss": 158.986,
+      "currentPrice": 159.197,
+      "stopLoss": 159.16,
       "takeProfit": 159.266,
       "hardStopLoss": 158.906,
       "softStopLoss": 158.986,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": -0.1,
-      "unrealizedPnL": -50,
+      "pipsPnL": 11.1,
+      "unrealizedPnL": 5550,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.12,
-      "lowestPriceSinceEntry": 159.021
+      "highestPriceSinceEntry": 159.21,
+      "lowestPriceSinceEntry": 159.021,
+      "trailingStop": 159.16
     },
     {
       "id": "pos_1795160287654_kcw",
@@ -63,18 +64,19 @@
       "lots": 0.5,
       "entryPrice": 159.05,
       "entryTime": 1795160287654,
-      "currentPrice": 159.085,
-      "stopLoss": 158.95,
+      "currentPrice": 159.197,
+      "stopLoss": 159.16,
       "takeProfit": 159.23,
       "hardStopLoss": 158.87,
       "softStopLoss": 158.95,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.5,
-      "unrealizedPnL": 1750,
+      "pipsPnL": 14.7,
+      "unrealizedPnL": 7350,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.12,
-      "lowestPriceSinceEntry": 159.035
+      "highestPriceSinceEntry": 159.21,
+      "lowestPriceSinceEntry": 159.035,
+      "trailingStop": 159.16
     }
   ],
   "tradeLogs": [
@@ -24776,6 +24778,6 @@
       "tradeId": "trade_1795159910900_qxy2"
     }
   ],
-  "lastUpdated": 1795160574049,
+  "lastUpdated": 1795161308608,
   "startedAt": 1791769904156
 }
