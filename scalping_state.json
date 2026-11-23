@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1236000,
-    "equity": 1237050,
-    "freeMargin": 1157050,
+    "balance": 1239850,
+    "equity": 1236800,
+    "freeMargin": 1156800,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -43,42 +43,58 @@
       "lots": 0.5,
       "entryPrice": 159.355,
       "entryTime": 1795442864255,
-      "currentPrice": 159.275,
+      "currentPrice": 159.312,
       "stopLoss": 159.255,
       "takeProfit": 159.535,
       "hardStopLoss": 159.175,
       "softStopLoss": 159.255,
       "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": -8,
-      "unrealizedPnL": -4000,
+      "spikeAvoidanceCount": 3,
+      "pipsPnL": -4.3,
+      "unrealizedPnL": -2150,
       "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
       "highestPriceSinceEntry": 159.408,
-      "lowestPriceSinceEntry": 159.263
+      "lowestPriceSinceEntry": 159.249
     },
     {
-      "id": "pos_1795444352359_9r5",
+      "id": "pos_1795445786584_xqg",
+      "pair": "USDJPY",
+      "direction": "BUY",
+      "lots": 0.5,
+      "entryPrice": 159.33,
+      "entryTime": 1795445786584,
+      "currentPrice": 159.312,
+      "stopLoss": 159.23,
+      "takeProfit": 159.51,
+      "hardStopLoss": 159.15,
+      "softStopLoss": 159.23,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": -1.8,
+      "unrealizedPnL": -900,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 159.334,
+      "lowestPriceSinceEntry": 159.308
+    }
+  ],
+  "tradeLogs": [
+    {
+      "id": "trade_1795445650729_6gs3",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 159.376,
+      "exitPrice": 159.299,
       "entryTime": 1795444352359,
-      "currentPrice": 159.275,
-      "stopLoss": 159.31300000000002,
-      "takeProfit": 159.196,
-      "hardStopLoss": 159.556,
-      "softStopLoss": 159.476,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 10.1,
-      "unrealizedPnL": 5050,
-      "signalReason": "Volman Block Breakout (ビルドアップ下方ブレイク) (信頼度: 88%)",
-      "highestPriceSinceEntry": 159.408,
-      "lowestPriceSinceEntry": 159.263,
-      "trailingStop": 159.31300000000002
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1795445650729,
+      "pipsGain": 7.7,
+      "realizedPnL": 3850,
+      "commissionFee": 398,
+      "netRealizedPnL": 3452,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 22分。損益: +7.7 pips (+3,850円 / XM手数料控除後: 3,452円)。",
+      "holdingDurationMinutes": 22
+    },
     {
       "id": "trade_1795444124578_e8qv",
       "pair": "USDJPY",
@@ -25209,33 +25225,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1500,
-    "wins": 868,
+    "totalTrades": 1501,
+    "wins": 869,
     "losses": 632,
     "winRate": 57.9,
     "profitFactor": 1.06,
-    "totalPipsWon": 7516.5,
+    "totalPipsWon": 7524.2,
     "totalPipsLost": 7232.6,
-    "netPips": 283.9,
-    "netProfit": 236550,
+    "netPips": 291.6,
+    "netProfit": 240400,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 17.66,
+    "maxDrawdownPercent": 17.61,
     "averageWinPips": 8.7,
     "averageLossPips": 11.4,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.23,
+    "expectancyPips": 0.24,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 9
   },
   "equityHistory": [
-    {
-      "timestamp": 1795033961118,
-      "equity": 1258100,
-      "balance": 1261500,
-      "tradeId": "trade_1795033961118_y3jx"
-    },
     {
       "timestamp": 1795038135632,
       "equity": 1258500,
@@ -25829,8 +25839,14 @@
       "equity": 1235650,
       "balance": 1236000,
       "tradeId": "trade_1795444124578_e8qv"
+    },
+    {
+      "timestamp": 1795445650729,
+      "equity": 1237350,
+      "balance": 1239850,
+      "tradeId": "trade_1795445650729_6gs3"
     }
   ],
-  "lastUpdated": 1795445183763,
+  "lastUpdated": 1795445922359,
   "startedAt": 1791769904156
 }
