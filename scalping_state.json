@@ -27,9 +27,9 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1273400,
-    "equity": 1271700,
-    "freeMargin": 1191700,
+    "balance": 1265650,
+    "equity": 1279000,
+    "freeMargin": 1199000,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
@@ -61,23 +61,22 @@
       "pair": "USDJPY",
       "direction": "BUY",
       "lots": 0.5,
-      "entryPrice": 158.947,
-      "entryTime": 1795490656491,
-      "currentPrice": 158.96,
-      "stopLoss": 158.847,
-      "takeProfit": 159.127,
-      "hardStopLoss": 158.767,
-      "softStopLoss": 158.847,
+      "entryPrice": 158.849,
+      "entryTime": 1795484069695,
+      "currentPrice": 158.965,
+      "stopLoss": 158.92399999999998,
+      "takeProfit": 159.029,
+      "hardStopLoss": 158.669,
+      "softStopLoss": 158.749,
       "softStopTriggeredTime": null,
       "spikeAvoidanceCount": 0,
-      "pipsPnL": 1.3,
-      "unrealizedPnL": 650,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 158.966,
-      "lowestPriceSinceEntry": 158.933
-    }
-  ],
-  "tradeLogs": [
+      "pipsPnL": 11.6,
+      "unrealizedPnL": 5800,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 90%)",
+      "highestPriceSinceEntry": 158.974,
+      "lowestPriceSinceEntry": 158.758,
+      "trailingStop": 158.92399999999998
+    },
     {
       "id": "trade_1795490279171_8g77",
       "pair": "USDJPY",
@@ -86,32 +85,22 @@
       "entryPrice": 158.814,
       "exitPrice": 158.909,
       "entryTime": 1795486212645,
-      "exitTime": 1795490279171,
-      "pipsGain": 9.5,
-      "realizedPnL": 4750,
-      "commissionFee": 397,
-      "netRealizedPnL": 4353,
-      "exitReason": "TRAILING_STOP",
-      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 68分。損益: +9.5 pips (+4,750円 / XM手数料控除後: 4,353円)。",
-      "holdingDurationMinutes": 68
-    },
-    {
-      "id": "trade_1795490279171_2sxt",
-      "pair": "USDJPY",
-      "direction": "BUY",
-      "lots": 0.5,
-      "entryPrice": 158.849,
-      "exitPrice": 158.909,
-      "entryTime": 1795484069695,
-      "exitTime": 1795490279171,
-      "pipsGain": 6,
-      "realizedPnL": 3000,
-      "commissionFee": 397,
-      "netRealizedPnL": 2603,
-      "exitReason": "TRAILING_STOP",
-      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 103分。損益: +6 pips (+3,000円 / XM手数料控除後: 2,603円)。",
-      "holdingDurationMinutes": 103
-    },
+      "currentPrice": 158.965,
+      "stopLoss": 158.92399999999998,
+      "takeProfit": 158.994,
+      "hardStopLoss": 158.634,
+      "softStopLoss": 158.714,
+      "softStopTriggeredTime": null,
+      "spikeAvoidanceCount": 0,
+      "pipsPnL": 15.1,
+      "unrealizedPnL": 7550,
+      "signalReason": "Bob Volman 20EMA Pullback Breakout (押し目ブレイク) (信頼度: 94%)",
+      "highestPriceSinceEntry": 158.974,
+      "lowestPriceSinceEntry": 158.812,
+      "trailingStop": 158.92399999999998
+    }
+  ],
+  "tradeLogs": [
     {
       "id": "trade_1795486212644_rcxi",
       "pair": "USDJPY",
@@ -26255,6 +26244,6 @@
       "tradeId": "trade_1795490279171_8g77"
     }
   ],
-  "lastUpdated": 1795490928153,
+  "lastUpdated": 1795491664535,
   "startedAt": 1791769904156
 }
