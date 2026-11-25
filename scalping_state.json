@@ -27,58 +27,50 @@
   },
   "account": {
     "initialBalance": 1000000,
-    "balance": 1209600,
-    "equity": 1215050,
-    "freeMargin": 1135050,
+    "balance": 1215550,
+    "equity": 1215550,
+    "freeMargin": 1215550,
     "marginLevel": 9999,
     "currency": "JPY",
     "spreadPips": 0,
     "slippagePips": 0
   },
-  "openPositions": [
+  "openPositions": [],
+  "tradeLogs": [
     {
-      "id": "pos_1795596361300_nbs",
-      "pair": "USDJPY",
-      "direction": "SELL",
-      "lots": 0.5,
-      "entryPrice": 159.411,
-      "entryTime": 1795596361300,
-      "currentPrice": 159.38,
-      "stopLoss": 159.511,
-      "takeProfit": 159.231,
-      "hardStopLoss": 159.591,
-      "softStopLoss": 159.511,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 3.1,
-      "unrealizedPnL": 1550,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 90%)",
-      "highestPriceSinceEntry": 159.464,
-      "lowestPriceSinceEntry": 159.375
-    },
-    {
-      "id": "pos_1795596437007_3ww",
+      "id": "trade_1795597844082_9p4k",
       "pair": "USDJPY",
       "direction": "SELL",
       "lots": 0.5,
       "entryPrice": 159.458,
+      "exitPrice": 159.375,
       "entryTime": 1795596437007,
-      "currentPrice": 159.38,
-      "stopLoss": 159.425,
-      "takeProfit": 159.278,
-      "hardStopLoss": 159.638,
-      "softStopLoss": 159.558,
-      "softStopTriggeredTime": null,
-      "spikeAvoidanceCount": 0,
-      "pipsPnL": 7.8,
-      "unrealizedPnL": 3900,
-      "signalReason": "Bob Volman 20EMA Pullback Breakout (戻り目ブレイク) (信頼度: 94%)",
-      "highestPriceSinceEntry": 159.464,
-      "lowestPriceSinceEntry": 159.375,
-      "trailingStop": 159.425
-    }
-  ],
-  "tradeLogs": [
+      "exitTime": 1795597844082,
+      "pipsGain": 8.3,
+      "realizedPnL": 4150,
+      "commissionFee": 398,
+      "netRealizedPnL": 3752,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 23分。損益: +8.3 pips (+4,150円 / XM手数料控除後: 3,752円)。",
+      "holdingDurationMinutes": 23
+    },
+    {
+      "id": "trade_1795597844082_906l",
+      "pair": "USDJPY",
+      "direction": "SELL",
+      "lots": 0.5,
+      "entryPrice": 159.411,
+      "exitPrice": 159.375,
+      "entryTime": 1795596361300,
+      "exitTime": 1795597844082,
+      "pipsGain": 3.6,
+      "realizedPnL": 1800,
+      "commissionFee": 398,
+      "netRealizedPnL": 1402,
+      "exitReason": "TRAILING_STOP",
+      "aiAnalysis": "【決済完了: TRAILING_STOP】保有時間 25分。損益: +3.6 pips (+1,800円 / XM手数料控除後: 1,402円)。",
+      "holdingDurationMinutes": 25
+    },
     {
       "id": "trade_1795596346174_jg7w",
       "pair": "USDJPY",
@@ -26535,33 +26527,27 @@
     }
   ],
   "metrics": {
-    "totalTrades": 1578,
-    "wins": 910,
+    "totalTrades": 1580,
+    "wins": 912,
     "losses": 668,
     "winRate": 57.7,
     "profitFactor": 1.05,
-    "totalPipsWon": 7893.3,
+    "totalPipsWon": 7905.2,
     "totalPipsLost": 7662.2,
-    "netPips": 231.1,
-    "netProfit": 210150,
+    "netPips": 243,
+    "netProfit": 216100,
     "maxDrawdown": 240800,
-    "maxDrawdownPercent": 18.01,
+    "maxDrawdownPercent": 17.93,
     "averageWinPips": 8.7,
     "averageLossPips": 11.5,
     "riskRewardRatio": 0.76,
-    "expectancyPips": 0.15,
+    "expectancyPips": 0.16,
     "consecutiveWins": 0,
     "consecutiveLosses": 6,
     "maxConsecutiveWins": 9,
     "maxConsecutiveLosses": 9
   },
   "equityHistory": [
-    {
-      "timestamp": 1795187704860,
-      "equity": 1213600,
-      "balance": 1209350,
-      "tradeId": "trade_1795187704860_w4m6"
-    },
     {
       "timestamp": 1795188292099,
       "equity": 1218350,
@@ -27155,8 +27141,14 @@
       "equity": 1209600,
       "balance": 1209600,
       "tradeId": "trade_1795596346174_jg7w"
+    },
+    {
+      "timestamp": 1795597844082,
+      "equity": 1215550,
+      "balance": 1215550,
+      "tradeId": "trade_1795597844082_9p4k"
     }
   ],
-  "lastUpdated": 1795597215309,
+  "lastUpdated": 1795597844082,
   "startedAt": 1791769904156
 }
